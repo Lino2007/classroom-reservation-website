@@ -1,0 +1,118 @@
+@import url(http://fonts.googleapis.com/css?family=Gabriela);
+
+.htmlslika {
+     width:100px; 
+    height:100px;
+    margin-top: -50px; 
+    text-align: center;
+}
+
+#okvir {
+   margin-top: 6%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10%;
+    height: 100%;
+    width: 100%;
+    }
+
+#meni {
+       
+    background: #74afdb;
+        height: 100pt;
+        width: 65%;
+        position: relative;
+        text-align: center;
+}
+
+#negundl {
+    text-decoration: none;
+}
+
+
+
+
+
+#meni  ul {
+    position: absolute;
+  bottom: 0;
+ 
+        list-style-type: none;
+        
+      margin-bottom: 1%; 
+      margin-left: 3%;
+   
+		
+		
+}
+
+#meni  ul  li {
+        display: inline-block;
+        padding-right: 35px; 
+        font-size: 150%;
+	
+}
+
+#glavni {
+	margin-top: 1%;
+  float: left;
+  width : 65%;
+  height: 1000pt;
+  background: #74afdb;
+}
+
+#glavni > h2 {
+   margin-left: 1%;
+   margin-top: 5%;
+}
+
+#glavni > p {
+	margin-right: 2%;
+	margin-left: 1%;
+}
+
+#tabelaSala {
+    margin-top: 5%;
+    margin-left: 8%;
+    width: 55%;
+    height: 70%;
+    border-collapse:collapse;
+}
+.hrow {
+    background: #939499;
+
+}
+
+.trow {
+    background: #939499;
+
+}
+
+
+
+#blanko {
+    visibility: hidden;
+    border: 0;
+}
+
+.trow, .srow, .nrow,.hrow {
+   
+          border: solid 1px black; 
+        
+    
+}
+.srow {
+    background:  #c8c9cf;
+
+
+}
+
+.nrow {
+    background: white;
+    border: solid 2px gray;
+
+    
+}
+
+
+
