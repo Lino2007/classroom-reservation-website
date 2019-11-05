@@ -27,6 +27,7 @@
 
 #negundl {
     text-decoration: none;
+    
 }
 
 
@@ -57,7 +58,7 @@
 	margin-top: 1%;
   float: left;
   width : 65%;
-  height: 1000pt;
+  height: 500pt;
   background: #74afdb;
 }
 
@@ -72,46 +73,80 @@
 }
 
 #tabelaSala {
+   
     margin-top: 5%;
-    margin-left: 8%;
-    width: 55%;
-    height: 70%;
+    margin-left: 20%;
+    margin-right:25%;
+   width: 60%;
+    height: 50%; 
     border-collapse:collapse;
 }
-.hrow {
+.headerSprat {
     background: #939499;
+    width: 40pt; 
+    height: 40pt;
+  /*  text-align: right; */
+    margin-right: 1pt;
+}
+
+.headerSprat #sprat {
+    height: 50pt;
+    background: #939499;
+    text-align: center;
 
 }
 
-.trow {
-    background: #939499;
-
+.headerSprat.low {
+    text-align: right;
+  
 }
 
+#rb {
+   
+    vertical-align: bottom ;
+    text-align: center;
+}
 
+.sala.zauzetaSala {
+    background:orange;
+}
+
+.sala.slobodnaSala {
+    background:lightgreen;
+}
 
 #blanko {
     visibility: hidden;
     border: 0;
 }
 
-.trow, .srow, .nrow,.hrow {
+ .headerRedni, .sala,.headerSprat {
    
           border: solid 1px black; 
         
     
 }
-.srow {
-    background:  #c8c9cf;
 
+.headerRedni {
+    background:  #c8c9cf;
+    width : 60pt;
+   
+    font-weight: normal;
+    text-align: left ;
 
 }
 
-.nrow {
+.sala.kancelarija {
+    background: darkslategray;
+}
+
+.sala {
     background: white;
     border: solid 2px gray;
-
-    
+    width: 30pt;
+    height: 30pt;
+    vertical-align: top;
+    text-align: left;
 }
 
 
