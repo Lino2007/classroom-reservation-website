@@ -1,0 +1,113 @@
+@import url(http://fonts.googleapis.com/css?family=Gabriela);
+
+.htmlslika {
+     width:100px; 
+    height:100px;
+    margin-top: -50px; 
+    text-align: center;
+}
+
+#okvir {
+   margin-top: 6%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10%;
+    height: 100%;
+    width: 100%;
+    }
+
+#meni {
+       
+    background: #74afdb;
+        height: 100pt;
+        width: 65%;
+        position: relative;
+        text-align: center;
+}
+
+#negundl {
+    text-decoration: none;
+    
+}
+
+
+
+
+
+#meni  ul {
+    position: absolute;
+  bottom: 0;
+ 
+        list-style-type: none;
+        
+      margin-bottom: 1%; 
+      margin-left: 3%;
+   
+		
+		
+}
+
+#meni  ul  li {
+        display: inline-block;
+        padding-right: 35px; 
+        font-size: 150%;
+	
+}
+
+#glavni {
+	margin-top: 1%;
+  float: left;
+  width : 65%;
+  height: 750pt;
+  background: #74afdb;
+}
+
+#glavni > h2 {
+   margin-left: 1%;
+   margin-top: 5%;
+}
+
+ #glavni > p {
+	margin-right: 2%;
+	margin-left: 1%;
+}
+
+
+  .slike img {
+    width: 150px;
+    height: 150px;
+  }
+ .slike {
+   margin-top: 1%;
+   display: grid;
+   grid-gap: 0em;
+   align-items: center;
+   grid-template-columns: repeat(3, 150px);
+ }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 720px) {
+      .slike {
+        grid-template-columns: repeat(2, 150px);
+      
+      }
+      #meni  ul  li {
+        font-size: 100%
+      }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other+&*/ 
+  @media screen and (max-width: 500px) {
+    .slike {
+      grid-template-columns: repeat(1, 150px);
+    }
+    #glavni {
+      height: 1200pt;
+    }
+    #meni  ul  li {
+      font-size: 50%
+    }
+  } 
+ 
+
+
