@@ -90,11 +90,72 @@
 
  label + select {
     width: 30%;
-    margin: 5% 30% 0 4%;
+    margin: 3% 30% 0 4%;
 }
 
-label + input {
+label + input[type=checkbox] {
     width: 7%;
     margin: 2% 10% 0 2%;
 }
 
+label + input[type=time] {
+    width: 30%;
+    margin: 2% 30% 0 4%;
+}
+
+
+#odb {
+    margin-top: 4%;
+    margin-left:20%;
+    font-weight: bold;
+    font-size: 22pt;
+    text-align: right;
+}
+
+#kalendar {
+   margin-top:2%;
+    height:500pt;
+   width: 100%;
+   display: flex;
+  align-items: center;
+   margin-left: 13%;
+}
+
+table {
+    background: lightgrey;
+    border: 3px solid black;
+    border-spacing: 10px;
+}
+
+th {
+    border: 3px solid blue;
+}
+
+table td {
+    width: 70px;
+}
+
+#unutrasnja {
+    height: 50px; 
+    border-collapse: collapse;
+    border: 3px solid darkblue;
+}
+#unutrasnja  td , tr {
+  
+    border: 3px solid darkblue;
+}
+#unutrasnja tr {
+   /* height: 25px; */
+    text-align: center;
+}
+
+#unutrasnja tr .free{
+    height: 12px;
+  background: green;
+ 
+}
+#unutrasnja tr .busy{
+    height: 12px;
+    background: red;
+   
+  }
