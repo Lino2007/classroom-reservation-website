@@ -100,7 +100,7 @@ label + input[type=checkbox] {
 
 label + input[type=time] {
     width: 30%;
-    margin: 2% 30% 0 4%;
+    margin: 2% 20% 0 4%;
 }
 
 
@@ -113,12 +113,18 @@ label + input[type=time] {
 }
 
 #kalendar {
-   margin-top:2%;
+    margin-top: -12%;
     height:500pt;
    width: 100%;
    display: flex;
   align-items: center;
    margin-left: 13%;
+}
+
+#month {
+    font-family: Consolas;
+    font-size: 20pt;
+    font-weight: bold;
 }
 
 table {
@@ -129,6 +135,7 @@ table {
 
 th {
     border: 3px solid blue;
+    background: lightskyblue;
 }
 
 table td {
@@ -149,13 +156,35 @@ table td {
     text-align: center;
 }
 
-#unutrasnja tr .free{
+#unutrasnja tr .slobodna{
     height: 12px;
   background: green;
  
 }
-#unutrasnja tr .busy{
+#unutrasnja tr .zauzeta{
     height: 12px;
     background: red;
    
   }
+
+  #btnsec {
+    margin-top:-12%;
+    margin-left: 13%;
+  }
+
+  .kalbtn {
+      width: 100px;
+      height: 40px;
+      border: groove blue 3px;
+      background: rgb(253, 241, 169);
+      font-family: Consolas;
+      color: blue;
+      font-weight: bold;
+      font-size: 12pt;
+
+  }
+
+  #nxt {
+      margin-left: 54%;
+  }
+
