@@ -1,77 +1,81 @@
-@import url(http://fonts.googleapis.com/css?family=Gabriela);
-
-.htmlslika {
-     width:100px; 
-    height:100px;
-    margin-top: -50px; 
-    text-align: center;
-}
-
-#okvir {
-   margin-top: 6%;
+/*background element*/
+.okvir {
+    position: relative;
+    z-index: 0;
+    margin-top: 0%;
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 10%;
     height: 100%;
     width: 100%;
-    }
-
-#meni {
-       
-    background: #74afdb;
+  }
+  
+  /*uredjenje gornjeg dijela stranice (meni i logo)*/
+  .logo {
+    margin-top: 0%;
+    z-index: 1;
+    width: 65%;
+    text-align: center;
+   position: relative;
+  }
+  
+  .htmlslika {
+    top: 75px;
+    display: table-cell;
+     width:150px; 
+    height:150px;
+    margin: 0 auto;
+    position: relative; 
+  }
+  
+  .meni {
+        background: #74afdb;
         height: 100pt;
         width: 65%;
         position: relative;
         text-align: center;
-}
-
-#negundl {
-    text-decoration: none;
-    
-}
-
-
-
-
-
-#meni  ul {
+  }
+  
+  .meni  ul {
     position: absolute;
-  bottom: 0;
- 
-        list-style-type: none;
-        
-      margin-bottom: 1%; 
-      margin-left: 3%;
-   
-		
-		
-}
-
-#meni  ul  li {
+    bottom: 0;
+    list-style-type: none;
+    margin-bottom: 1%; 
+    margin-left: 3%;
+  }
+  
+  .meni  ul  li {
         display: inline-block;
         padding-right: 35px; 
         font-size: 150%;
-	
-}
-
-#glavni {
-	margin-top: 1%;
+  }
+  
+  /*uklanjam podvlaku kod linka*/
+  .bezPodvlake {
+    text-decoration: none;
+  }
+  
+  
+  /*uredjenje sadrzaja*/
+  .sadrzaj {
+  margin-top: 1%;
   float: left;
   width : 65%;
   height: 500pt;
   background: #74afdb;
-}
-
-#glavni > h2 {
+  }
+  
+  .sadrzaj  h2 {
    margin-left: 1%;
    margin-top: 5%;
-}
+  }
+  
+  .sadrzaj  p {
+  margin-right: 2%;
+  margin-left: 1%;
+  }
 
-#glavni > p {
-	margin-right: 2%;
-	margin-left: 1%;
-}
-
+  /*poravnanje labela i inputa*/
  form {
     width: 80%;
     margin: 0 auto;
@@ -93,6 +97,52 @@
  input + input {
     float: right;
 }
+
+  input[type=submit] {
+      margin-top:  4%;
+      margin-left: 34.5%;
+      width: 31%;
+  }
+
+@media screen and (max-width: 500px) {
+    form {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+     label, input {
+        font-size: 8pt;
+        display: list-item;
+        list-style-type: none;
+       
+    } 
+    
+     label {
+        margin-left: 20%;
+        width: 50%;
+        text-align: left;
+        
+    }
+    
+     label + input {
+        width: 60%;
+        height: 15px;
+        margin: 5% 30% 0 20%;
+    }
+
+    
+     input + input {
+        float: bottom;
+    }
+
+    #forma:first-child {
+        margin-top: 5%;
+    }
+
+    .sadrzaj {
+        height: 300pt;
+    }
+  } 
 
 
 
