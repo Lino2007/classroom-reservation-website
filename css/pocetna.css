@@ -1,86 +1,96 @@
-@import url(http://fonts.googleapis.com/css?family=Gabriela);
+/*background element*/
+.okvir {
+  position: relative;
+  z-index: 0;
+  margin-top: 0%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 10%;
+  height: 100%;
+  width: 100%;
+}
+
+/*uredjenje gornjeg dijela stranice (meni i logo)*/
+.logo {
+  margin-top: 0%;
+  z-index: 1;
+  width: 65%;
+  text-align: center;
+ position: relative;
+}
 
 .htmlslika {
-     width:100px; 
-    height:100px;
-    margin-top: -50px; 
-    text-align: center;
+  top: 75px;
+  display: table-cell;
+   width:150px; 
+  height:150px;
+  margin: 0 auto;
+  position: relative; 
 }
 
-#okvir {
-   margin-top: 6%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-bottom: 10%;
-    height: 100%;
-    width: 100%;
-    }
-
-#meni {
-       
-    background: #74afdb;
-        height: 100pt;
-        width: 65%;
-        position: relative;
-        text-align: center;
-}
-
-#negundl {
-    text-decoration: none;
-    
-}
-
-
-
-
-
-#meni  ul {
-    position: absolute;
-  bottom: 0;
- 
-        list-style-type: none;
-        
-      margin-bottom: 1%; 
-      margin-left: 3%;
-   
-		
-		
-}
-
-#meni  ul  li {
-        display: inline-block;
-        padding-right: 35px; 
-        font-size: 150%;
-	
-}
-
-#glavni {
-	margin-top: 1%;
-  float: left;
-  width : 65%;
-  height: 750pt;
+.meni {
+     
   background: #74afdb;
+      height: 100pt;
+      width: 65%;
+      position: relative;
+      text-align: center;
 }
 
-#glavni > h2 {
-   margin-left: 1%;
-   margin-top: 5%;
+.meni  ul {
+  position: absolute;
+  bottom: 0;
+  list-style-type: none;
+  margin-bottom: 1%; 
+  margin-left: 3%;
 }
 
- #glavni > p {
-	margin-right: 2%;
-	margin-left: 1%;
+.meni  ul  li {
+      display: inline-block;
+      padding-right: 35px; 
+      font-size: 150%;
+}
+
+/*uklanjam podvlaku kod linka*/
+.bezPodvlake {
+  text-decoration: none;
 }
 
 
+/*uredjenje sadrzaja*/
+.sadrzaj {
+margin-top: 1%;
+float: left;
+width : 65%;
+height: 500pt;
+background: #74afdb;
+}
+
+.sadrzaj  h2 {
+ margin-left: 1%;
+ margin-top: 5%;
+}
+
+.sadrzaj  p {
+margin-right: 2%;
+margin-left: 1%;
+}
+
+/*centriraju se slike*/
+/*.sadrzaj .slike {
+  margin-left: 20%;
+  } */
+
+/*postavljanje fiksne velicine na slikama*/
   .slike img {
     width: 150px;
     height: 150px;
   }
+
  .slike {
    margin-top: 1%;
    display: grid;
-   grid-gap: 0em;
+   grid-gap: 1em;
    align-items: center;
    grid-template-columns: repeat(3, 150px);
  }
@@ -91,7 +101,11 @@
         grid-template-columns: repeat(2, 150px);
       
       }
-      #meni  ul  li {
+       /*uvecava se sadrzaj tako da slike ne ispadaju van sadrzaja*/
+    .sadrzaj {
+      height: 750pt;
+    }
+      .meni  ul  li {
         font-size: 100%
       }
   }
@@ -101,10 +115,11 @@
     .slike {
       grid-template-columns: repeat(1, 150px);
     }
-    #glavni {
-      height: 1200pt;
+    /*uvecava se sadrzaj tako da slike ne ispadaju van sadrzaja*/
+    .sadrzaj {
+      height: 1250pt;
     }
-    #meni  ul  li {
+    .sadrzaj  ul  li {
       font-size: 50%
     }
   } 
