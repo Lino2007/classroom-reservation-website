@@ -30,7 +30,7 @@
 
 .meni {
        
-    background: #74afdb;
+        background: #74afdb;
         height: 100pt;
         width: 65%;
         position: relative;
@@ -142,6 +142,29 @@
     height: 30pt;
     vertical-align: top;
     text-align: left;
+}
+
+/*za ekrane ispod sirine 600px*/
+@media screen and (max-width: 600px) {
+
+   
+    .meni  ul {
+       
+        position: absolute;
+        bottom: 0;
+        list-style-type: none;
+       text-align: center;
+    }
+    
+    .meni  ul  li {
+        display: list-item; 
+            font-size: 70%;
+    }
+
+    .headerSprat, .headerRedni{
+        visibility: hidden;
+        border: 0;
+    }
 }
 
 
