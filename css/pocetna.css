@@ -111,7 +111,7 @@ margin-left: 1%;
   }
   
   /* Responsive layout - makes the two columns stack on top of each other instead of next to each other+&*/ 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 600px) {
     .slike {
       grid-template-columns: repeat(1, 150px);
     }
@@ -122,6 +122,15 @@ margin-left: 1%;
     .sadrzaj  ul  li {
       font-size: 50%
     }
+    /*scale za razlicite browsere*/
+    .slike img {
+      -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
+         -moz-transform: scale(0.8); /* FF3.5+ */
+          -ms-transform: scale(0.8); /* IE9 */
+           -o-transform: scale(0.8); /* Opera 10.5+ */
+              transform: scale(0.8);
+                
+    }​
   } 
  
 
