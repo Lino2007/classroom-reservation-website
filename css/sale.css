@@ -54,6 +54,7 @@
 /*uklanjam podvlaku kod linka*/
 .bezPodvlake {
     text-decoration: none;
+    color: black;
 }
 
 /*uredjenje sadrzaja*/
@@ -147,10 +148,8 @@
 /*za ekrane ispod sirine 600px*/
 @media screen and (max-width: 600px) {
 
-   
     .meni  ul {
-       
-        position: absolute;
+       position: absolute;
         bottom: 0;
         list-style-type: none;
        text-align: center;

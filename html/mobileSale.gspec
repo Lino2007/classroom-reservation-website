@@ -1,0 +1,74 @@
+@lib galen-extras
+
+= Skeleton =
+    | header, menu, content, footer are aligned vertically above each other with ~0px margin
+
+    header, menu, content, footer:
+        centered horizontally inside screen 1px 
+
+    menu, content:
+        inside screen 
+
+    footer:
+        inside screen 0px bottom 
+
+    header:
+        height 69px 
+        inside screen 0px top 
+
+    menu:
+        height 63px 
+
+= header elements =
+    | header.logo should be squared with 48px size
+
+    header.logo:
+        inside header 13px top, 0px left, 8px bottom 
+        left-of header.text 22px 
+
+    header.text:
+        height 39px 
+        inside header 20px top, 10px bottom 
+
+= menu elements =
+    | menu.item-* are aligned horizontally next to each other with 0px margin
+
+    menu.item-1, menu.item-2, menu.item-3, menu.item-4:
+        height 63px 
+
+    menu.item-2, menu.item-3, menu.item-4:
+        inside menu 0px top bottom 
+
+    menu.item-1:
+        inside menu 0px top left bottom 
+
+= content elements =
+    | login_caption, username_textfield, password_textfield are aligned vertically above each other with 10px margin
+    | login_button, cancel_button are aligned horizontally next to each other with 3px margin
+
+   cancel_button:
+        inside login_box 31px bottom, >= 21px right 
+        width 90px 
+
+    login_button:
+        inside login_box 31px bottom, 21px left 
+        width 79px 
+
+    login_caption:
+        height 33px 
+        inside login_box 41px top, 21px left right 
+
+    login_button, cancel_button:
+        below password_textfield 10px 
+        height 45px 
+
+    username_textfield, password_textfield:
+        height 34px 
+        inside login_box 21px left right 
+
+    login_box:
+        centered horizontally inside content 1px 
+        inside content 20px top 
+
+    login_caption, username_textfield, password_textfield:
+        centered horizontally inside login_box 1px 

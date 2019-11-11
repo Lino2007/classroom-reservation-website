@@ -54,6 +54,11 @@
 /*uklanjam podvlaku kod linka*/
 .bezPodvlake {
   text-decoration: none;
+ 
+}
+
+a {
+  color: black;
 }
 
 
@@ -95,8 +100,8 @@ margin-left: 1%;
    grid-template-columns: repeat(3, 150px);
  }
   
-  /* Responsive layout - makes a two column-layout instead of four columns */
-  @media screen and (max-width: 720px) {
+  /* Responsive layout */
+  @media only screen and (max-width: 720px) {
       .slike {
         grid-template-columns: repeat(2, 150px);
       
@@ -110,27 +115,40 @@ margin-left: 1%;
       }
   }
   
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other+&*/ 
-  @media screen and (max-width: 600px) {
-    .slike {
-      grid-template-columns: repeat(1, 150px);
-    }
-    /*uvecava se sadrzaj tako da slike ne ispadaju van sadrzaja*/
-    .sadrzaj {
-      height: 1250pt;
-    }
-    .sadrzaj  ul  li {
-      font-size: 50%
-    }
-    /*scale za razlicite browsere*/
-    .slike img {
-      -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
-         -moz-transform: scale(0.8); /* FF3.5+ */
-          -ms-transform: scale(0.8); /* IE9 */
-           -o-transform: scale(0.8); /* Opera 10.5+ */
-              transform: scale(0.8);
-     }​
-  } 
- 
+  @media only screen and (max-width: 600px) {
 
+    .meni  ul {
+      position: absolute;
+       bottom: 0;
+       list-style-type: none;
+      text-align: center;
+   }
+   
+   .meni  ul  li {
+       display: list-item; 
+       font-size: 70%;
+   }
 
+  .slike {
+  grid-template-columns : repeat(1,150px);
+  }
+   /*uvecava se visina sadrzaja tako da slike ne ispadaju van sadrzaja*/
+  .sadrzaj {
+  height : 1250pt;
+  }
+   /*scale za razlicite browsere*/
+  .sadrzaj ul li {
+  font-size : 50%;
+  }
+  .slike img {
+  -webkit-transform: scale(0.8); /* Saf3.1+, Chrome */
+  -moz-transform: scale(0.8); /* FF3.5+ */
+  -ms-transform: scale(0.8); /* IE9 */
+  -o-transform: scale(0.8); /* Opera 10.5+ */
+  transform : scale(0.8);
+  }
+  }
+  
+  
+
+          
