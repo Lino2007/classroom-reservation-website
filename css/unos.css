@@ -54,6 +54,10 @@
   .bezPodvlake {
     text-decoration: none;
   }
+
+  a {
+    color: black;
+  }
   
   
   /*uredjenje sadrzaja*/
@@ -105,6 +109,19 @@
   }
 
 @media screen and (max-width: 500px) {
+  
+   .meni  ul {
+    position: absolute;
+     bottom: 0;
+     list-style-type: none;
+    text-align: center;
+   }
+ 
+   .meni  ul  li {
+     display: list-item; 
+     font-size: 70%;
+   }
+
     form {
         width: 80%;
         margin: 0 auto;
