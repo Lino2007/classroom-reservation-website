@@ -54,6 +54,9 @@
 /*uklanjam podvlaku kod linka*/
 .bezPodvlake {
     text-decoration: none;
+}
+
+a {
     color: black;
 }
 
