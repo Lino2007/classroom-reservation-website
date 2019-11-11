@@ -1,0 +1,70 @@
+#definicija objekata
+#  okvir css .okvir
+   # logo css .logo
+  #  meni css .meni
+  #  sadrzaj css .sadrzaj
+ #   header id header
+@objects
+    menu_item-* css ul li a
+    tabela_sale  .tabelaSala tr .sala
+    tabela_zauzeteSale  .tabelaSala tr .sala.zauzetaSala
+    tabele_slobodneSale  .tabelaSala tr .sala.slobodnaSala
+    tabele_kancelarija   .tabelaSala tr .sala.kancelarija
+    tabele_headerRedni-* .tabelaSala tr .headerRedni
+    tabele_headerSprat-* .tabelaSala .headerSprat
+
+@set 
+    colspan_six 250px
+   
+
+= Meni section =
+    menu_item-1:
+       aligned horizontally all menu_item-2 
+    menu_item-2:
+       text is "Sale"
+       #css text-decoration is "none"
+
+
+= Tabela =
+    #provjera da li klase celija prate specifikaciju
+     tabela_sale:
+       width < 80px
+       height < 80px
+       css background-color is "rgb(255, 255, 255)"
+    
+     tabela_zauzeteSale:
+       css background-color is "rgb(255, 165, 0)"
+
+     tabele_slobodneSale:
+       css background-color is "rgb(144, 238, 144)"
+     
+     tabele_kancelarija:
+       css background-color is "rgb(47, 79, 79)"
+
+= Test dimenzija headera =
+       @for [2 - 10] as index
+          tabele_headerRedni-${index}:
+             width > 100px
+             height < 100px
+             css background-color is "rgb(200, 201, 207)"
+             css text-align is "left"
+
+= Test headerSprat = 
+       @forEach [tabele_headerSprat-*]  as header
+            ${header}:
+             css text-align is "center"
+             css font-weight is "700" 
+#700 oznacava bold
+
+#da li je colspan=6? (stavljena je vrijednost malo manja od velicine 6 kolona)
+= Test siroka headerSprat celija =
+       tabele_headerSprat-1:
+             width > ${colspan_six}
+                 
+    
+
+  
+     
+   
+
+       
