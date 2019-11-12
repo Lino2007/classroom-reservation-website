@@ -1,17 +1,17 @@
 {
   "tests" : [ {
     "name" : "mobileSale.gspec",
-    "startedAt" : 1573590303582,
-    "endedAt" : 1573590313158,
+    "startedAt" : 1573590271458,
+    "endedAt" : 1573590283596,
     "failed" : false,
     "statistic" : {
-      "passed" : 58,
+      "passed" : 59,
       "errors" : 0,
       "warnings" : 0,
-      "total" : 58
+      "total" : 59
     },
     "testId" : "1-mobilesale.gspec",
-    "duration" : 9576,
+    "duration" : 12138,
     "failed" : false
   } ]
 }

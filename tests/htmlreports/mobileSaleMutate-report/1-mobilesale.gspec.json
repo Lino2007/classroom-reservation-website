@@ -3,15 +3,15 @@
   "name" : "mobileSale.gspec",
   "report" : {
     "nodes" : [ {
-      "name" : "Simple check",
+      "name" : "Mutation test",
       "status" : "info",
       "nodes" : [ {
-        "name" : "check  mobileSale.gspec --url http://localhost/wt1918048/html/sale.html --size 1263x975 --htmlreport htmlreports/mobileSale-report",
+        "name" : "check  mobileSale.gspec --url http://localhost/wt1918048/html/sale.html --size 1263x975 --htmlreport htmlreports/mobileSaleMutate-report",
         "status" : "info",
         "nodes" : [ {
           "name" : "Check layout: mobileSale.gspec included tags: ",
           "status" : "info",
-          "time" : 1573590312237,
+          "time" : 1573590282690,
           "sections" : [ {
             "name" : "Meni section",
             "place" : {
@@ -925,11 +925,139 @@
           },
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
+        }, {
+          "name" : "Mutation testing: mobileSale.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573590282690,
+          "mutationReport" : {
+            "objectMutationStatistics" : {
+              "menu_item-2" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_kancelarija" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "logo_slika" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_headerRedni-3" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_headerRedni-2" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_headerRedni-10" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "container_meni" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "menu_item-1" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabela_zauzeteSale" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_headerRedni-9" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_headerRedni-8" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabela_sale" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_headerRedni-5" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_headerRedni-4" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_headerRedni-7" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_headerRedni-6" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_headerSprat-1" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_slobodneSale" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_headerSprat-2" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_headerSprat-3" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_headerSprat-4" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_headerSprat-5" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "tabele_headerSprat-6" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              }
+            },
+            "totalPassed" : 230,
+            "totalFailed" : 0,
+            "totalMutations" : 230,
+            "failedRatio" : 0.0
+          },
+          "type" : "mutation"
         } ],
-        "time" : 1573590308191,
+        "time" : 1573590275582,
         "type" : "node"
       } ],
-      "time" : 1573590303582,
+      "time" : 1573590271458,
       "type" : "node"
     } ]
   }

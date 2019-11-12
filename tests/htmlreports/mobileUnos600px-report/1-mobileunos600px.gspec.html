@@ -8,43 +8,43 @@
         <script src="galen-report.js"></script>
         <script type="text/javascript">
 var REPORT_DATA = {
-  "testId" : "1-mobileunos.gspec",
-  "name" : "mobileUnos.gspec",
+  "testId" : "1-mobileunos600px.gspec",
+  "name" : "mobileUnos600px.gspec",
   "report" : {
     "nodes" : [ {
       "name" : "Simple check",
       "status" : "info",
       "nodes" : [ {
-        "name" : "check  mobileUnos.gspec --url http://localhost/wt1918048/html/unos.html --size 1263x975 --htmlreport htmlreports/mobileUnos-report",
+        "name" : "check  mobileUnos600px.gspec --url http://localhost/wt1918048/html/unos.html --size 600x975 --htmlreport htmlreports/mobileUnos600px-report",
         "status" : "info",
         "nodes" : [ {
-          "name" : "Check layout: mobileUnos.gspec included tags: ",
+          "name" : "Check layout: mobileUnos600px.gspec included tags: ",
           "status" : "info",
-          "time" : 1573590296831,
+          "time" : 1573590325844,
           "sections" : [ {
             "name" : "Meni section",
             "place" : {
-              "filePath" : "mobileUnos.gspec",
-              "lineNumber" : 17
+              "filePath" : "mobileUnos600px.gspec",
+              "lineNumber" : 16
             },
             "objects" : [ {
               "name" : "menu_item-1",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 19
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 18
                 },
-                "name" : "aligned horizontally all menu_item-2",
-                "highlight" : [ "menu_item-1", "menu_item-2" ]
+                "name" : "aligned vertically centered menu_item-1",
+                "highlight" : [ "menu_item-1", "menu_item-1" ]
               } ]
             }, {
               "name" : "menu_item-3",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 21
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 20
                 },
                 "name" : "text is \"Unos\"",
                 "highlight" : [ "menu_item-3" ]
@@ -53,16 +53,16 @@ var REPORT_DATA = {
           }, {
             "name" : "Check logo",
             "place" : {
-              "filePath" : "mobileUnos.gspec",
-              "lineNumber" : 23
+              "filePath" : "mobileUnos600px.gspec",
+              "lineNumber" : 22
             },
             "objects" : [ {
               "name" : "logo_slika",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 25
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 24
                 },
                 "name" : "inside partly container_meni -79px top",
                 "meta" : [ {
@@ -81,39 +81,54 @@ var REPORT_DATA = {
               } ]
             } ]
           }, {
-            "name" : "Check alignment label + input",
+            "name" : "Check vertical aligment label + input",
             "place" : {
-              "filePath" : "mobileUnos.gspec",
-              "lineNumber" : 27
+              "filePath" : "mobileUnos600px.gspec",
+              "lineNumber" : 26
             },
             "objects" : [ {
+              "name" : "label-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "above input-1 10 to 30px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label-1",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input-1",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "10 to 30px",
+                  "realDistance" : "15px"
+                } ],
+                "highlight" : [ "label-1", "input-1" ]
+              } ]
+            }, {
               "name" : "label-2",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
+                  "filePath" : "mobileUnos600px.gspec",
                   "lineNumber" : 30
                 },
-                "name" : "aligned horizontally centered input-2",
-                "highlight" : [ "label-2", "input-2" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 34
-                },
-                "name" : "left-of input-2 10 to 30px",
+                "name" : "above input-2 10 to 30px",
                 "meta" : [ {
                   "from" : {
                     "object" : "label-2",
-                    "edge" : "right"
+                    "edge" : "bottom"
                   },
                   "to" : {
                     "object" : "input-2",
-                    "edge" : "left"
+                    "edge" : "top"
                   },
                   "expectedDistance" : "10 to 30px",
-                  "realDistance" : "30px"
+                  "realDistance" : "15px"
                 } ],
                 "highlight" : [ "label-2", "input-2" ]
               } ]
@@ -122,283 +137,61 @@ var REPORT_DATA = {
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
+                  "filePath" : "mobileUnos600px.gspec",
                   "lineNumber" : 30
                 },
-                "name" : "aligned horizontally centered input-3",
-                "highlight" : [ "label-3", "input-3" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 34
-                },
-                "name" : "left-of input-3 10 to 30px",
+                "name" : "above input-3 10 to 30px",
                 "meta" : [ {
                   "from" : {
                     "object" : "label-3",
-                    "edge" : "right"
+                    "edge" : "bottom"
                   },
                   "to" : {
                     "object" : "input-3",
-                    "edge" : "left"
+                    "edge" : "top"
                   },
                   "expectedDistance" : "10 to 30px",
-                  "realDistance" : "30px"
+                  "realDistance" : "15px"
                 } ],
                 "highlight" : [ "label-3", "input-3" ]
-              } ]
-            }, {
-              "name" : "label-1",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 34
-                },
-                "name" : "left-of input-1 10 to 30px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "label-1",
-                    "edge" : "right"
-                  },
-                  "to" : {
-                    "object" : "input-1",
-                    "edge" : "left"
-                  },
-                  "expectedDistance" : "10 to 30px",
-                  "realDistance" : "30px"
-                } ],
-                "highlight" : [ "label-1", "input-1" ]
               } ]
             }, {
               "name" : "label-4",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 34
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 30
                 },
-                "name" : "left-of input-4 10 to 30px",
+                "name" : "above input-4 10 to 30px",
                 "meta" : [ {
                   "from" : {
                     "object" : "label-4",
-                    "edge" : "right"
+                    "edge" : "bottom"
                   },
                   "to" : {
                     "object" : "input-4",
-                    "edge" : "left"
+                    "edge" : "top"
                   },
                   "expectedDistance" : "10 to 30px",
-                  "realDistance" : "30px"
+                  "realDistance" : "15px"
                 } ],
                 "highlight" : [ "label-4", "input-4" ]
               } ]
             } ]
           }, {
-            "name" : "Label and input centered",
-            "place" : {
-              "filePath" : "mobileUnos.gspec",
-              "lineNumber" : 36
-            },
-            "objects" : [ {
-              "name" : "label-1",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 39
-                },
-                "name" : "inside container_sadrzaj 0 px left",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "label-1",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "left"
-                  },
-                  "expectedDistance" : "0px",
-                  "realDistance" : "0px"
-                } ],
-                "highlight" : [ "label-1", "container_sadrzaj" ]
-              } ]
-            }, {
-              "name" : "input-1",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 41
-                },
-                "name" : "inside container_sadrzaj 219 px right",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "input-1",
-                    "edge" : "right"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "219px",
-                  "realDistance" : "219px"
-                } ],
-                "highlight" : [ "input-1", "container_sadrzaj" ]
-              } ]
-            }, {
-              "name" : "label-2",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 39
-                },
-                "name" : "inside container_sadrzaj 0 px left",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "label-2",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "left"
-                  },
-                  "expectedDistance" : "0px",
-                  "realDistance" : "0px"
-                } ],
-                "highlight" : [ "label-2", "container_sadrzaj" ]
-              } ]
-            }, {
-              "name" : "input-2",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 41
-                },
-                "name" : "inside container_sadrzaj 219 px right",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "input-2",
-                    "edge" : "right"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "219px",
-                  "realDistance" : "219px"
-                } ],
-                "highlight" : [ "input-2", "container_sadrzaj" ]
-              } ]
-            }, {
-              "name" : "label-3",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 39
-                },
-                "name" : "inside container_sadrzaj 0 px left",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "label-3",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "left"
-                  },
-                  "expectedDistance" : "0px",
-                  "realDistance" : "0px"
-                } ],
-                "highlight" : [ "label-3", "container_sadrzaj" ]
-              } ]
-            }, {
-              "name" : "input-3",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 41
-                },
-                "name" : "inside container_sadrzaj 219 px right",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "input-3",
-                    "edge" : "right"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "219px",
-                  "realDistance" : "219px"
-                } ],
-                "highlight" : [ "input-3", "container_sadrzaj" ]
-              } ]
-            }, {
-              "name" : "label-4",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 39
-                },
-                "name" : "inside container_sadrzaj 0 px left",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "label-4",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "left"
-                  },
-                  "expectedDistance" : "0px",
-                  "realDistance" : "0px"
-                } ],
-                "highlight" : [ "label-4", "container_sadrzaj" ]
-              } ]
-            }, {
-              "name" : "input-4",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 41
-                },
-                "name" : "inside container_sadrzaj 219 px right",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "input-4",
-                    "edge" : "right"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "219px",
-                  "realDistance" : "219px"
-                } ],
-                "highlight" : [ "input-4", "container_sadrzaj" ]
-              } ]
-            } ]
-          }, {
             "name" : "Label check",
             "place" : {
-              "filePath" : "mobileUnos.gspec",
-              "lineNumber" : 45
+              "filePath" : "mobileUnos600px.gspec",
+              "lineNumber" : 32
             },
             "objects" : [ {
               "name" : "label-1",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 47
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 34
                 },
                 "name" : "text contains \"Naziv\"",
                 "highlight" : [ "label-1" ]
@@ -408,8 +201,8 @@ var REPORT_DATA = {
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 49
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 36
                 },
                 "name" : "text contains \"mjesta\"",
                 "highlight" : [ "label-2" ]
@@ -418,16 +211,16 @@ var REPORT_DATA = {
           }, {
             "name" : "Button in form positioning",
             "place" : {
-              "filePath" : "mobileUnos.gspec",
-              "lineNumber" : 51
+              "filePath" : "mobileUnos600px.gspec",
+              "lineNumber" : 38
             },
             "objects" : [ {
               "name" : "button",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 53
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 40
                 },
                 "name" : "below last_txt_input_field 20 to 30 px",
                 "meta" : [ {
@@ -440,22 +233,22 @@ var REPORT_DATA = {
                     "edge" : "bottom"
                   },
                   "expectedDistance" : "20 to 30px",
-                  "realDistance" : "25px"
+                  "realDistance" : "30px"
                 } ],
                 "highlight" : [ "button", "last_txt_input_field" ]
               }, {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 65
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 52
                 },
                 "name" : "text is \"Unesi\"",
                 "highlight" : [ "button" ]
               }, {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 66
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 53
                 },
                 "name" : "css text-align is \"center\"",
                 "highlight" : [ "button" ]
@@ -465,8 +258,8 @@ var REPORT_DATA = {
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 56
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 43
                 },
                 "name" : "above input_email 20 to 50 px",
                 "meta" : [ {
@@ -479,7 +272,7 @@ var REPORT_DATA = {
                     "edge" : "top"
                   },
                   "expectedDistance" : "20 to 50px",
-                  "realDistance" : "32px"
+                  "realDistance" : "45px"
                 } ],
                 "highlight" : [ "input_numb", "input_email" ]
               } ]
@@ -488,10 +281,10 @@ var REPORT_DATA = {
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 59
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 46
                 },
-                "name" : "above input_email 20 to 100 px",
+                "name" : "above input_email 20 to 120 px",
                 "meta" : [ {
                   "from" : {
                     "object" : "input-1",
@@ -501,8 +294,8 @@ var REPORT_DATA = {
                     "object" : "input_email",
                     "edge" : "top"
                   },
-                  "expectedDistance" : "20 to 100px",
-                  "realDistance" : "83px"
+                  "expectedDistance" : "20 to 120px",
+                  "realDistance" : "110px"
                 } ],
                 "highlight" : [ "input-1", "input_email" ]
               } ]
@@ -511,8 +304,8 @@ var REPORT_DATA = {
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 62
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 49
                 },
                 "name" : "below input_email 20 to 50 px",
                 "meta" : [ {
@@ -525,7 +318,7 @@ var REPORT_DATA = {
                     "edge" : "bottom"
                   },
                   "expectedDistance" : "20 to 50px",
-                  "realDistance" : "32px"
+                  "realDistance" : "46px"
                 } ],
                 "highlight" : [ "input-4", "input_email" ]
               } ]
@@ -533,67 +326,61 @@ var REPORT_DATA = {
           } ],
           "objects" : {
             "menu_item-3" : {
-              "area" : [ 510, 260, 50, 26 ]
+              "area" : [ 188, 251, 23, 12 ]
             },
             "label-4" : {
-              "area" : [ 330, 494, 190, 18 ]
+              "area" : [ 219, 513, 148, 12 ]
             },
             "input_email" : {
-              "area" : [ 550, 442, 194, 20 ]
-            },
-            "menu_item-2" : {
-              "area" : [ 430, 260, 41, 26 ]
+              "area" : [ 219, 475, 182, 19 ]
             },
             "label-3" : {
-              "area" : [ 330, 443, 190, 18 ]
+              "area" : [ 219, 448, 148, 12 ]
             },
             "label-2" : {
-              "area" : [ 330, 391, 190, 18 ]
+              "area" : [ 219, 384, 148, 12 ]
             },
             "label-1" : {
-              "area" : [ 330, 339, 190, 18 ]
-            },
-            "container_sadrzaj" : {
-              "area" : [ 330, 307, 633, 252 ]
+              "area" : [ 219, 319, 148, 12 ]
             },
             "logo_slika" : {
-              "area" : [ 572, 83, 150, 150 ]
+              "area" : [ 233, 83, 150, 150 ]
             },
             "input-1" : {
-              "area" : [ 550, 339, 194, 20 ]
+              "area" : [ 219, 346, 182, 19 ]
             },
             "input-2" : {
-              "area" : [ 550, 390, 194, 20 ]
+              "area" : [ 219, 411, 182, 19 ]
             },
             "container_meni" : {
-              "area" : [ 251, 162, 791, 133 ]
+              "area" : [ 122, 162, 371, 133 ]
             },
             "menu_item-1" : {
-              "area" : [ 315, 260, 75, 26 ]
+              "area" : [ 182, 225, 35, 12 ]
             },
             "button" : {
-              "area" : [ 549, 539, 196, 20 ]
+              "area" : [ 262, 589, 92, 16 ]
             },
             "input-3" : {
-              "area" : [ 550, 442, 194, 20 ]
+              "area" : [ 219, 475, 182, 19 ]
             },
             "last_txt_input_field" : {
-              "area" : [ 550, 494, 194, 20 ]
+              "area" : [ 219, 540, 182, 19 ]
             },
             "input-4" : {
-              "area" : [ 550, 494, 194, 20 ]
+              "area" : [ 219, 540, 182, 19 ]
             },
             "input_numb" : {
-              "area" : [ 550, 390, 194, 20 ]
+              "area" : [ 219, 411, 182, 19 ]
             }
           },
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1573590293629,
+        "time" : 1573590322764,
         "type" : "node"
       } ],
-      "time" : 1573590289552,
+      "time" : 1573590318047,
       "type" : "node"
     } ]
   }

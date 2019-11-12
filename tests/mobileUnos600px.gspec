@@ -8,7 +8,6 @@
     last_txt_input_field #spr
     input_numb           input[type='number']
     input_email          input[type='email']
-    container_sadrzaj    #forma
     
     
 @set 
@@ -16,7 +15,7 @@
 
 = Meni section =
     menu_item-1:
-       aligned horizontally all menu_item-2 
+       aligned vertically centered menu_item-1 
     menu_item-3:
        text is "Unos"
     
@@ -24,23 +23,11 @@
     logo_slika:
         inside partly container_meni ${pedeset_posto} top  
 
-= Check alignment label + input =
-    @for [2 - 3] as index
-          label-${index}:
-              aligned horizontally centered input-${index}
-
+= Check vertical aligment label + input =
+#provjera da li je label iznad inputa
     @for [1 - 4] as index
           label-${index}:
-              left-of input-${index} 10 to 30px
-
-= Label and input centered =
-    @for [1 - 4] as index
-          label-${index}:
-              inside container_sadrzaj 0 px left 
-          input-${index}:
-              inside container_sadrzaj 219 px right
-#posto su rucno centrirani 0 i 219px (lijevo i desno) oznacavaju da je sadrzaj centriran
-      
+              above input-${index} 10 to 30px
 
 = Label check =
     label-1: 
@@ -56,7 +43,7 @@
        above input_email 20 to 50 px
     
     input-1:
-       above input_email 20 to 100 px
+       above input_email 20 to 120 px
     
     input-4:
        below input_email 20 to 50 px
@@ -64,6 +51,3 @@
     button:
       text is "Unesi"
       css text-align is "center"
-    
-    
-

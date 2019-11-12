@@ -1,0 +1,378 @@
+{
+  "testId" : "1-mobileunos600px.gspec",
+  "name" : "mobileUnos600px.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  mobileUnos600px.gspec --url http://localhost/wt1918048/html/unos.html --size 600x975 --htmlreport htmlreports/mobileUnos600px-report",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: mobileUnos600px.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573590325844,
+          "sections" : [ {
+            "name" : "Meni section",
+            "place" : {
+              "filePath" : "mobileUnos600px.gspec",
+              "lineNumber" : 16
+            },
+            "objects" : [ {
+              "name" : "menu_item-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 18
+                },
+                "name" : "aligned vertically centered menu_item-1",
+                "highlight" : [ "menu_item-1", "menu_item-1" ]
+              } ]
+            }, {
+              "name" : "menu_item-3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 20
+                },
+                "name" : "text is \"Unos\"",
+                "highlight" : [ "menu_item-3" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Check logo",
+            "place" : {
+              "filePath" : "mobileUnos600px.gspec",
+              "lineNumber" : 22
+            },
+            "objects" : [ {
+              "name" : "logo_slika",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 24
+                },
+                "name" : "inside partly container_meni -79px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo_slika",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "container_meni",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "-79px",
+                  "realDistance" : "-79px"
+                } ],
+                "highlight" : [ "logo_slika", "container_meni" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Check vertical aligment label + input",
+            "place" : {
+              "filePath" : "mobileUnos600px.gspec",
+              "lineNumber" : 26
+            },
+            "objects" : [ {
+              "name" : "label-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "above input-1 10 to 30px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label-1",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input-1",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "10 to 30px",
+                  "realDistance" : "15px"
+                } ],
+                "highlight" : [ "label-1", "input-1" ]
+              } ]
+            }, {
+              "name" : "label-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "above input-2 10 to 30px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label-2",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input-2",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "10 to 30px",
+                  "realDistance" : "15px"
+                } ],
+                "highlight" : [ "label-2", "input-2" ]
+              } ]
+            }, {
+              "name" : "label-3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "above input-3 10 to 30px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label-3",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input-3",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "10 to 30px",
+                  "realDistance" : "15px"
+                } ],
+                "highlight" : [ "label-3", "input-3" ]
+              } ]
+            }, {
+              "name" : "label-4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "above input-4 10 to 30px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label-4",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input-4",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "10 to 30px",
+                  "realDistance" : "15px"
+                } ],
+                "highlight" : [ "label-4", "input-4" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Label check",
+            "place" : {
+              "filePath" : "mobileUnos600px.gspec",
+              "lineNumber" : 32
+            },
+            "objects" : [ {
+              "name" : "label-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 34
+                },
+                "name" : "text contains \"Naziv\"",
+                "highlight" : [ "label-1" ]
+              } ]
+            }, {
+              "name" : "label-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 36
+                },
+                "name" : "text contains \"mjesta\"",
+                "highlight" : [ "label-2" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Button in form positioning",
+            "place" : {
+              "filePath" : "mobileUnos600px.gspec",
+              "lineNumber" : 38
+            },
+            "objects" : [ {
+              "name" : "button",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 40
+                },
+                "name" : "below last_txt_input_field 20 to 30 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "button",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "last_txt_input_field",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "20 to 30px",
+                  "realDistance" : "30px"
+                } ],
+                "highlight" : [ "button", "last_txt_input_field" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 52
+                },
+                "name" : "text is \"Unesi\"",
+                "highlight" : [ "button" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 53
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "button" ]
+              } ]
+            }, {
+              "name" : "input_numb",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 43
+                },
+                "name" : "above input_email 20 to 50 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input_numb",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input_email",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "20 to 50px",
+                  "realDistance" : "45px"
+                } ],
+                "highlight" : [ "input_numb", "input_email" ]
+              } ]
+            }, {
+              "name" : "input-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 46
+                },
+                "name" : "above input_email 20 to 120 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input-1",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input_email",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "20 to 120px",
+                  "realDistance" : "110px"
+                } ],
+                "highlight" : [ "input-1", "input_email" ]
+              } ]
+            }, {
+              "name" : "input-4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos600px.gspec",
+                  "lineNumber" : 49
+                },
+                "name" : "below input_email 20 to 50 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input-4",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "input_email",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "20 to 50px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "input-4", "input_email" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "menu_item-3" : {
+              "area" : [ 188, 251, 23, 12 ]
+            },
+            "label-4" : {
+              "area" : [ 219, 513, 148, 12 ]
+            },
+            "input_email" : {
+              "area" : [ 219, 475, 182, 19 ]
+            },
+            "label-3" : {
+              "area" : [ 219, 448, 148, 12 ]
+            },
+            "label-2" : {
+              "area" : [ 219, 384, 148, 12 ]
+            },
+            "label-1" : {
+              "area" : [ 219, 319, 148, 12 ]
+            },
+            "logo_slika" : {
+              "area" : [ 233, 83, 150, 150 ]
+            },
+            "input-1" : {
+              "area" : [ 219, 346, 182, 19 ]
+            },
+            "input-2" : {
+              "area" : [ 219, 411, 182, 19 ]
+            },
+            "container_meni" : {
+              "area" : [ 122, 162, 371, 133 ]
+            },
+            "menu_item-1" : {
+              "area" : [ 182, 225, 35, 12 ]
+            },
+            "button" : {
+              "area" : [ 262, 589, 92, 16 ]
+            },
+            "input-3" : {
+              "area" : [ 219, 475, 182, 19 ]
+            },
+            "last_txt_input_field" : {
+              "area" : [ 219, 540, 182, 19 ]
+            },
+            "input-4" : {
+              "area" : [ 219, 540, 182, 19 ]
+            },
+            "input_numb" : {
+              "area" : [ 219, 411, 182, 19 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1573590322764,
+        "type" : "node"
+      } ],
+      "time" : 1573590318047,
+      "type" : "node"
+    } ]
+  }
+}

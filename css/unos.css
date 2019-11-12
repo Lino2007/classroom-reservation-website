@@ -108,7 +108,7 @@
       width: 31%;
   }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   
    .meni  ul {
     position: absolute;

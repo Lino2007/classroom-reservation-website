@@ -3,15 +3,15 @@
   "name" : "mobileUnos.gspec",
   "report" : {
     "nodes" : [ {
-      "name" : "Simple check",
+      "name" : "Mutation test",
       "status" : "info",
       "nodes" : [ {
-        "name" : "check  mobileUnos.gspec --url http://localhost/wt1918048/html/unos.html --size 1263x975 --htmlreport htmlreports/mobileUnos-report",
+        "name" : "check  mobileUnos.gspec --url http://localhost/wt1918048/html/unos.html --size 1263x975 --htmlreport htmlreports/mobileUnosMutate-report",
         "status" : "info",
         "nodes" : [ {
           "name" : "Check layout: mobileUnos.gspec included tags: ",
           "status" : "info",
-          "time" : 1573590296831,
+          "time" : 1573590265437,
           "sections" : [ {
             "name" : "Meni section",
             "place" : {
@@ -580,11 +580,114 @@
           },
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
+        }, {
+          "name" : "Mutation testing: mobileUnos.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573590265437,
+          "mutationReport" : {
+            "objectMutationStatistics" : {
+              "menu_item-3" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "label-4" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "input_email" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "menu_item-2" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "label-3" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "label-2" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "label-1" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "container_sadrzaj" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "logo_slika" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "input-1" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "input-2" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "container_meni" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "menu_item-1" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "button" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "input-3" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "last_txt_input_field" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "input-4" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "input_numb" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              }
+            },
+            "totalPassed" : 180,
+            "totalFailed" : 0,
+            "failedRatio" : 0.0,
+            "totalMutations" : 180
+          },
+          "type" : "mutation"
         } ],
-        "time" : 1573590293629,
+        "time" : 1573590259876,
         "type" : "node"
       } ],
-      "time" : 1573590289552,
+      "time" : 1573590255759,
       "type" : "node"
     } ]
   }

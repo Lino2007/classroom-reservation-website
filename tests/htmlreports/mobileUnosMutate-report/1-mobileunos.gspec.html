@@ -8,61 +8,61 @@
         <script src="galen-report.js"></script>
         <script type="text/javascript">
 var REPORT_DATA = {
-  "testId" : "1-mobilesale.gspec",
-  "name" : "mobileSale.gspec",
+  "testId" : "1-mobileunos.gspec",
+  "name" : "mobileUnos.gspec",
   "report" : {
     "nodes" : [ {
-      "name" : "Simple check",
+      "name" : "Mutation test",
       "status" : "info",
       "nodes" : [ {
-        "name" : "check  mobileSale.gspec --url http://localhost/wt1918048/html/sale.html --size 1263x975 --htmlreport htmlreports/mobileSale-report",
+        "name" : "check  mobileUnos.gspec --url http://localhost/wt1918048/html/unos.html --size 1263x975 --htmlreport htmlreports/mobileUnosMutate-report",
         "status" : "info",
         "nodes" : [ {
-          "name" : "Check layout: mobileSale.gspec included tags: ",
+          "name" : "Check layout: mobileUnos.gspec included tags: ",
           "status" : "info",
-          "time" : 1573590312237,
+          "time" : 1573590265437,
           "sections" : [ {
             "name" : "Meni section",
             "place" : {
-              "filePath" : "mobileSale.gspec",
-              "lineNumber" : 18
+              "filePath" : "mobileUnos.gspec",
+              "lineNumber" : 17
             },
             "objects" : [ {
               "name" : "menu_item-1",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 20
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 19
                 },
                 "name" : "aligned horizontally all menu_item-2",
                 "highlight" : [ "menu_item-1", "menu_item-2" ]
               } ]
             }, {
-              "name" : "menu_item-2",
+              "name" : "menu_item-3",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 22
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 21
                 },
-                "name" : "text is \"Sale\"",
-                "highlight" : [ "menu_item-2" ]
+                "name" : "text is \"Unos\"",
+                "highlight" : [ "menu_item-3" ]
               } ]
             } ]
           }, {
             "name" : "Check logo",
             "place" : {
-              "filePath" : "mobileSale.gspec",
-              "lineNumber" : 24
+              "filePath" : "mobileUnos.gspec",
+              "lineNumber" : 23
             },
             "objects" : [ {
               "name" : "logo_slika",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 26
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 25
                 },
                 "name" : "inside partly container_meni -79px top",
                 "meta" : [ {
@@ -81,804 +81,489 @@ var REPORT_DATA = {
               } ]
             } ]
           }, {
-            "name" : "Tabela",
+            "name" : "Check alignment label + input",
             "place" : {
-              "filePath" : "mobileSale.gspec",
-              "lineNumber" : 28
+              "filePath" : "mobileUnos.gspec",
+              "lineNumber" : 27
             },
             "objects" : [ {
-              "name" : "tabela_sale",
+              "name" : "label-2",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 31
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 30
                 },
-                "name" : "width < 80px",
+                "name" : "aligned horizontally centered input-2",
+                "highlight" : [ "label-2", "input-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 34
+                },
+                "name" : "left-of input-2 10 to 30px",
                 "meta" : [ {
                   "from" : {
-                    "object" : "tabela_sale",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "tabela_sale",
+                    "object" : "label-2",
                     "edge" : "right"
                   },
-                  "expectedDistance" : "< 80px",
-                  "realDistance" : "73px"
+                  "to" : {
+                    "object" : "input-2",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "10 to 30px",
+                  "realDistance" : "30px"
                 } ],
-                "highlight" : [ "tabela_sale" ]
+                "highlight" : [ "label-2", "input-2" ]
+              } ]
+            }, {
+              "name" : "label-3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "aligned horizontally centered input-3",
+                "highlight" : [ "label-3", "input-3" ]
               }, {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 32
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 34
                 },
-                "name" : "height < 80px",
+                "name" : "left-of input-3 10 to 30px",
                 "meta" : [ {
                   "from" : {
-                    "object" : "tabela_sale",
-                    "edge" : "top"
+                    "object" : "label-3",
+                    "edge" : "right"
                   },
                   "to" : {
-                    "object" : "tabela_sale",
-                    "edge" : "bottom"
+                    "object" : "input-3",
+                    "edge" : "left"
                   },
-                  "expectedDistance" : "< 80px",
-                  "realDistance" : "44px"
+                  "expectedDistance" : "10 to 30px",
+                  "realDistance" : "30px"
                 } ],
-                "highlight" : [ "tabela_sale" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 33
-                },
-                "name" : "css background-color is \"rgb(255, 255, 255)\"",
-                "highlight" : [ "tabela_sale" ]
+                "highlight" : [ "label-3", "input-3" ]
               } ]
             }, {
-              "name" : "tabela_zauzeteSale",
+              "name" : "label-1",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 36
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 34
                 },
-                "name" : "css background-color is \"rgb(255, 165, 0)\"",
-                "highlight" : [ "tabela_zauzeteSale" ]
+                "name" : "left-of input-1 10 to 30px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label-1",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "input-1",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "10 to 30px",
+                  "realDistance" : "30px"
+                } ],
+                "highlight" : [ "label-1", "input-1" ]
               } ]
             }, {
-              "name" : "tabele_slobodneSale",
+              "name" : "label-4",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileSale.gspec",
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 34
+                },
+                "name" : "left-of input-4 10 to 30px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label-4",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "input-4",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "10 to 30px",
+                  "realDistance" : "30px"
+                } ],
+                "highlight" : [ "label-4", "input-4" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Label and input centered",
+            "place" : {
+              "filePath" : "mobileUnos.gspec",
+              "lineNumber" : 36
+            },
+            "objects" : [ {
+              "name" : "label-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
                   "lineNumber" : 39
                 },
-                "name" : "css background-color is \"rgb(144, 238, 144)\"",
-                "highlight" : [ "tabele_slobodneSale" ]
+                "name" : "inside container_sadrzaj 0 px left",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label-1",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "container_sadrzaj",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "0px",
+                  "realDistance" : "0px"
+                } ],
+                "highlight" : [ "label-1", "container_sadrzaj" ]
               } ]
             }, {
-              "name" : "tabele_kancelarija",
+              "name" : "input-1",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 42
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 41
                 },
-                "name" : "css background-color is \"rgb(47, 79, 79)\"",
-                "highlight" : [ "tabele_kancelarija" ]
+                "name" : "inside container_sadrzaj 219 px right",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input-1",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "container_sadrzaj",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "219px",
+                  "realDistance" : "219px"
+                } ],
+                "highlight" : [ "input-1", "container_sadrzaj" ]
+              } ]
+            }, {
+              "name" : "label-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 39
+                },
+                "name" : "inside container_sadrzaj 0 px left",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label-2",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "container_sadrzaj",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "0px",
+                  "realDistance" : "0px"
+                } ],
+                "highlight" : [ "label-2", "container_sadrzaj" ]
+              } ]
+            }, {
+              "name" : "input-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "inside container_sadrzaj 219 px right",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input-2",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "container_sadrzaj",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "219px",
+                  "realDistance" : "219px"
+                } ],
+                "highlight" : [ "input-2", "container_sadrzaj" ]
+              } ]
+            }, {
+              "name" : "label-3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 39
+                },
+                "name" : "inside container_sadrzaj 0 px left",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label-3",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "container_sadrzaj",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "0px",
+                  "realDistance" : "0px"
+                } ],
+                "highlight" : [ "label-3", "container_sadrzaj" ]
+              } ]
+            }, {
+              "name" : "input-3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "inside container_sadrzaj 219 px right",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input-3",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "container_sadrzaj",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "219px",
+                  "realDistance" : "219px"
+                } ],
+                "highlight" : [ "input-3", "container_sadrzaj" ]
+              } ]
+            }, {
+              "name" : "label-4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 39
+                },
+                "name" : "inside container_sadrzaj 0 px left",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label-4",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "container_sadrzaj",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "0px",
+                  "realDistance" : "0px"
+                } ],
+                "highlight" : [ "label-4", "container_sadrzaj" ]
+              } ]
+            }, {
+              "name" : "input-4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "inside container_sadrzaj 219 px right",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input-4",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "container_sadrzaj",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "219px",
+                  "realDistance" : "219px"
+                } ],
+                "highlight" : [ "input-4", "container_sadrzaj" ]
               } ]
             } ]
           }, {
-            "name" : "Test dimenzija headera",
+            "name" : "Label check",
             "place" : {
-              "filePath" : "mobileSale.gspec",
-              "lineNumber" : 44
+              "filePath" : "mobileUnos.gspec",
+              "lineNumber" : 45
             },
             "objects" : [ {
-              "name" : "tabele_headerRedni-2",
+              "name" : "label-1",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileSale.gspec",
+                  "filePath" : "mobileUnos.gspec",
                   "lineNumber" : 47
                 },
-                "name" : "width > 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-2",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-2",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "> 100px",
-                  "realDistance" : "108px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-2" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
-                },
-                "name" : "height < 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-2",
-                    "edge" : "top"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-2",
-                    "edge" : "bottom"
-                  },
-                  "expectedDistance" : "< 100px",
-                  "realDistance" : "44px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-2" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
-                },
-                "name" : "css background-color is \"rgb(200, 201, 207)\"",
-                "highlight" : [ "tabele_headerRedni-2" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
-                },
-                "name" : "css text-align is \"left\"",
-                "highlight" : [ "tabele_headerRedni-2" ]
+                "name" : "text contains \"Naziv\"",
+                "highlight" : [ "label-1" ]
               } ]
             }, {
-              "name" : "tabele_headerRedni-3",
+              "name" : "label-2",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
-                },
-                "name" : "width > 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-3",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-3",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "> 100px",
-                  "realDistance" : "108px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-3" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
-                },
-                "name" : "height < 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-3",
-                    "edge" : "top"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-3",
-                    "edge" : "bottom"
-                  },
-                  "expectedDistance" : "< 100px",
-                  "realDistance" : "44px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-3" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
+                  "filePath" : "mobileUnos.gspec",
                   "lineNumber" : 49
                 },
-                "name" : "css background-color is \"rgb(200, 201, 207)\"",
-                "highlight" : [ "tabele_headerRedni-3" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
-                },
-                "name" : "css text-align is \"left\"",
-                "highlight" : [ "tabele_headerRedni-3" ]
-              } ]
-            }, {
-              "name" : "tabele_headerRedni-4",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
-                },
-                "name" : "width > 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-4",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-4",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "> 100px",
-                  "realDistance" : "108px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-4" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
-                },
-                "name" : "height < 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-4",
-                    "edge" : "top"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-4",
-                    "edge" : "bottom"
-                  },
-                  "expectedDistance" : "< 100px",
-                  "realDistance" : "44px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-4" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
-                },
-                "name" : "css background-color is \"rgb(200, 201, 207)\"",
-                "highlight" : [ "tabele_headerRedni-4" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
-                },
-                "name" : "css text-align is \"left\"",
-                "highlight" : [ "tabele_headerRedni-4" ]
-              } ]
-            }, {
-              "name" : "tabele_headerRedni-5",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
-                },
-                "name" : "width > 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-5",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-5",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "> 100px",
-                  "realDistance" : "108px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-5" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
-                },
-                "name" : "height < 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-5",
-                    "edge" : "top"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-5",
-                    "edge" : "bottom"
-                  },
-                  "expectedDistance" : "< 100px",
-                  "realDistance" : "44px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-5" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
-                },
-                "name" : "css background-color is \"rgb(200, 201, 207)\"",
-                "highlight" : [ "tabele_headerRedni-5" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
-                },
-                "name" : "css text-align is \"left\"",
-                "highlight" : [ "tabele_headerRedni-5" ]
-              } ]
-            }, {
-              "name" : "tabele_headerRedni-6",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
-                },
-                "name" : "width > 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-6",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-6",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "> 100px",
-                  "realDistance" : "108px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-6" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
-                },
-                "name" : "height < 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-6",
-                    "edge" : "top"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-6",
-                    "edge" : "bottom"
-                  },
-                  "expectedDistance" : "< 100px",
-                  "realDistance" : "44px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-6" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
-                },
-                "name" : "css background-color is \"rgb(200, 201, 207)\"",
-                "highlight" : [ "tabele_headerRedni-6" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
-                },
-                "name" : "css text-align is \"left\"",
-                "highlight" : [ "tabele_headerRedni-6" ]
-              } ]
-            }, {
-              "name" : "tabele_headerRedni-7",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
-                },
-                "name" : "width > 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-7",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-7",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "> 100px",
-                  "realDistance" : "108px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-7" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
-                },
-                "name" : "height < 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-7",
-                    "edge" : "top"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-7",
-                    "edge" : "bottom"
-                  },
-                  "expectedDistance" : "< 100px",
-                  "realDistance" : "44px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-7" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
-                },
-                "name" : "css background-color is \"rgb(200, 201, 207)\"",
-                "highlight" : [ "tabele_headerRedni-7" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
-                },
-                "name" : "css text-align is \"left\"",
-                "highlight" : [ "tabele_headerRedni-7" ]
-              } ]
-            }, {
-              "name" : "tabele_headerRedni-8",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
-                },
-                "name" : "width > 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-8",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-8",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "> 100px",
-                  "realDistance" : "108px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-8" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
-                },
-                "name" : "height < 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-8",
-                    "edge" : "top"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-8",
-                    "edge" : "bottom"
-                  },
-                  "expectedDistance" : "< 100px",
-                  "realDistance" : "44px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-8" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
-                },
-                "name" : "css background-color is \"rgb(200, 201, 207)\"",
-                "highlight" : [ "tabele_headerRedni-8" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
-                },
-                "name" : "css text-align is \"left\"",
-                "highlight" : [ "tabele_headerRedni-8" ]
-              } ]
-            }, {
-              "name" : "tabele_headerRedni-9",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
-                },
-                "name" : "width > 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-9",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-9",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "> 100px",
-                  "realDistance" : "108px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-9" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
-                },
-                "name" : "height < 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-9",
-                    "edge" : "top"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-9",
-                    "edge" : "bottom"
-                  },
-                  "expectedDistance" : "< 100px",
-                  "realDistance" : "44px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-9" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
-                },
-                "name" : "css background-color is \"rgb(200, 201, 207)\"",
-                "highlight" : [ "tabele_headerRedni-9" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
-                },
-                "name" : "css text-align is \"left\"",
-                "highlight" : [ "tabele_headerRedni-9" ]
-              } ]
-            }, {
-              "name" : "tabele_headerRedni-10",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
-                },
-                "name" : "width > 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-10",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-10",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "> 100px",
-                  "realDistance" : "108px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-10" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
-                },
-                "name" : "height < 100px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "tabele_headerRedni-10",
-                    "edge" : "top"
-                  },
-                  "to" : {
-                    "object" : "tabele_headerRedni-10",
-                    "edge" : "bottom"
-                  },
-                  "expectedDistance" : "< 100px",
-                  "realDistance" : "44px"
-                } ],
-                "highlight" : [ "tabele_headerRedni-10" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
-                },
-                "name" : "css background-color is \"rgb(200, 201, 207)\"",
-                "highlight" : [ "tabele_headerRedni-10" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
-                },
-                "name" : "css text-align is \"left\"",
-                "highlight" : [ "tabele_headerRedni-10" ]
+                "name" : "text contains \"mjesta\"",
+                "highlight" : [ "label-2" ]
               } ]
             } ]
           }, {
-            "name" : "Test headerSprat",
+            "name" : "Button in form positioning",
             "place" : {
-              "filePath" : "mobileSale.gspec",
-              "lineNumber" : 52
+              "filePath" : "mobileUnos.gspec",
+              "lineNumber" : 51
             },
             "objects" : [ {
-              "name" : "tabele_headerSprat-1",
+              "name" : "button",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 55
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 53
                 },
-                "name" : "css text-align is \"center\"",
-                "highlight" : [ "tabele_headerSprat-1" ]
+                "name" : "below last_txt_input_field 20 to 30 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "button",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "last_txt_input_field",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "20 to 30px",
+                  "realDistance" : "25px"
+                } ],
+                "highlight" : [ "button", "last_txt_input_field" ]
               }, {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 56
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 65
                 },
-                "name" : "css font-weight is \"700\"",
-                "highlight" : [ "tabele_headerSprat-1" ]
+                "name" : "text is \"Unesi\"",
+                "highlight" : [ "button" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 66
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "button" ]
               } ]
             }, {
-              "name" : "tabele_headerSprat-2",
+              "name" : "input_numb",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 55
-                },
-                "name" : "css text-align is \"center\"",
-                "highlight" : [ "tabele_headerSprat-2" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
+                  "filePath" : "mobileUnos.gspec",
                   "lineNumber" : 56
                 },
-                "name" : "css font-weight is \"700\"",
-                "highlight" : [ "tabele_headerSprat-2" ]
+                "name" : "above input_email 20 to 50 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input_numb",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input_email",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "20 to 50px",
+                  "realDistance" : "32px"
+                } ],
+                "highlight" : [ "input_numb", "input_email" ]
               } ]
             }, {
-              "name" : "tabele_headerSprat-3",
+              "name" : "input-1",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 55
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 59
                 },
-                "name" : "css text-align is \"center\"",
-                "highlight" : [ "tabele_headerSprat-3" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 56
-                },
-                "name" : "css font-weight is \"700\"",
-                "highlight" : [ "tabele_headerSprat-3" ]
+                "name" : "above input_email 20 to 100 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input-1",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input_email",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "20 to 100px",
+                  "realDistance" : "83px"
+                } ],
+                "highlight" : [ "input-1", "input_email" ]
               } ]
             }, {
-              "name" : "tabele_headerSprat-4",
+              "name" : "input-4",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 55
-                },
-                "name" : "css text-align is \"center\"",
-                "highlight" : [ "tabele_headerSprat-4" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 56
-                },
-                "name" : "css font-weight is \"700\"",
-                "highlight" : [ "tabele_headerSprat-4" ]
-              } ]
-            }, {
-              "name" : "tabele_headerSprat-5",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 55
-                },
-                "name" : "css text-align is \"center\"",
-                "highlight" : [ "tabele_headerSprat-5" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 56
-                },
-                "name" : "css font-weight is \"700\"",
-                "highlight" : [ "tabele_headerSprat-5" ]
-              } ]
-            }, {
-              "name" : "tabele_headerSprat-6",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 55
-                },
-                "name" : "css text-align is \"center\"",
-                "highlight" : [ "tabele_headerSprat-6" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 56
-                },
-                "name" : "css font-weight is \"700\"",
-                "highlight" : [ "tabele_headerSprat-6" ]
-              } ]
-            } ]
-          }, {
-            "name" : "Test siroka headerSprat celija",
-            "place" : {
-              "filePath" : "mobileSale.gspec",
-              "lineNumber" : 60
-            },
-            "objects" : [ {
-              "name" : "tabele_headerSprat-1",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileSale.gspec",
+                  "filePath" : "mobileUnos.gspec",
                   "lineNumber" : 62
                 },
-                "name" : "width > 250px",
+                "name" : "below input_email 20 to 50 px",
                 "meta" : [ {
                   "from" : {
-                    "object" : "tabele_headerSprat-1",
-                    "edge" : "left"
+                    "object" : "input-4",
+                    "edge" : "top"
                   },
                   "to" : {
-                    "object" : "tabele_headerSprat-1",
-                    "edge" : "right"
+                    "object" : "input_email",
+                    "edge" : "bottom"
                   },
-                  "expectedDistance" : "> 250px",
-                  "realDistance" : "366px"
+                  "expectedDistance" : "20 to 50px",
+                  "realDistance" : "32px"
                 } ],
-                "highlight" : [ "tabele_headerSprat-1" ]
+                "highlight" : [ "input-4", "input_email" ]
               } ]
             } ]
           } ],
           "objects" : {
+            "menu_item-3" : {
+              "area" : [ 510, 260, 50, 26 ]
+            },
+            "label-4" : {
+              "area" : [ 330, 494, 190, 18 ]
+            },
+            "input_email" : {
+              "area" : [ 550, 442, 194, 20 ]
+            },
             "menu_item-2" : {
               "area" : [ 430, 260, 41, 26 ]
             },
-            "tabele_kancelarija" : {
-              "area" : [ 592, 768, 73, 44 ]
+            "label-3" : {
+              "area" : [ 330, 443, 190, 18 ]
+            },
+            "label-2" : {
+              "area" : [ 330, 391, 190, 18 ]
+            },
+            "label-1" : {
+              "area" : [ 330, 339, 190, 18 ]
+            },
+            "container_sadrzaj" : {
+              "area" : [ 330, 307, 633, 252 ]
             },
             "logo_slika" : {
               "area" : [ 572, 83, 150, 150 ]
             },
-            "tabele_headerRedni-3" : {
-              "area" : [ 409, 504, 108, 44 ]
+            "input-1" : {
+              "area" : [ 550, 339, 194, 20 ]
             },
-            "tabele_headerRedni-2" : {
-              "area" : [ 409, 460, 108, 44 ]
-            },
-            "tabele_headerRedni-10" : {
-              "area" : [ 409, 812, 108, 44 ]
+            "input-2" : {
+              "area" : [ 550, 390, 194, 20 ]
             },
             "container_meni" : {
               "area" : [ 251, 162, 791, 133 ]
@@ -886,59 +571,132 @@ var REPORT_DATA = {
             "menu_item-1" : {
               "area" : [ 315, 260, 75, 26 ]
             },
-            "tabela_zauzeteSale" : {
-              "area" : [ 811, 504, 73, 44 ]
+            "button" : {
+              "area" : [ 549, 539, 196, 20 ]
             },
-            "tabele_headerRedni-9" : {
-              "area" : [ 409, 768, 108, 44 ]
+            "input-3" : {
+              "area" : [ 550, 442, 194, 20 ]
             },
-            "tabele_headerRedni-8" : {
-              "area" : [ 409, 724, 108, 44 ]
+            "last_txt_input_field" : {
+              "area" : [ 550, 494, 194, 20 ]
             },
-            "tabela_sale" : {
-              "area" : [ 518, 460, 73, 44 ]
+            "input-4" : {
+              "area" : [ 550, 494, 194, 20 ]
             },
-            "tabele_headerRedni-5" : {
-              "area" : [ 409, 592, 108, 44 ]
-            },
-            "tabele_headerRedni-4" : {
-              "area" : [ 409, 548, 108, 44 ]
-            },
-            "tabele_headerRedni-7" : {
-              "area" : [ 409, 680, 108, 44 ]
-            },
-            "tabele_headerRedni-6" : {
-              "area" : [ 409, 636, 108, 44 ]
-            },
-            "tabele_headerSprat-1" : {
-              "area" : [ 518, 347, 366, 56 ]
-            },
-            "tabele_slobodneSale" : {
-              "area" : [ 811, 460, 73, 44 ]
-            },
-            "tabele_headerSprat-2" : {
-              "area" : [ 518, 403, 73, 56 ]
-            },
-            "tabele_headerSprat-3" : {
-              "area" : [ 592, 403, 73, 56 ]
-            },
-            "tabele_headerSprat-4" : {
-              "area" : [ 665, 403, 73, 56 ]
-            },
-            "tabele_headerSprat-5" : {
-              "area" : [ 738, 403, 73, 56 ]
-            },
-            "tabele_headerSprat-6" : {
-              "area" : [ 811, 403, 73, 56 ]
+            "input_numb" : {
+              "area" : [ 550, 390, 194, 20 ]
             }
           },
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
+        }, {
+          "name" : "Mutation testing: mobileUnos.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573590265437,
+          "mutationReport" : {
+            "objectMutationStatistics" : {
+              "menu_item-3" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "label-4" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "input_email" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "menu_item-2" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "label-3" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "label-2" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "label-1" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "container_sadrzaj" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "logo_slika" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "input-1" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "input-2" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "container_meni" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "menu_item-1" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "button" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "input-3" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "last_txt_input_field" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "input-4" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "input_numb" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              }
+            },
+            "totalPassed" : 180,
+            "totalFailed" : 0,
+            "failedRatio" : 0.0,
+            "totalMutations" : 180
+          },
+          "type" : "mutation"
         } ],
-        "time" : 1573590308191,
+        "time" : 1573590259876,
         "type" : "node"
       } ],
-      "time" : 1573590303582,
+      "time" : 1573590255759,
       "type" : "node"
     } ]
   }

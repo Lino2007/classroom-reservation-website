@@ -1,0 +1,382 @@
+{
+  "testId" : "1-mobilesale600px.gspec",
+  "name" : "mobileSale600px.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  mobileSale600px.gspec --url http://localhost/wt1918048/html/sale.html --size 600x975 --htmlreport htmlreports/mobileSale-report",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: mobileSale600px.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573570105394,
+          "sections" : [ {
+            "name" : "Meni section",
+            "place" : {
+              "filePath" : "mobileSale600px.gspec",
+              "lineNumber" : 17
+            },
+            "objects" : [ {
+              "name" : "menu_item-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 19
+                },
+                "name" : "aligned vertically centered menu_item-1",
+                "highlight" : [ "menu_item-2", "menu_item-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 21
+                },
+                "name" : "text is \"Sale\"",
+                "highlight" : [ "menu_item-2" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Check logo",
+            "place" : {
+              "filePath" : "mobileSale600px.gspec",
+              "lineNumber" : 23
+            },
+            "objects" : [ {
+              "name" : "logo_slika",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "inside partly container_meni -79px top",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo_slika",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "container_meni",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "-79px",
+                  "realDistance" : "-79px"
+                } ],
+                "highlight" : [ "logo_slika", "container_meni" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Tabela",
+            "place" : {
+              "filePath" : "mobileSale600px.gspec",
+              "lineNumber" : 27
+            },
+            "objects" : [ {
+              "name" : "tabela_sale",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "width < 80px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "tabela_sale",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "tabela_sale",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "< 80px",
+                  "realDistance" : "38px"
+                } ],
+                "highlight" : [ "tabela_sale" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 31
+                },
+                "name" : "height < 80px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "tabela_sale",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "tabela_sale",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "< 80px",
+                  "realDistance" : "44px"
+                } ],
+                "highlight" : [ "tabela_sale" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 32
+                },
+                "name" : "css background-color is \"rgb(255, 255, 255)\"",
+                "highlight" : [ "tabela_sale" ]
+              } ]
+            }, {
+              "name" : "tabela_zauzeteSale",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 35
+                },
+                "name" : "css background-color is \"rgb(255, 165, 0)\"",
+                "highlight" : [ "tabela_zauzeteSale" ]
+              } ]
+            }, {
+              "name" : "tabele_slobodneSale",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 38
+                },
+                "name" : "css background-color is \"rgb(144, 238, 144)\"",
+                "highlight" : [ "tabele_slobodneSale" ]
+              } ]
+            }, {
+              "name" : "tabele_kancelarija",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "css background-color is \"rgb(47, 79, 79)\"",
+                "highlight" : [ "tabele_kancelarija" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Vidljivost headerRedni i headerSprat",
+            "place" : {
+              "filePath" : "mobileSale600px.gspec",
+              "lineNumber" : 43
+            },
+            "objects" : [ {
+              "name" : "tabele_headerSprat-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 45
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "tabele_headerSprat-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 45
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "tabele_headerSprat-3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 45
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "tabele_headerSprat-4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 45
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "tabele_headerSprat-5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 45
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "tabele_headerSprat-6",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 45
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "tabele_headerRedni-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "tabele_headerRedni-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "tabele_headerRedni-3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "tabele_headerRedni-4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "tabele_headerRedni-5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "tabele_headerRedni-6",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "tabele_headerRedni-7",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "tabele_headerRedni-8",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "tabele_headerRedni-9",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            }, {
+              "name" : "tabele_headerRedni-10",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileSale600px.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "absent",
+                "highlight" : [ ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "tabela_zauzeteSale" : {
+              "area" : [ 368, 474, 38, 44 ]
+            },
+            "menu_item-2" : {
+              "area" : [ 186, 238, 19, 12 ]
+            },
+            "tabela_sale" : {
+              "area" : [ 242, 430, 38, 44 ]
+            },
+            "tabele_kancelarija" : {
+              "area" : [ 280, 738, 38, 44 ]
+            },
+            "logo_slika" : {
+              "area" : [ 224, 83, 150, 150 ]
+            },
+            "tabele_slobodneSale" : {
+              "area" : [ 368, 430, 38, 44 ]
+            },
+            "container_meni" : {
+              "area" : [ 118, 162, 360, 133 ]
+            },
+            "menu_item-1" : {
+              "area" : [ 178, 225, 35, 12 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1573570100523,
+        "type" : "node"
+      } ],
+      "time" : 1573570094725,
+      "type" : "node"
+    } ]
+  }
+}

@@ -1,4 +1,3 @@
-#nesto lino
 @objects
     menu_item-* css ul li a
     tabela_sale  .tabelaSala tr .sala
@@ -16,8 +15,8 @@
    
 
 = Meni section =
-    menu_item-1:
-       aligned horizontally all menu_item-2 
+    menu_item-2:
+       aligned vertically centered menu_item-1 
     menu_item-2:
        text is "Sale"
     
@@ -41,25 +40,14 @@
      tabele_kancelarija:
        css background-color is "rgb(47, 79, 79)"
 
-= Test dimenzija headera =
-       @for [2 - 10] as index
-          tabele_headerRedni-${index}:
-             width > 100px
-             height < 100px
-             css background-color is "rgb(200, 201, 207)"
-             css text-align is "left"
+= Vidljivost headerRedni i headerSprat =
+     tabele_headerSprat-*:
+       absent
+     tabele_headerRedni-*:
+       absent
+         
 
-= Test headerSprat = 
-       @forEach [tabele_headerSprat-*]  as header
-            ${header}:
-             css text-align is "center"
-             css font-weight is "700" 
-#700 oznacava bold
 
-#da li je colspan=6? (stavljena je vrijednost malo manja od velicine 6 kolona)
-= Test siroka headerSprat celija =
-       tabele_headerSprat-1:
-             width > ${colspan_six}
                  
 
 
