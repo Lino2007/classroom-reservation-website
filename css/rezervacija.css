@@ -183,10 +183,10 @@ table td {
   
  /*postavka buttona*/
  #btnSection {
-    margin-left:7%;
-   width: 80%;
+    margin-left:7.5%;
+   width: 72%;
    text-align: center;
-    margin-right: 30%;
+    margin-right: 20%;
    
   } 
 
@@ -198,12 +198,12 @@ table td {
   }
 
   .inner #rbtn {
-      margin-left: 72%;
+      margin-left: 65%;
   }
 
   #spacer {
-      margin-left: 20%;
-      width: 60%;
+      margin-left: 14%;
+      width: 64%;
   }
 
   .btnCal {
@@ -217,13 +217,21 @@ table td {
       font-size: 12pt;
   }
 
-
+  @media screen and (max-width:700px) {
+         #datumi {
+            margin-left: 4%;
+         }
+  } 
   
 
   @media screen and (max-width:600px) {
+
+    #datumi {
+        margin-left: 25%;
+    }
     
     /*transponovanje redova i kolona*/
-    table .red > *{
+     table .red > *{
         display: block;
     }
 

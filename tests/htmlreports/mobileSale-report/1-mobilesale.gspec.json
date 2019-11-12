@@ -11,7 +11,7 @@
         "nodes" : [ {
           "name" : "Check layout: mobileSale.gspec included tags: ",
           "status" : "info",
-          "time" : 1573590312237,
+          "time" : 1573574216649,
           "sections" : [ {
             "name" : "Meni section",
             "place" : {
@@ -926,10 +926,10 @@
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1573590308191,
+        "time" : 1573574208306,
         "type" : "node"
       } ],
-      "time" : 1573590303582,
+      "time" : 1573574202491,
       "type" : "node"
     } ]
   }
