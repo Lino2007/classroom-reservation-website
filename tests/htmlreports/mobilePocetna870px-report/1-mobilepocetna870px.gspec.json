@@ -1,0 +1,456 @@
+{
+  "testId" : "1-mobilepocetna870px.gspec",
+  "name" : "mobilePocetna870px.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  mobilePocetna870px.gspec --url http://localhost/wt1918048/html/pocetna.html --size 865x975 --htmlreport htmlreports/mobilePocetna870px-report",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: mobilePocetna870px.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573601964624,
+          "sections" : [ {
+            "name" : "Images section",
+            "place" : {
+              "filePath" : "mobilePocetna870px.gspec",
+              "lineNumber" : 5
+            },
+            "objects" : [ {
+              "name" : "img_item-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 10
+                },
+                "name" : "above img_item-3 14 to 18 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-1",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-3",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "14 to 18px",
+                  "realDistance" : "16px"
+                } ],
+                "highlight" : [ "img_item-1", "img_item-3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 11
+                },
+                "name" : "aligned vertically centered img_item-3",
+                "highlight" : [ "img_item-1", "img_item-3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "left-of img_item-2 14 to 18 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-1",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "img_item-2",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "14 to 18px",
+                  "realDistance" : "16px"
+                } ],
+                "highlight" : [ "img_item-1", "img_item-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "aligned horizontally centered img_item-2",
+                "highlight" : [ "img_item-1", "img_item-2" ]
+              } ]
+            }, {
+              "name" : "img_item-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 10
+                },
+                "name" : "above img_item-4 14 to 18 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-2",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-4",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "14 to 18px",
+                  "realDistance" : "16px"
+                } ],
+                "highlight" : [ "img_item-2", "img_item-4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 11
+                },
+                "name" : "aligned vertically centered img_item-4",
+                "highlight" : [ "img_item-2", "img_item-4" ]
+              } ]
+            }, {
+              "name" : "img_item-3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 10
+                },
+                "name" : "above img_item-5 14 to 18 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-3",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-5",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "14 to 18px",
+                  "realDistance" : "16px"
+                } ],
+                "highlight" : [ "img_item-3", "img_item-5" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 11
+                },
+                "name" : "aligned vertically centered img_item-5",
+                "highlight" : [ "img_item-3", "img_item-5" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "left-of img_item-4 14 to 18 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-3",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "img_item-4",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "14 to 18px",
+                  "realDistance" : "16px"
+                } ],
+                "highlight" : [ "img_item-3", "img_item-4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "aligned horizontally centered img_item-4",
+                "highlight" : [ "img_item-3", "img_item-4" ]
+              } ]
+            }, {
+              "name" : "img_item-4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 10
+                },
+                "name" : "above img_item-6 14 to 18 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-4",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-6",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "14 to 18px",
+                  "realDistance" : "16px"
+                } ],
+                "highlight" : [ "img_item-4", "img_item-6" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 11
+                },
+                "name" : "aligned vertically centered img_item-6",
+                "highlight" : [ "img_item-4", "img_item-6" ]
+              } ]
+            }, {
+              "name" : "img_item-5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 10
+                },
+                "name" : "above img_item-7 14 to 18 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-5",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-7",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "14 to 18px",
+                  "realDistance" : "16px"
+                } ],
+                "highlight" : [ "img_item-5", "img_item-7" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 11
+                },
+                "name" : "aligned vertically centered img_item-7",
+                "highlight" : [ "img_item-5", "img_item-7" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "left-of img_item-6 14 to 18 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-5",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "img_item-6",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "14 to 18px",
+                  "realDistance" : "16px"
+                } ],
+                "highlight" : [ "img_item-5", "img_item-6" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "aligned horizontally centered img_item-6",
+                "highlight" : [ "img_item-5", "img_item-6" ]
+              } ]
+            }, {
+              "name" : "img_item-6",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 10
+                },
+                "name" : "above img_item-8 14 to 18 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-6",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-8",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "14 to 18px",
+                  "realDistance" : "16px"
+                } ],
+                "highlight" : [ "img_item-6", "img_item-8" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 11
+                },
+                "name" : "aligned vertically centered img_item-8",
+                "highlight" : [ "img_item-6", "img_item-8" ]
+              } ]
+            }, {
+              "name" : "img_item-7",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 10
+                },
+                "name" : "above img_item-9 14 to 18 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-7",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-9",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "14 to 18px",
+                  "realDistance" : "16px"
+                } ],
+                "highlight" : [ "img_item-7", "img_item-9" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 11
+                },
+                "name" : "aligned vertically centered img_item-9",
+                "highlight" : [ "img_item-7", "img_item-9" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "left-of img_item-8 14 to 18 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-7",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "img_item-8",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "14 to 18px",
+                  "realDistance" : "16px"
+                } ],
+                "highlight" : [ "img_item-7", "img_item-8" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "aligned horizontally centered img_item-8",
+                "highlight" : [ "img_item-7", "img_item-8" ]
+              } ]
+            }, {
+              "name" : "img_item-8",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 10
+                },
+                "name" : "above img_item-10 14 to 18 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-8",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-10",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "14 to 18px",
+                  "realDistance" : "16px"
+                } ],
+                "highlight" : [ "img_item-8", "img_item-10" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 11
+                },
+                "name" : "aligned vertically centered img_item-10",
+                "highlight" : [ "img_item-8", "img_item-10" ]
+              } ]
+            }, {
+              "name" : "img_item-9",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "left-of img_item-10 14 to 18 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-9",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "img_item-10",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "14 to 18px",
+                  "realDistance" : "16px"
+                } ],
+                "highlight" : [ "img_item-9", "img_item-10" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna870px.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "aligned horizontally centered img_item-10",
+                "highlight" : [ "img_item-9", "img_item-10" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "img_item-8" : {
+              "area" : [ 417, 806, 150, 150 ]
+            },
+            "img_item-9" : {
+              "area" : [ 251, 972, 150, 150 ]
+            },
+            "img_item-10" : {
+              "area" : [ 417, 972, 150, 150 ]
+            },
+            "img_item-6" : {
+              "area" : [ 417, 640, 150, 150 ]
+            },
+            "img_item-7" : {
+              "area" : [ 251, 806, 150, 150 ]
+            },
+            "img_item-1" : {
+              "area" : [ 251, 308, 150, 150 ]
+            },
+            "img_item-4" : {
+              "area" : [ 417, 474, 150, 150 ]
+            },
+            "img_item-5" : {
+              "area" : [ 251, 640, 150, 150 ]
+            },
+            "img_item-2" : {
+              "area" : [ 417, 308, 150, 150 ]
+            },
+            "img_item-3" : {
+              "area" : [ 251, 474, 150, 150 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1573601961452,
+        "type" : "node"
+      } ],
+      "time" : 1573601956672,
+      "type" : "node"
+    } ]
+  }
+}

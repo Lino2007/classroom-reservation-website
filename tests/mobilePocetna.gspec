@@ -1,0 +1,24 @@
+@objects
+    menu_item-* css ul li a
+    img_item-*  .slike img
+
+= Meni section =
+    menu_item-1:
+       aligned horizontally all menu_item-2 
+
+= Images section =
+#provjera da li su po tri slike u redu
+#te da li su vertikalno i horizontalno poravnate
+    @for [4 - 6] as index
+        img_item-${index}:
+           above img_item-${index+3} 14 to 18 px
+           below img_item-${index-3} 14 to 18 px
+           aligned vertically centered img_item-${index+3}
+           aligned vertically centered img_item-${index-3}
+    
+    @for [2 , 5 , 8] as index
+        img_item-${index}:
+           left-of img_item-${index+1} 14 to 18 px
+           right-of img_item-${index-1} 14 to 18 px
+           aligned horizontally centered img_item-${index+1}
+           aligned horizontally centered img_item-${index-1}

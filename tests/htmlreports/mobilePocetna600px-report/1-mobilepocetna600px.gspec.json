@@ -1,0 +1,561 @@
+{
+  "testId" : "1-mobilepocetna600px.gspec",
+  "name" : "mobilePocetna600px.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  mobilePocetna600px.gspec --url http://localhost/wt1918048/html/pocetna.html --size 600x975 --htmlreport htmlreports/mobilePocetna600px-report",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: mobilePocetna600px.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573601222053,
+          "sections" : [ {
+            "name" : "Meni section",
+            "place" : {
+              "filePath" : "mobilePocetna600px.gspec",
+              "lineNumber" : 6
+            },
+            "objects" : [ {
+              "name" : "menu_item-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 8
+                },
+                "name" : "aligned vertically centered menu_item-2",
+                "highlight" : [ "menu_item-1", "menu_item-2" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Images section",
+            "place" : {
+              "filePath" : "mobilePocetna600px.gspec",
+              "lineNumber" : 10
+            },
+            "objects" : [ {
+              "name" : "img_item-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 15
+                },
+                "name" : "above img_item-3 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-2",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-3",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-2", "img_item-3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "below img_item-1 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-2",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img_item-1",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-2", "img_item-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "aligned vertically centered img_item-3",
+                "highlight" : [ "img_item-2", "img_item-3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 18
+                },
+                "name" : "aligned vertically centered img_item-1",
+                "highlight" : [ "img_item-2", "img_item-1" ]
+              } ]
+            }, {
+              "name" : "img_item-3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 15
+                },
+                "name" : "above img_item-4 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-3",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-4",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-3", "img_item-4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "below img_item-2 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-3",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img_item-2",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-3", "img_item-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "aligned vertically centered img_item-4",
+                "highlight" : [ "img_item-3", "img_item-4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 18
+                },
+                "name" : "aligned vertically centered img_item-2",
+                "highlight" : [ "img_item-3", "img_item-2" ]
+              } ]
+            }, {
+              "name" : "img_item-4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 15
+                },
+                "name" : "above img_item-5 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-4",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-5",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-4", "img_item-5" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "below img_item-3 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-4",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img_item-3",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-4", "img_item-3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "aligned vertically centered img_item-5",
+                "highlight" : [ "img_item-4", "img_item-5" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 18
+                },
+                "name" : "aligned vertically centered img_item-3",
+                "highlight" : [ "img_item-4", "img_item-3" ]
+              } ]
+            }, {
+              "name" : "img_item-5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 15
+                },
+                "name" : "above img_item-6 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-5",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-6",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-5", "img_item-6" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "below img_item-4 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-5",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img_item-4",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-5", "img_item-4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "aligned vertically centered img_item-6",
+                "highlight" : [ "img_item-5", "img_item-6" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 18
+                },
+                "name" : "aligned vertically centered img_item-4",
+                "highlight" : [ "img_item-5", "img_item-4" ]
+              } ]
+            }, {
+              "name" : "img_item-6",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 15
+                },
+                "name" : "above img_item-7 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-6",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-7",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-6", "img_item-7" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "below img_item-5 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-6",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img_item-5",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-6", "img_item-5" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "aligned vertically centered img_item-7",
+                "highlight" : [ "img_item-6", "img_item-7" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 18
+                },
+                "name" : "aligned vertically centered img_item-5",
+                "highlight" : [ "img_item-6", "img_item-5" ]
+              } ]
+            }, {
+              "name" : "img_item-7",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 15
+                },
+                "name" : "above img_item-8 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-7",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-8",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-7", "img_item-8" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "below img_item-6 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-7",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img_item-6",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-7", "img_item-6" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "aligned vertically centered img_item-8",
+                "highlight" : [ "img_item-7", "img_item-8" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 18
+                },
+                "name" : "aligned vertically centered img_item-6",
+                "highlight" : [ "img_item-7", "img_item-6" ]
+              } ]
+            }, {
+              "name" : "img_item-8",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 15
+                },
+                "name" : "above img_item-9 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-8",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-9",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-8", "img_item-9" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "below img_item-7 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-8",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img_item-7",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-8", "img_item-7" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "aligned vertically centered img_item-9",
+                "highlight" : [ "img_item-8", "img_item-9" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 18
+                },
+                "name" : "aligned vertically centered img_item-7",
+                "highlight" : [ "img_item-8", "img_item-7" ]
+              } ]
+            }, {
+              "name" : "img_item-9",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 15
+                },
+                "name" : "above img_item-10 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-9",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "img_item-10",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-9", "img_item-10" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "below img_item-8 44 to 48 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "img_item-9",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "img_item-8",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "44 to 48px",
+                  "realDistance" : "46px"
+                } ],
+                "highlight" : [ "img_item-9", "img_item-8" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "aligned vertically centered img_item-10",
+                "highlight" : [ "img_item-9", "img_item-10" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobilePocetna600px.gspec",
+                  "lineNumber" : 18
+                },
+                "name" : "aligned vertically centered img_item-8",
+                "highlight" : [ "img_item-9", "img_item-8" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "img_item-8" : {
+              "area" : [ 224, 1481, 120, 120 ]
+            },
+            "menu_item-2" : {
+              "area" : [ 186, 238, 19, 12 ]
+            },
+            "img_item-9" : {
+              "area" : [ 224, 1647, 120, 120 ]
+            },
+            "img_item-10" : {
+              "area" : [ 224, 1813, 120, 120 ]
+            },
+            "img_item-6" : {
+              "area" : [ 224, 1149, 120, 120 ]
+            },
+            "img_item-7" : {
+              "area" : [ 224, 1315, 120, 120 ]
+            },
+            "img_item-1" : {
+              "area" : [ 224, 319, 120, 120 ]
+            },
+            "img_item-4" : {
+              "area" : [ 224, 817, 120, 120 ]
+            },
+            "img_item-5" : {
+              "area" : [ 224, 983, 120, 120 ]
+            },
+            "menu_item-1" : {
+              "area" : [ 178, 225, 35, 12 ]
+            },
+            "img_item-2" : {
+              "area" : [ 224, 485, 120, 120 ]
+            },
+            "img_item-3" : {
+              "area" : [ 224, 651, 120, 120 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1573601218101,
+        "type" : "node"
+      } ],
+      "time" : 1573601213399,
+      "type" : "node"
+    } ]
+  }
+}

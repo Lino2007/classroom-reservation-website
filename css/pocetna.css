@@ -82,9 +82,9 @@ margin-left: 1%;
 }
 
 /*centriraju se slike*/
-/*.sadrzaj .slike {
-  margin-left: 20%;
-  } */
+.sadrzaj .slike {
+   margin-left: 15%;
+  } 
 
 /*postavljanje fiksne velicine na slikama*/
   .slike img {
@@ -101,7 +101,7 @@ margin-left: 1%;
  }
   
   /* Responsive layout */
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 865px) {
       .slike {
         grid-template-columns: repeat(2, 150px);
       
@@ -116,6 +116,9 @@ margin-left: 1%;
   }
   
   @media only screen and (max-width: 600px) {
+    .sadrzaj .slike {
+      margin-left: 25%;
+     } 
 
     .meni  ul {
       position: absolute;

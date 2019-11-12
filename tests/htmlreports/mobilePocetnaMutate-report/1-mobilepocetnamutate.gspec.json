@@ -1,0 +1,25 @@
+{
+  "testId" : "1-mobilepocetnamutate.gspec",
+  "name" : "mobilePocetnaMutate.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Mutation test",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  mobilePocetnaMutate.gspec --url http://localhost/wt1918048/html/pocetna.html --size 1263x975 --htmlreport htmlreports/mobilePocetnaMutate-report",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "FileNotFoundException: mobilePocetnaMutate.gspec",
+          "status" : "error",
+          "time" : 1573599509854,
+          "stacktrace" : "java.io.FileNotFoundException: mobilePocetnaMutate.gspec\r\n\tat com.galenframework.speclang2.pagespec.PageSpecReader.read(PageSpecReader.java:43)\r\n\tat com.galenframework.api.mutation.GalenMutate.parseSpec(GalenMutate.java:76)\r\n\tat com.galenframework.api.mutation.GalenMutate.checkAllMutations(GalenMutate.java:51)\r\n\tat com.galenframework.suite.actions.GalenPageActionMutate.execute(GalenPageActionMutate.java:38)\r\n\tat com.galenframework.runner.GalenPageRunner.executeAction(GalenPageRunner.java:84)\r\n\tat com.galenframework.runner.GalenPageRunner.run(GalenPageRunner.java:76)\r\n\tat com.galenframework.runner.GalenBasicTestRunner.runTest(GalenBasicTestRunner.java:76)\r\n\tat com.galenframework.tests.GalenBasicTest.execute(GalenBasicTest.java:55)\r\n\tat com.galenframework.TestRunnable.runTest(TestRunnable.java:75)\r\n\tat com.galenframework.TestRunnable.run(TestRunnable.java:101)\r\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\r\n\tat java.lang.Thread.run(Unknown Source)\r\n",
+          "type" : "node"
+        } ],
+        "time" : 1573599509839,
+        "type" : "node"
+      } ],
+      "time" : 1573599504387,
+      "type" : "node"
+    } ]
+  }
+}

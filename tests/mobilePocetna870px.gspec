@@ -1,0 +1,21 @@
+@objects
+    menu_item-* css ul li a
+    img_item-*  .slike img
+
+= Images section =
+#provjera da li su po dvije slike u redu
+#te da li su horizontalno/vertikalno poravnate
+    @for [1 - 8] as index
+        img_item-${index}:
+           above img_item-${index+2} 14 to 18 px
+           aligned vertically centered img_item-${index+2}
+           
+    
+    @for [1 , 3 , 5, 7, 9] as index
+        img_item-${index}:
+           left-of img_item-${index+1} 14 to 18 px
+           aligned horizontally centered img_item-${index+1}
+          
+           
+    
+  
