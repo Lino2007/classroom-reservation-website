@@ -1,0 +1,54 @@
+@objects
+    select_item-*  .sadrzaj select option
+    table_item-*   #datumi td .unutrasnja
+    cell_slobodna  .slobodna
+    cell_zauzeta   .zauzeta
+    input_checkbox  input[type='checkbox']
+    input_dropdown  #dropdown
+    label-*          label
+    input-*          input
+    tabela_un        table .unutrasnja tr td
+    button-*         .btnCal
+
+= Select test =
+    select_item-1:
+       text is "VA"
+    global:
+       count any select_item-* is 4
+
+= Table test =
+    counter:
+       count any table_item-* is 31
+  
+    @for [1-5,25-31] as index
+        table_item-${index}:
+            text is "${index}"
+    
+    cell_slobodna:
+       css background-color is "rgb(0, 128, 0)"
+
+    cell_zauzeta:
+       css background-color is "rgb(255, 0, 0)"
+    
+    tabela_un:
+       css border-spacing is "10px 10px"
+    
+= Label + input =
+    input_dropdown:
+       above input_checkbox -90 to -80 px
+    
+    @for [2 , 3] as index
+        label-${index}:
+         left-of input-${index} 10 to 30px
+
+= Test buttona =
+    button-1:
+       width > 70 px 
+       height < 50 px
+       css font-weight is "700"
+       css text-align is "center"
+
+    
+       
+   
+

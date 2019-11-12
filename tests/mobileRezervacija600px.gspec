@@ -1,0 +1,42 @@
+@objects
+    menu_item-* css ul li a
+    tabele_col-* #datumi tr td
+    button-*         .btnCal
+    label-*          label
+    input-*          input
+    tabela_datuma    #datumi
+    input_dropdown  #dropdown
+    input_checkbox  input[type='checkbox']
+
+= Meni section =
+    menu_item-1:
+       aligned vertically centered menu_item-2 
+
+    
+= Check table =
+#broj vidljivih objekata u tabeli bi trebao biti 22:
+#7*th + 7*2 (u mini tabelama) + 1 (novembar)= 22
+     counter:
+       count visible tabele_col-* is 22
+
+#dimenzije tabele bi trebale biti height > width
+     tabela_datuma:
+        height > 200px
+        width  < 180px
+
+
+= Test buttona =
+    button-*:
+       width > 70 px 
+       height < 50 px
+       css font-weight is "700"
+       css text-align is "center"
+
+= Label + input =
+    #da li je doslo do overlapa?
+    input_dropdown:
+       above input_checkbox -90 to -50 px
+    
+    @for [2 , 3] as index
+        label-${index}:
+         left-of input-${index} 10 to 30px

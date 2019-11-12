@@ -8,99 +8,259 @@
         <script src="galen-report.js"></script>
         <script type="text/javascript">
 var REPORT_DATA = {
-  "testId" : "1-mobileunos.gspec",
-  "name" : "mobileUnos.gspec",
+  "testId" : "1-mobilerezervacija600px.gspec",
+  "name" : "mobileRezervacija600px.gspec",
   "report" : {
     "nodes" : [ {
-      "name" : "Mutation test",
+      "name" : "Simple check",
       "status" : "info",
       "nodes" : [ {
-        "name" : "check  mobileUnos.gspec --url http://localhost/wt1918048/html/unos.html --size 1263x975 --htmlreport htmlreports/mobileUnosMutate-report",
+        "name" : "check  mobileRezervacija600px.gspec --url http://localhost/wt1918048/html/rezervacija.html --size 600x975 --htmlreport htmlreports/mobileRezervacija600px-report",
         "status" : "info",
         "nodes" : [ {
-          "name" : "Check layout: mobileUnos.gspec included tags: ",
+          "name" : "Check layout: mobileRezervacija600px.gspec included tags: ",
           "status" : "info",
-          "time" : 1573593290888,
+          "time" : 1573598130401,
           "sections" : [ {
             "name" : "Meni section",
             "place" : {
-              "filePath" : "mobileUnos.gspec",
-              "lineNumber" : 17
+              "filePath" : "mobileRezervacija600px.gspec",
+              "lineNumber" : 11
             },
             "objects" : [ {
               "name" : "menu_item-1",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 19
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 13
                 },
-                "name" : "aligned horizontally all menu_item-2",
+                "name" : "aligned vertically centered menu_item-2",
                 "highlight" : [ "menu_item-1", "menu_item-2" ]
-              } ]
-            }, {
-              "name" : "menu_item-3",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 21
-                },
-                "name" : "text is \"Unos\"",
-                "highlight" : [ "menu_item-3" ]
               } ]
             } ]
           }, {
-            "name" : "Check logo",
+            "name" : "Check table",
             "place" : {
-              "filePath" : "mobileUnos.gspec",
-              "lineNumber" : 23
+              "filePath" : "mobileRezervacija600px.gspec",
+              "lineNumber" : 16
             },
             "objects" : [ {
-              "name" : "logo_slika",
+              "name" : "counter",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 25
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 20
                 },
-                "name" : "inside partly container_meni -79px top",
+                "name" : "count visible tabele_col-* is 22",
+                "highlight" : [ "tabele_col-15", "tabele_col-26", "tabele_col-25", "tabele_col-24", "tabele_col-35", "tabele_col-23", "tabele_col-34", "tabele_col-22", "tabele_col-33", "tabele_col-1", "tabele_col-21", "tabele_col-32", "tabele_col-20", "tabele_col-31", "tabele_col-30", "tabele_col-19", "tabele_col-18", "tabele_col-29", "tabele_col-17", "tabele_col-28", "tabele_col-16", "tabele_col-27" ]
+              } ]
+            }, {
+              "name" : "tabela_datuma",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 24
+                },
+                "name" : "height > 200px",
                 "meta" : [ {
                   "from" : {
-                    "object" : "logo_slika",
+                    "object" : "tabela_datuma",
                     "edge" : "top"
                   },
                   "to" : {
-                    "object" : "container_meni",
-                    "edge" : "top"
+                    "object" : "tabela_datuma",
+                    "edge" : "bottom"
                   },
-                  "expectedDistance" : "-79px",
-                  "realDistance" : "-79px"
+                  "expectedDistance" : "> 200px",
+                  "realDistance" : "438px"
                 } ],
-                "highlight" : [ "logo_slika", "container_meni" ]
+                "highlight" : [ "tabela_datuma" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "width  < 180px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "tabela_datuma",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "tabela_datuma",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "< 180px",
+                  "realDistance" : "148px"
+                } ],
+                "highlight" : [ "tabela_datuma" ]
               } ]
             } ]
           }, {
-            "name" : "Check alignment label + input",
+            "name" : "Test buttona",
             "place" : {
-              "filePath" : "mobileUnos.gspec",
-              "lineNumber" : 27
+              "filePath" : "mobileRezervacija600px.gspec",
+              "lineNumber" : 28
             },
             "objects" : [ {
+              "name" : "button-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "width > 70 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "button-1",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "button-1",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "> 70px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "button-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 31
+                },
+                "name" : "height < 50 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "button-1",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "button-1",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "< 50px",
+                  "realDistance" : "40px"
+                } ],
+                "highlight" : [ "button-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 32
+                },
+                "name" : "css font-weight is \"700\"",
+                "highlight" : [ "button-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 33
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "button-1" ]
+              } ]
+            }, {
+              "name" : "button-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "width > 70 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "button-2",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "button-2",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "> 70px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "button-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 31
+                },
+                "name" : "height < 50 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "button-2",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "button-2",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "< 50px",
+                  "realDistance" : "40px"
+                } ],
+                "highlight" : [ "button-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 32
+                },
+                "name" : "css font-weight is \"700\"",
+                "highlight" : [ "button-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 33
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "button-2" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Label + input",
+            "place" : {
+              "filePath" : "mobileRezervacija600px.gspec",
+              "lineNumber" : 35
+            },
+            "objects" : [ {
+              "name" : "input_dropdown",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 38
+                },
+                "name" : "above input_checkbox -90 to -50 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input_dropdown",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input_checkbox",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "-90 to -50px",
+                  "realDistance" : "-68px"
+                } ],
+                "highlight" : [ "input_dropdown", "input_checkbox" ]
+              } ]
+            }, {
               "name" : "label-2",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 30
-                },
-                "name" : "aligned horizontally centered input-2",
-                "highlight" : [ "label-2", "input-2" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 34
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 42
                 },
                 "name" : "left-of input-2 10 to 30px",
                 "meta" : [ {
@@ -113,7 +273,7 @@ var REPORT_DATA = {
                     "edge" : "left"
                   },
                   "expectedDistance" : "10 to 30px",
-                  "realDistance" : "30px"
+                  "realDistance" : "28px"
                 } ],
                 "highlight" : [ "label-2", "input-2" ]
               } ]
@@ -122,16 +282,8 @@ var REPORT_DATA = {
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 30
-                },
-                "name" : "aligned horizontally centered input-3",
-                "highlight" : [ "label-3", "input-3" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 34
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 42
                 },
                 "name" : "left-of input-3 10 to 30px",
                 "meta" : [ {
@@ -144,559 +296,120 @@ var REPORT_DATA = {
                     "edge" : "left"
                   },
                   "expectedDistance" : "10 to 30px",
-                  "realDistance" : "30px"
+                  "realDistance" : "28px"
                 } ],
                 "highlight" : [ "label-3", "input-3" ]
-              } ]
-            }, {
-              "name" : "label-1",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 34
-                },
-                "name" : "left-of input-1 10 to 30px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "label-1",
-                    "edge" : "right"
-                  },
-                  "to" : {
-                    "object" : "input-1",
-                    "edge" : "left"
-                  },
-                  "expectedDistance" : "10 to 30px",
-                  "realDistance" : "30px"
-                } ],
-                "highlight" : [ "label-1", "input-1" ]
-              } ]
-            }, {
-              "name" : "label-4",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 34
-                },
-                "name" : "left-of input-4 10 to 30px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "label-4",
-                    "edge" : "right"
-                  },
-                  "to" : {
-                    "object" : "input-4",
-                    "edge" : "left"
-                  },
-                  "expectedDistance" : "10 to 30px",
-                  "realDistance" : "30px"
-                } ],
-                "highlight" : [ "label-4", "input-4" ]
-              } ]
-            } ]
-          }, {
-            "name" : "Label and input centered",
-            "place" : {
-              "filePath" : "mobileUnos.gspec",
-              "lineNumber" : 36
-            },
-            "objects" : [ {
-              "name" : "label-1",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 39
-                },
-                "name" : "inside container_sadrzaj 0 px left",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "label-1",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "left"
-                  },
-                  "expectedDistance" : "0px",
-                  "realDistance" : "0px"
-                } ],
-                "highlight" : [ "label-1", "container_sadrzaj" ]
-              } ]
-            }, {
-              "name" : "input-1",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 41
-                },
-                "name" : "inside container_sadrzaj 219 px right",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "input-1",
-                    "edge" : "right"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "219px",
-                  "realDistance" : "219px"
-                } ],
-                "highlight" : [ "input-1", "container_sadrzaj" ]
-              } ]
-            }, {
-              "name" : "label-2",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 39
-                },
-                "name" : "inside container_sadrzaj 0 px left",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "label-2",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "left"
-                  },
-                  "expectedDistance" : "0px",
-                  "realDistance" : "0px"
-                } ],
-                "highlight" : [ "label-2", "container_sadrzaj" ]
-              } ]
-            }, {
-              "name" : "input-2",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 41
-                },
-                "name" : "inside container_sadrzaj 219 px right",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "input-2",
-                    "edge" : "right"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "219px",
-                  "realDistance" : "219px"
-                } ],
-                "highlight" : [ "input-2", "container_sadrzaj" ]
-              } ]
-            }, {
-              "name" : "label-3",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 39
-                },
-                "name" : "inside container_sadrzaj 0 px left",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "label-3",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "left"
-                  },
-                  "expectedDistance" : "0px",
-                  "realDistance" : "0px"
-                } ],
-                "highlight" : [ "label-3", "container_sadrzaj" ]
-              } ]
-            }, {
-              "name" : "input-3",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 41
-                },
-                "name" : "inside container_sadrzaj 219 px right",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "input-3",
-                    "edge" : "right"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "219px",
-                  "realDistance" : "219px"
-                } ],
-                "highlight" : [ "input-3", "container_sadrzaj" ]
-              } ]
-            }, {
-              "name" : "label-4",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 39
-                },
-                "name" : "inside container_sadrzaj 0 px left",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "label-4",
-                    "edge" : "left"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "left"
-                  },
-                  "expectedDistance" : "0px",
-                  "realDistance" : "0px"
-                } ],
-                "highlight" : [ "label-4", "container_sadrzaj" ]
-              } ]
-            }, {
-              "name" : "input-4",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 41
-                },
-                "name" : "inside container_sadrzaj 219 px right",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "input-4",
-                    "edge" : "right"
-                  },
-                  "to" : {
-                    "object" : "container_sadrzaj",
-                    "edge" : "right"
-                  },
-                  "expectedDistance" : "219px",
-                  "realDistance" : "219px"
-                } ],
-                "highlight" : [ "input-4", "container_sadrzaj" ]
-              } ]
-            } ]
-          }, {
-            "name" : "Label check",
-            "place" : {
-              "filePath" : "mobileUnos.gspec",
-              "lineNumber" : 45
-            },
-            "objects" : [ {
-              "name" : "label-1",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 47
-                },
-                "name" : "text contains \"Naziv\"",
-                "highlight" : [ "label-1" ]
-              } ]
-            }, {
-              "name" : "label-2",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 49
-                },
-                "name" : "text contains \"mjesta\"",
-                "highlight" : [ "label-2" ]
-              } ]
-            } ]
-          }, {
-            "name" : "Button in form positioning",
-            "place" : {
-              "filePath" : "mobileUnos.gspec",
-              "lineNumber" : 51
-            },
-            "objects" : [ {
-              "name" : "button",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 53
-                },
-                "name" : "below last_txt_input_field 20 to 30 px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "button",
-                    "edge" : "top"
-                  },
-                  "to" : {
-                    "object" : "last_txt_input_field",
-                    "edge" : "bottom"
-                  },
-                  "expectedDistance" : "20 to 30px",
-                  "realDistance" : "25px"
-                } ],
-                "highlight" : [ "button", "last_txt_input_field" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 65
-                },
-                "name" : "text is \"Unesi\"",
-                "highlight" : [ "button" ]
-              }, {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 66
-                },
-                "name" : "css text-align is \"center\"",
-                "highlight" : [ "button" ]
-              } ]
-            }, {
-              "name" : "input_numb",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 56
-                },
-                "name" : "above input_email 20 to 50 px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "input_numb",
-                    "edge" : "bottom"
-                  },
-                  "to" : {
-                    "object" : "input_email",
-                    "edge" : "top"
-                  },
-                  "expectedDistance" : "20 to 50px",
-                  "realDistance" : "32px"
-                } ],
-                "highlight" : [ "input_numb", "input_email" ]
-              } ]
-            }, {
-              "name" : "input-1",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 59
-                },
-                "name" : "above input_email 20 to 100 px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "input-1",
-                    "edge" : "bottom"
-                  },
-                  "to" : {
-                    "object" : "input_email",
-                    "edge" : "top"
-                  },
-                  "expectedDistance" : "20 to 100px",
-                  "realDistance" : "83px"
-                } ],
-                "highlight" : [ "input-1", "input_email" ]
-              } ]
-            }, {
-              "name" : "input-4",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "mobileUnos.gspec",
-                  "lineNumber" : 62
-                },
-                "name" : "below input_email 20 to 50 px",
-                "meta" : [ {
-                  "from" : {
-                    "object" : "input-4",
-                    "edge" : "top"
-                  },
-                  "to" : {
-                    "object" : "input_email",
-                    "edge" : "bottom"
-                  },
-                  "expectedDistance" : "20 to 50px",
-                  "realDistance" : "32px"
-                } ],
-                "highlight" : [ "input-4", "input_email" ]
               } ]
             } ]
           } ],
           "objects" : {
-            "menu_item-3" : {
-              "area" : [ 510, 260, 50, 26 ]
-            },
-            "label-4" : {
-              "area" : [ 330, 494, 190, 18 ]
-            },
-            "input_email" : {
-              "area" : [ 550, 442, 194, 20 ]
-            },
             "menu_item-2" : {
-              "area" : [ 430, 260, 41, 26 ]
+              "area" : [ 186, 238, 19, 12 ]
             },
-            "label-3" : {
-              "area" : [ 330, 443, 190, 18 ]
-            },
-            "label-2" : {
-              "area" : [ 330, 391, 190, 18 ]
-            },
-            "label-1" : {
-              "area" : [ 330, 339, 190, 18 ]
-            },
-            "container_sadrzaj" : {
-              "area" : [ 330, 307, 633, 252 ]
-            },
-            "logo_slika" : {
-              "area" : [ 572, 83, 150, 150 ]
-            },
-            "input-1" : {
-              "area" : [ 550, 339, 194, 20 ]
-            },
-            "input-2" : {
-              "area" : [ 550, 390, 194, 20 ]
-            },
-            "container_meni" : {
-              "area" : [ 251, 162, 791, 133 ]
+            "input_dropdown" : {
+              "area" : [ 154, 383, 288, 116 ]
             },
             "menu_item-1" : {
-              "area" : [ 315, 260, 75, 26 ]
+              "area" : [ 178, 225, 35, 12 ]
             },
-            "button" : {
-              "area" : [ 549, 539, 196, 20 ]
+            "tabele_col-26" : {
+              "area" : [ 291, 765, 47, 16 ]
+            },
+            "tabele_col-25" : {
+              "area" : [ 291, 735, 47, 30 ]
+            },
+            "tabele_col-24" : {
+              "area" : [ 289, 732, 52, 52 ]
+            },
+            "input_checkbox" : {
+              "area" : [ 251, 431, 20, 13 ]
+            },
+            "tabele_col-23" : {
+              "area" : [ 291, 713, 47, 16 ]
+            },
+            "tabele_col-22" : {
+              "area" : [ 291, 683, 47, 30 ]
+            },
+            "tabele_col-1" : {
+              "area" : [ 221, 530, 122, 33 ]
+            },
+            "tabele_col-21" : {
+              "area" : [ 289, 680, 52, 52 ]
+            },
+            "tabele_col-20" : {
+              "area" : [ 291, 661, 47, 16 ]
+            },
+            "tabele_col-29" : {
+              "area" : [ 291, 817, 47, 16 ]
+            },
+            "tabele_col-28" : {
+              "area" : [ 291, 787, 47, 30 ]
+            },
+            "tabele_col-27" : {
+              "area" : [ 289, 784, 52, 52 ]
+            },
+            "label-3" : {
+              "area" : [ 165, 415, 64, 28 ]
+            },
+            "button-2" : {
+              "area" : [ 303, 969, 100, 40 ]
+            },
+            "label-2" : {
+              "area" : [ 165, 394, 64, 14 ]
+            },
+            "button-1" : {
+              "area" : [ 140, 969, 100, 40 ]
+            },
+            "tabela_datuma" : {
+              "area" : [ 209, 518, 148, 438 ]
+            },
+            "input-2" : {
+              "area" : [ 257, 454, 90, 20 ]
+            },
+            "tabele_col-15" : {
+              "area" : [ 289, 576, 52, 52 ]
+            },
+            "tabele_col-35" : {
+              "area" : [ 291, 921, 47, 16 ]
+            },
+            "tabele_col-34" : {
+              "area" : [ 291, 891, 47, 30 ]
+            },
+            "tabele_col-33" : {
+              "area" : [ 289, 888, 52, 52 ]
             },
             "input-3" : {
-              "area" : [ 550, 442, 194, 20 ]
+              "area" : [ 257, 480, 90, 20 ]
             },
-            "last_txt_input_field" : {
-              "area" : [ 550, 494, 194, 20 ]
+            "tabele_col-32" : {
+              "area" : [ 291, 869, 47, 16 ]
             },
-            "input-4" : {
-              "area" : [ 550, 494, 194, 20 ]
+            "tabele_col-31" : {
+              "area" : [ 291, 839, 47, 30 ]
             },
-            "input_numb" : {
-              "area" : [ 550, 390, 194, 20 ]
+            "tabele_col-30" : {
+              "area" : [ 289, 836, 52, 52 ]
+            },
+            "tabele_col-19" : {
+              "area" : [ 291, 631, 47, 30 ]
+            },
+            "tabele_col-18" : {
+              "area" : [ 289, 628, 52, 52 ]
+            },
+            "tabele_col-17" : {
+              "area" : [ 291, 609, 47, 16 ]
+            },
+            "tabele_col-16" : {
+              "area" : [ 291, 579, 47, 30 ]
             }
           },
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
-        }, {
-          "name" : "Mutation testing: mobileUnos.gspec included tags: ",
-          "status" : "info",
-          "time" : 1573593290888,
-          "mutationReport" : {
-            "objectMutationStatistics" : {
-              "menu_item-3" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "label-4" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "input_email" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "menu_item-2" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "label-3" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "label-2" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "label-1" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "container_sadrzaj" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "logo_slika" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "input-1" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "input-2" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "container_meni" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "menu_item-1" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "button" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "input-3" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "last_txt_input_field" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "input-4" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              },
-              "input_numb" : {
-                "passed" : 10,
-                "failed" : 0,
-                "failedMutations" : [ ]
-              }
-            },
-            "totalPassed" : 180,
-            "totalFailed" : 0,
-            "failedRatio" : 0.0,
-            "totalMutations" : 180
-          },
-          "type" : "mutation"
         } ],
-        "time" : 1573593285390,
+        "time" : 1573598122130,
         "type" : "node"
       } ],
-      "time" : 1573593281169,
+      "time" : 1573598117520,
       "type" : "node"
     } ]
   }

@@ -6,21 +6,520 @@
       "name" : "Simple check",
       "status" : "info",
       "nodes" : [ {
-        "name" : "check  mobileRezervacija.gspec --url http://localhost/wt1918048/html/rezervacija.html --size 1263x1241 --htmlreport htmlreports/mobileRezervacija-report",
+        "name" : "check  mobileRezervacija.gspec --url http://localhost/wt1918048/html/rezervacija.html --size 1263x975 --htmlreport htmlreports/mobileRezervacija-report",
         "status" : "info",
         "nodes" : [ {
           "name" : "Check layout: mobileRezervacija.gspec included tags: ",
-          "status" : "info",
-          "time" : 1573502484514,
-          "sections" : [ ],
-          "objects" : { },
+          "status" : "error",
+          "time" : 1573596610026,
+          "sections" : [ {
+            "name" : "Select test",
+            "place" : {
+              "filePath" : "mobileRezervacija.gspec",
+              "lineNumber" : 13
+            },
+            "objects" : [ {
+              "name" : "select_item-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 15
+                },
+                "name" : "text is \"VA\"",
+                "highlight" : [ "select_item-1" ]
+              } ]
+            }, {
+              "name" : "global",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "count any select_item-* is 4",
+                "highlight" : [ "select_item-4", "select_item-3", "select_item-2", "select_item-1" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Table test",
+            "place" : {
+              "filePath" : "mobileRezervacija.gspec",
+              "lineNumber" : 19
+            },
+            "objects" : [ {
+              "name" : "counter",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 21
+                },
+                "name" : "count any table_item-* is 31",
+                "highlight" : [ "table_item-10", "table_item-11", "table_item-12", "table_item-13", "table_item-14", "table_item-15", "table_item-16", "table_item-17", "table_item-30", "table_item-31", "table_item-18", "table_item-19", "table_item-1", "table_item-21", "table_item-2", "table_item-22", "table_item-3", "table_item-23", "table_item-4", "table_item-24", "table_item-5", "table_item-25", "table_item-6", "table_item-26", "table_item-7", "table_item-27", "table_item-8", "table_item-28", "table_item-20", "table_item-9", "table_item-29" ]
+              } ]
+            }, {
+              "name" : "table_item-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "text is \"1\"",
+                "highlight" : [ "table_item-1" ]
+              } ]
+            }, {
+              "name" : "table_item-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "text is \"2\"",
+                "highlight" : [ "table_item-2" ]
+              } ]
+            }, {
+              "name" : "table_item-3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "text is \"3\"",
+                "highlight" : [ "table_item-3" ]
+              } ]
+            }, {
+              "name" : "table_item-4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "text is \"4\"",
+                "highlight" : [ "table_item-4" ]
+              } ]
+            }, {
+              "name" : "table_item-5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "text is \"5\"",
+                "highlight" : [ "table_item-5" ]
+              } ]
+            }, {
+              "name" : "table_item-25",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "text is \"25\"",
+                "highlight" : [ "table_item-25" ]
+              } ]
+            }, {
+              "name" : "table_item-26",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "text is \"26\"",
+                "highlight" : [ "table_item-26" ]
+              } ]
+            }, {
+              "name" : "table_item-27",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "text is \"27\"",
+                "highlight" : [ "table_item-27" ]
+              } ]
+            }, {
+              "name" : "table_item-28",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "text is \"28\"",
+                "highlight" : [ "table_item-28" ]
+              } ]
+            }, {
+              "name" : "table_item-29",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "text is \"29\"",
+                "highlight" : [ "table_item-29" ]
+              } ]
+            }, {
+              "name" : "table_item-30",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "text is \"30\"",
+                "highlight" : [ "table_item-30" ]
+              } ]
+            }, {
+              "name" : "table_item-31",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "text is \"31\"",
+                "highlight" : [ "table_item-31" ]
+              } ]
+            }, {
+              "name" : "cell_slobodna",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 28
+                },
+                "name" : "css background-color is \"rgb(0, 128, 0)\"",
+                "highlight" : [ "cell_slobodna" ]
+              } ]
+            }, {
+              "name" : "cell_zauzeta",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 31
+                },
+                "name" : "css background-color is \"rgb(255, 0, 0)\"",
+                "highlight" : [ "cell_zauzeta" ]
+              } ]
+            }, {
+              "name" : "tabela_un",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 34
+                },
+                "name" : "css border-spacing is \"10px 10px\"",
+                "highlight" : [ "tabela_un" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Label + input",
+            "place" : {
+              "filePath" : "mobileRezervacija.gspec",
+              "lineNumber" : 36
+            },
+            "objects" : [ {
+              "name" : "input_dropdown",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 38
+                },
+                "name" : "above input_checkbox -90 to -80 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input_dropdown",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input_checkbox",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "-90 to -80px",
+                  "realDistance" : "-82px"
+                } ],
+                "highlight" : [ "input_dropdown", "input_checkbox" ]
+              } ]
+            }, {
+              "name" : "label-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 42
+                },
+                "name" : "left-of input-2 10 to 30px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label-2",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "input-2",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "10 to 30px",
+                  "realDistance" : "30px"
+                } ],
+                "highlight" : [ "label-2", "input-2" ]
+              } ]
+            }, {
+              "name" : "label-3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 42
+                },
+                "name" : "left-of input-3 10 to 30px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label-3",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "input-3",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "10 to 30px",
+                  "realDistance" : "30px"
+                } ],
+                "highlight" : [ "label-3", "input-3" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Test buttona",
+            "place" : {
+              "filePath" : "mobileRezervacija.gspec",
+              "lineNumber" : 44
+            },
+            "objects" : [ {
+              "name" : "button-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 46
+                },
+                "name" : "width > 70 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "button-1",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "button-1",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "> 70px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "button-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 47
+                },
+                "name" : "height < 50 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "button-1",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "button-1",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "< 50px",
+                  "realDistance" : "40px"
+                } ],
+                "highlight" : [ "button-1" ]
+              }, {
+                "status" : "error",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 48
+                },
+                "name" : "css background is \"rgb(253, 241, 169)\"",
+                "errors" : [ "\"button-1\" css property \"background\" is \"\" but should be \"rgb(253, 241, 169)\"" ],
+                "highlight" : [ "button-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 49
+                },
+                "name" : "css font-weight is \"700\"",
+                "highlight" : [ "button-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "button-1" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "table_item-10" : {
+              "area" : [ 845, 701, 64, 50 ]
+            },
+            "table_item-11" : {
+              "area" : [ 383, 763, 64, 50 ]
+            },
+            "table_item-12" : {
+              "area" : [ 460, 763, 64, 50 ]
+            },
+            "table_item-13" : {
+              "area" : [ 537, 763, 64, 50 ]
+            },
+            "table_item-14" : {
+              "area" : [ 614, 763, 64, 50 ]
+            },
+            "table_item-15" : {
+              "area" : [ 691, 763, 64, 50 ]
+            },
+            "table_item-16" : {
+              "area" : [ 768, 763, 64, 50 ]
+            },
+            "table_item-17" : {
+              "area" : [ 845, 763, 64, 50 ]
+            },
+            "select_item-4" : {
+              "area" : [ 552, 440, 187, 16 ]
+            },
+            "input_dropdown" : {
+              "area" : [ 330, 373, 633, 133 ]
+            },
+            "select_item-3" : {
+              "area" : [ 552, 424, 187, 16 ]
+            },
+            "select_item-2" : {
+              "area" : [ 552, 408, 187, 16 ]
+            },
+            "table_item-30" : {
+              "area" : [ 768, 887, 64, 50 ]
+            },
+            "select_item-1" : {
+              "area" : [ 552, 392, 187, 16 ]
+            },
+            "table_item-31" : {
+              "area" : [ 845, 887, 64, 50 ]
+            },
+            "input_checkbox" : {
+              "area" : [ 537, 424, 44, 13 ]
+            },
+            "cell_zauzeta" : {
+              "area" : [ 769, 671, 62, 16 ]
+            },
+            "table_item-18" : {
+              "area" : [ 383, 825, 64, 50 ]
+            },
+            "cell_slobodna" : {
+              "area" : [ 692, 671, 62, 16 ]
+            },
+            "table_item-19" : {
+              "area" : [ 460, 825, 64, 50 ]
+            },
+            "tabela_un" : {
+              "area" : [ 692, 640, 62, 30 ]
+            },
+            "table_item-1" : {
+              "area" : [ 691, 639, 64, 50 ]
+            },
+            "table_item-21" : {
+              "area" : [ 614, 825, 64, 50 ]
+            },
+            "table_item-2" : {
+              "area" : [ 768, 639, 64, 50 ]
+            },
+            "table_item-22" : {
+              "area" : [ 691, 825, 64, 50 ]
+            },
+            "label-3" : {
+              "area" : [ 330, 422, 190, 18 ]
+            },
+            "table_item-3" : {
+              "area" : [ 845, 639, 64, 50 ]
+            },
+            "table_item-23" : {
+              "area" : [ 768, 825, 64, 50 ]
+            },
+            "label-2" : {
+              "area" : [ 330, 392, 190, 18 ]
+            },
+            "table_item-4" : {
+              "area" : [ 383, 701, 64, 50 ]
+            },
+            "table_item-24" : {
+              "area" : [ 845, 825, 64, 50 ]
+            },
+            "button-1" : {
+              "area" : [ 369, 979, 100, 40 ]
+            },
+            "table_item-5" : {
+              "area" : [ 460, 701, 64, 50 ]
+            },
+            "table_item-25" : {
+              "area" : [ 383, 887, 64, 50 ]
+            },
+            "table_item-6" : {
+              "area" : [ 537, 701, 64, 50 ]
+            },
+            "table_item-26" : {
+              "area" : [ 460, 887, 64, 50 ]
+            },
+            "table_item-7" : {
+              "area" : [ 614, 701, 64, 50 ]
+            },
+            "table_item-27" : {
+              "area" : [ 537, 887, 64, 50 ]
+            },
+            "table_item-8" : {
+              "area" : [ 691, 701, 64, 50 ]
+            },
+            "table_item-28" : {
+              "area" : [ 614, 887, 64, 50 ]
+            },
+            "input-2" : {
+              "area" : [ 550, 454, 194, 20 ]
+            },
+            "table_item-20" : {
+              "area" : [ 537, 825, 64, 50 ]
+            },
+            "input-3" : {
+              "area" : [ 550, 486, 194, 20 ]
+            },
+            "table_item-9" : {
+              "area" : [ 768, 701, 64, 50 ]
+            },
+            "table_item-29" : {
+              "area" : [ 691, 887, 64, 50 ]
+            }
+          },
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1573502482765,
+        "time" : 1573596606292,
         "type" : "node"
       } ],
-      "time" : 1573502476021,
+      "time" : 1573596602189,
       "type" : "node"
     } ]
   }

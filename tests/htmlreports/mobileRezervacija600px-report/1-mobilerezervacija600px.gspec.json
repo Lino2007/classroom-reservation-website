@@ -1,0 +1,407 @@
+{
+  "testId" : "1-mobilerezervacija600px.gspec",
+  "name" : "mobileRezervacija600px.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Simple check",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  mobileRezervacija600px.gspec --url http://localhost/wt1918048/html/rezervacija.html --size 600x975 --htmlreport htmlreports/mobileRezervacija600px-report",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: mobileRezervacija600px.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573598130401,
+          "sections" : [ {
+            "name" : "Meni section",
+            "place" : {
+              "filePath" : "mobileRezervacija600px.gspec",
+              "lineNumber" : 11
+            },
+            "objects" : [ {
+              "name" : "menu_item-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 13
+                },
+                "name" : "aligned vertically centered menu_item-2",
+                "highlight" : [ "menu_item-1", "menu_item-2" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Check table",
+            "place" : {
+              "filePath" : "mobileRezervacija600px.gspec",
+              "lineNumber" : 16
+            },
+            "objects" : [ {
+              "name" : "counter",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 20
+                },
+                "name" : "count visible tabele_col-* is 22",
+                "highlight" : [ "tabele_col-15", "tabele_col-26", "tabele_col-25", "tabele_col-24", "tabele_col-35", "tabele_col-23", "tabele_col-34", "tabele_col-22", "tabele_col-33", "tabele_col-1", "tabele_col-21", "tabele_col-32", "tabele_col-20", "tabele_col-31", "tabele_col-30", "tabele_col-19", "tabele_col-18", "tabele_col-29", "tabele_col-17", "tabele_col-28", "tabele_col-16", "tabele_col-27" ]
+              } ]
+            }, {
+              "name" : "tabela_datuma",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 24
+                },
+                "name" : "height > 200px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "tabela_datuma",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "tabela_datuma",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "> 200px",
+                  "realDistance" : "438px"
+                } ],
+                "highlight" : [ "tabela_datuma" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 25
+                },
+                "name" : "width  < 180px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "tabela_datuma",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "tabela_datuma",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "< 180px",
+                  "realDistance" : "148px"
+                } ],
+                "highlight" : [ "tabela_datuma" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Test buttona",
+            "place" : {
+              "filePath" : "mobileRezervacija600px.gspec",
+              "lineNumber" : 28
+            },
+            "objects" : [ {
+              "name" : "button-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "width > 70 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "button-1",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "button-1",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "> 70px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "button-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 31
+                },
+                "name" : "height < 50 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "button-1",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "button-1",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "< 50px",
+                  "realDistance" : "40px"
+                } ],
+                "highlight" : [ "button-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 32
+                },
+                "name" : "css font-weight is \"700\"",
+                "highlight" : [ "button-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 33
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "button-1" ]
+              } ]
+            }, {
+              "name" : "button-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "width > 70 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "button-2",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "button-2",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "> 70px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "button-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 31
+                },
+                "name" : "height < 50 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "button-2",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "button-2",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "< 50px",
+                  "realDistance" : "40px"
+                } ],
+                "highlight" : [ "button-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 32
+                },
+                "name" : "css font-weight is \"700\"",
+                "highlight" : [ "button-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 33
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "button-2" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Label + input",
+            "place" : {
+              "filePath" : "mobileRezervacija600px.gspec",
+              "lineNumber" : 35
+            },
+            "objects" : [ {
+              "name" : "input_dropdown",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 38
+                },
+                "name" : "above input_checkbox -90 to -50 px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input_dropdown",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input_checkbox",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : "-90 to -50px",
+                  "realDistance" : "-68px"
+                } ],
+                "highlight" : [ "input_dropdown", "input_checkbox" ]
+              } ]
+            }, {
+              "name" : "label-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 42
+                },
+                "name" : "left-of input-2 10 to 30px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label-2",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "input-2",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "10 to 30px",
+                  "realDistance" : "28px"
+                } ],
+                "highlight" : [ "label-2", "input-2" ]
+              } ]
+            }, {
+              "name" : "label-3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileRezervacija600px.gspec",
+                  "lineNumber" : 42
+                },
+                "name" : "left-of input-3 10 to 30px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "label-3",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "input-3",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : "10 to 30px",
+                  "realDistance" : "28px"
+                } ],
+                "highlight" : [ "label-3", "input-3" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "menu_item-2" : {
+              "area" : [ 186, 238, 19, 12 ]
+            },
+            "input_dropdown" : {
+              "area" : [ 154, 383, 288, 116 ]
+            },
+            "menu_item-1" : {
+              "area" : [ 178, 225, 35, 12 ]
+            },
+            "tabele_col-26" : {
+              "area" : [ 291, 765, 47, 16 ]
+            },
+            "tabele_col-25" : {
+              "area" : [ 291, 735, 47, 30 ]
+            },
+            "tabele_col-24" : {
+              "area" : [ 289, 732, 52, 52 ]
+            },
+            "input_checkbox" : {
+              "area" : [ 251, 431, 20, 13 ]
+            },
+            "tabele_col-23" : {
+              "area" : [ 291, 713, 47, 16 ]
+            },
+            "tabele_col-22" : {
+              "area" : [ 291, 683, 47, 30 ]
+            },
+            "tabele_col-1" : {
+              "area" : [ 221, 530, 122, 33 ]
+            },
+            "tabele_col-21" : {
+              "area" : [ 289, 680, 52, 52 ]
+            },
+            "tabele_col-20" : {
+              "area" : [ 291, 661, 47, 16 ]
+            },
+            "tabele_col-29" : {
+              "area" : [ 291, 817, 47, 16 ]
+            },
+            "tabele_col-28" : {
+              "area" : [ 291, 787, 47, 30 ]
+            },
+            "tabele_col-27" : {
+              "area" : [ 289, 784, 52, 52 ]
+            },
+            "label-3" : {
+              "area" : [ 165, 415, 64, 28 ]
+            },
+            "button-2" : {
+              "area" : [ 303, 969, 100, 40 ]
+            },
+            "label-2" : {
+              "area" : [ 165, 394, 64, 14 ]
+            },
+            "button-1" : {
+              "area" : [ 140, 969, 100, 40 ]
+            },
+            "tabela_datuma" : {
+              "area" : [ 209, 518, 148, 438 ]
+            },
+            "input-2" : {
+              "area" : [ 257, 454, 90, 20 ]
+            },
+            "tabele_col-15" : {
+              "area" : [ 289, 576, 52, 52 ]
+            },
+            "tabele_col-35" : {
+              "area" : [ 291, 921, 47, 16 ]
+            },
+            "tabele_col-34" : {
+              "area" : [ 291, 891, 47, 30 ]
+            },
+            "tabele_col-33" : {
+              "area" : [ 289, 888, 52, 52 ]
+            },
+            "input-3" : {
+              "area" : [ 257, 480, 90, 20 ]
+            },
+            "tabele_col-32" : {
+              "area" : [ 291, 869, 47, 16 ]
+            },
+            "tabele_col-31" : {
+              "area" : [ 291, 839, 47, 30 ]
+            },
+            "tabele_col-30" : {
+              "area" : [ 289, 836, 52, 52 ]
+            },
+            "tabele_col-19" : {
+              "area" : [ 291, 631, 47, 30 ]
+            },
+            "tabele_col-18" : {
+              "area" : [ 289, 628, 52, 52 ]
+            },
+            "tabele_col-17" : {
+              "area" : [ 291, 609, 47, 16 ]
+            },
+            "tabele_col-16" : {
+              "area" : [ 291, 579, 47, 30 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1573598122130,
+        "type" : "node"
+      } ],
+      "time" : 1573598117520,
+      "type" : "node"
+    } ]
+  }
+}
