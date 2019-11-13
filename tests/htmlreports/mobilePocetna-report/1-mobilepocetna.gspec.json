@@ -11,7 +11,7 @@
         "nodes" : [ {
           "name" : "Check layout: mobilePocetna.gspec included tags: ",
           "status" : "info",
-          "time" : 1573602056480,
+          "time" : 1573679493654,
           "sections" : [ {
             "name" : "Meni section",
             "place" : {
@@ -427,10 +427,10 @@
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1573602053137,
+        "time" : 1573679485269,
         "type" : "node"
       } ],
-      "time" : 1573602049011,
+      "time" : 1573679472854,
       "type" : "node"
     } ]
   }

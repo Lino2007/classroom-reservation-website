@@ -11,7 +11,7 @@
         "nodes" : [ {
           "name" : "Check layout: mobilePocetna870px.gspec included tags: ",
           "status" : "info",
-          "time" : 1573601964624,
+          "time" : 1573680540214,
           "sections" : [ {
             "name" : "Images section",
             "place" : {
@@ -446,10 +446,10 @@
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1573601961452,
+        "time" : 1573680537012,
         "type" : "node"
       } ],
-      "time" : 1573601956672,
+      "time" : 1573680532811,
       "type" : "node"
     } ]
   }

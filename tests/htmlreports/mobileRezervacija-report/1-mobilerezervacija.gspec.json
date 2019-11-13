@@ -10,8 +10,8 @@
         "status" : "info",
         "nodes" : [ {
           "name" : "Check layout: mobileRezervacija.gspec included tags: ",
-          "status" : "error",
-          "time" : 1573596610026,
+          "status" : "info",
+          "time" : 1573679494441,
           "sections" : [ {
             "name" : "Select test",
             "place" : {
@@ -349,19 +349,10 @@
                 } ],
                 "highlight" : [ "button-1" ]
               }, {
-                "status" : "error",
-                "place" : {
-                  "filePath" : "mobileRezervacija.gspec",
-                  "lineNumber" : 48
-                },
-                "name" : "css background is \"rgb(253, 241, 169)\"",
-                "errors" : [ "\"button-1\" css property \"background\" is \"\" but should be \"rgb(253, 241, 169)\"" ],
-                "highlight" : [ "button-1" ]
-              }, {
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileRezervacija.gspec",
-                  "lineNumber" : 49
+                  "lineNumber" : 48
                 },
                 "name" : "css font-weight is \"700\"",
                 "highlight" : [ "button-1" ]
@@ -369,7 +360,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileRezervacija.gspec",
-                  "lineNumber" : 50
+                  "lineNumber" : 49
                 },
                 "name" : "css text-align is \"center\"",
                 "highlight" : [ "button-1" ]
@@ -516,10 +507,10 @@
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1573596606292,
+        "time" : 1573679484081,
         "type" : "node"
       } ],
-      "time" : 1573596602189,
+      "time" : 1573679472776,
       "type" : "node"
     } ]
   }

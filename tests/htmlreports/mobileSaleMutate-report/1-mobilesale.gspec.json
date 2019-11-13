@@ -11,12 +11,12 @@
         "nodes" : [ {
           "name" : "Check layout: mobileSale.gspec included tags: ",
           "status" : "info",
-          "time" : 1573590282690,
+          "time" : 1573679437621,
           "sections" : [ {
             "name" : "Meni section",
             "place" : {
               "filePath" : "mobileSale.gspec",
-              "lineNumber" : 18
+              "lineNumber" : 17
             },
             "objects" : [ {
               "name" : "menu_item-1",
@@ -24,7 +24,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 20
+                  "lineNumber" : 19
                 },
                 "name" : "aligned horizontally all menu_item-2",
                 "highlight" : [ "menu_item-1", "menu_item-2" ]
@@ -35,7 +35,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 22
+                  "lineNumber" : 21
                 },
                 "name" : "text is \"Sale\"",
                 "highlight" : [ "menu_item-2" ]
@@ -45,7 +45,7 @@
             "name" : "Check logo",
             "place" : {
               "filePath" : "mobileSale.gspec",
-              "lineNumber" : 24
+              "lineNumber" : 23
             },
             "objects" : [ {
               "name" : "logo_slika",
@@ -53,7 +53,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 26
+                  "lineNumber" : 25
                 },
                 "name" : "inside partly container_meni -79px top",
                 "meta" : [ {
@@ -75,7 +75,7 @@
             "name" : "Tabela",
             "place" : {
               "filePath" : "mobileSale.gspec",
-              "lineNumber" : 28
+              "lineNumber" : 27
             },
             "objects" : [ {
               "name" : "tabela_sale",
@@ -83,7 +83,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 31
+                  "lineNumber" : 30
                 },
                 "name" : "width < 80px",
                 "meta" : [ {
@@ -103,7 +103,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 32
+                  "lineNumber" : 31
                 },
                 "name" : "height < 80px",
                 "meta" : [ {
@@ -123,7 +123,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 33
+                  "lineNumber" : 32
                 },
                 "name" : "css background-color is \"rgb(255, 255, 255)\"",
                 "highlight" : [ "tabela_sale" ]
@@ -134,7 +134,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 36
+                  "lineNumber" : 35
                 },
                 "name" : "css background-color is \"rgb(255, 165, 0)\"",
                 "highlight" : [ "tabela_zauzeteSale" ]
@@ -145,7 +145,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 39
+                  "lineNumber" : 38
                 },
                 "name" : "css background-color is \"rgb(144, 238, 144)\"",
                 "highlight" : [ "tabele_slobodneSale" ]
@@ -156,7 +156,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 42
+                  "lineNumber" : 41
                 },
                 "name" : "css background-color is \"rgb(47, 79, 79)\"",
                 "highlight" : [ "tabele_kancelarija" ]
@@ -166,7 +166,7 @@
             "name" : "Test dimenzija headera",
             "place" : {
               "filePath" : "mobileSale.gspec",
-              "lineNumber" : 44
+              "lineNumber" : 43
             },
             "objects" : [ {
               "name" : "tabele_headerRedni-2",
@@ -174,7 +174,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
+                  "lineNumber" : 46
                 },
                 "name" : "width > 100px",
                 "meta" : [ {
@@ -194,7 +194,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
+                  "lineNumber" : 47
                 },
                 "name" : "height < 100px",
                 "meta" : [ {
@@ -214,7 +214,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
+                  "lineNumber" : 48
                 },
                 "name" : "css background-color is \"rgb(200, 201, 207)\"",
                 "highlight" : [ "tabele_headerRedni-2" ]
@@ -222,7 +222,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
+                  "lineNumber" : 49
                 },
                 "name" : "css text-align is \"left\"",
                 "highlight" : [ "tabele_headerRedni-2" ]
@@ -233,7 +233,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
+                  "lineNumber" : 46
                 },
                 "name" : "width > 100px",
                 "meta" : [ {
@@ -253,7 +253,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
+                  "lineNumber" : 47
                 },
                 "name" : "height < 100px",
                 "meta" : [ {
@@ -273,7 +273,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
+                  "lineNumber" : 48
                 },
                 "name" : "css background-color is \"rgb(200, 201, 207)\"",
                 "highlight" : [ "tabele_headerRedni-3" ]
@@ -281,7 +281,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
+                  "lineNumber" : 49
                 },
                 "name" : "css text-align is \"left\"",
                 "highlight" : [ "tabele_headerRedni-3" ]
@@ -292,7 +292,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
+                  "lineNumber" : 46
                 },
                 "name" : "width > 100px",
                 "meta" : [ {
@@ -312,7 +312,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
+                  "lineNumber" : 47
                 },
                 "name" : "height < 100px",
                 "meta" : [ {
@@ -332,7 +332,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
+                  "lineNumber" : 48
                 },
                 "name" : "css background-color is \"rgb(200, 201, 207)\"",
                 "highlight" : [ "tabele_headerRedni-4" ]
@@ -340,7 +340,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
+                  "lineNumber" : 49
                 },
                 "name" : "css text-align is \"left\"",
                 "highlight" : [ "tabele_headerRedni-4" ]
@@ -351,7 +351,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
+                  "lineNumber" : 46
                 },
                 "name" : "width > 100px",
                 "meta" : [ {
@@ -371,7 +371,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
+                  "lineNumber" : 47
                 },
                 "name" : "height < 100px",
                 "meta" : [ {
@@ -391,7 +391,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
+                  "lineNumber" : 48
                 },
                 "name" : "css background-color is \"rgb(200, 201, 207)\"",
                 "highlight" : [ "tabele_headerRedni-5" ]
@@ -399,7 +399,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
+                  "lineNumber" : 49
                 },
                 "name" : "css text-align is \"left\"",
                 "highlight" : [ "tabele_headerRedni-5" ]
@@ -410,7 +410,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
+                  "lineNumber" : 46
                 },
                 "name" : "width > 100px",
                 "meta" : [ {
@@ -430,7 +430,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
+                  "lineNumber" : 47
                 },
                 "name" : "height < 100px",
                 "meta" : [ {
@@ -450,7 +450,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
+                  "lineNumber" : 48
                 },
                 "name" : "css background-color is \"rgb(200, 201, 207)\"",
                 "highlight" : [ "tabele_headerRedni-6" ]
@@ -458,7 +458,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
+                  "lineNumber" : 49
                 },
                 "name" : "css text-align is \"left\"",
                 "highlight" : [ "tabele_headerRedni-6" ]
@@ -469,7 +469,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
+                  "lineNumber" : 46
                 },
                 "name" : "width > 100px",
                 "meta" : [ {
@@ -489,7 +489,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
+                  "lineNumber" : 47
                 },
                 "name" : "height < 100px",
                 "meta" : [ {
@@ -509,7 +509,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
+                  "lineNumber" : 48
                 },
                 "name" : "css background-color is \"rgb(200, 201, 207)\"",
                 "highlight" : [ "tabele_headerRedni-7" ]
@@ -517,7 +517,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
+                  "lineNumber" : 49
                 },
                 "name" : "css text-align is \"left\"",
                 "highlight" : [ "tabele_headerRedni-7" ]
@@ -528,7 +528,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
+                  "lineNumber" : 46
                 },
                 "name" : "width > 100px",
                 "meta" : [ {
@@ -548,7 +548,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
+                  "lineNumber" : 47
                 },
                 "name" : "height < 100px",
                 "meta" : [ {
@@ -568,7 +568,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
+                  "lineNumber" : 48
                 },
                 "name" : "css background-color is \"rgb(200, 201, 207)\"",
                 "highlight" : [ "tabele_headerRedni-8" ]
@@ -576,7 +576,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
+                  "lineNumber" : 49
                 },
                 "name" : "css text-align is \"left\"",
                 "highlight" : [ "tabele_headerRedni-8" ]
@@ -587,7 +587,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
+                  "lineNumber" : 46
                 },
                 "name" : "width > 100px",
                 "meta" : [ {
@@ -607,7 +607,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
+                  "lineNumber" : 47
                 },
                 "name" : "height < 100px",
                 "meta" : [ {
@@ -627,7 +627,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
+                  "lineNumber" : 48
                 },
                 "name" : "css background-color is \"rgb(200, 201, 207)\"",
                 "highlight" : [ "tabele_headerRedni-9" ]
@@ -635,7 +635,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
+                  "lineNumber" : 49
                 },
                 "name" : "css text-align is \"left\"",
                 "highlight" : [ "tabele_headerRedni-9" ]
@@ -646,7 +646,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 47
+                  "lineNumber" : 46
                 },
                 "name" : "width > 100px",
                 "meta" : [ {
@@ -666,7 +666,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 48
+                  "lineNumber" : 47
                 },
                 "name" : "height < 100px",
                 "meta" : [ {
@@ -686,7 +686,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 49
+                  "lineNumber" : 48
                 },
                 "name" : "css background-color is \"rgb(200, 201, 207)\"",
                 "highlight" : [ "tabele_headerRedni-10" ]
@@ -694,7 +694,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 50
+                  "lineNumber" : 49
                 },
                 "name" : "css text-align is \"left\"",
                 "highlight" : [ "tabele_headerRedni-10" ]
@@ -704,7 +704,7 @@
             "name" : "Test headerSprat",
             "place" : {
               "filePath" : "mobileSale.gspec",
-              "lineNumber" : 52
+              "lineNumber" : 51
             },
             "objects" : [ {
               "name" : "tabele_headerSprat-1",
@@ -712,7 +712,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 55
+                  "lineNumber" : 54
                 },
                 "name" : "css text-align is \"center\"",
                 "highlight" : [ "tabele_headerSprat-1" ]
@@ -720,7 +720,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 56
+                  "lineNumber" : 55
                 },
                 "name" : "css font-weight is \"700\"",
                 "highlight" : [ "tabele_headerSprat-1" ]
@@ -731,7 +731,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 55
+                  "lineNumber" : 54
                 },
                 "name" : "css text-align is \"center\"",
                 "highlight" : [ "tabele_headerSprat-2" ]
@@ -739,7 +739,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 56
+                  "lineNumber" : 55
                 },
                 "name" : "css font-weight is \"700\"",
                 "highlight" : [ "tabele_headerSprat-2" ]
@@ -750,7 +750,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 55
+                  "lineNumber" : 54
                 },
                 "name" : "css text-align is \"center\"",
                 "highlight" : [ "tabele_headerSprat-3" ]
@@ -758,7 +758,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 56
+                  "lineNumber" : 55
                 },
                 "name" : "css font-weight is \"700\"",
                 "highlight" : [ "tabele_headerSprat-3" ]
@@ -769,7 +769,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 55
+                  "lineNumber" : 54
                 },
                 "name" : "css text-align is \"center\"",
                 "highlight" : [ "tabele_headerSprat-4" ]
@@ -777,7 +777,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 56
+                  "lineNumber" : 55
                 },
                 "name" : "css font-weight is \"700\"",
                 "highlight" : [ "tabele_headerSprat-4" ]
@@ -788,7 +788,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 55
+                  "lineNumber" : 54
                 },
                 "name" : "css text-align is \"center\"",
                 "highlight" : [ "tabele_headerSprat-5" ]
@@ -796,7 +796,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 56
+                  "lineNumber" : 55
                 },
                 "name" : "css font-weight is \"700\"",
                 "highlight" : [ "tabele_headerSprat-5" ]
@@ -807,7 +807,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 55
+                  "lineNumber" : 54
                 },
                 "name" : "css text-align is \"center\"",
                 "highlight" : [ "tabele_headerSprat-6" ]
@@ -815,7 +815,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 56
+                  "lineNumber" : 55
                 },
                 "name" : "css font-weight is \"700\"",
                 "highlight" : [ "tabele_headerSprat-6" ]
@@ -825,7 +825,7 @@
             "name" : "Test siroka headerSprat celija",
             "place" : {
               "filePath" : "mobileSale.gspec",
-              "lineNumber" : 60
+              "lineNumber" : 59
             },
             "objects" : [ {
               "name" : "tabele_headerSprat-1",
@@ -833,7 +833,7 @@
                 "status" : "info",
                 "place" : {
                   "filePath" : "mobileSale.gspec",
-                  "lineNumber" : 62
+                  "lineNumber" : 61
                 },
                 "name" : "width > 250px",
                 "meta" : [ {
@@ -928,7 +928,7 @@
         }, {
           "name" : "Mutation testing: mobileSale.gspec included tags: ",
           "status" : "info",
-          "time" : 1573590282690,
+          "time" : 1573679437621,
           "mutationReport" : {
             "objectMutationStatistics" : {
               "menu_item-2" : {
@@ -1054,10 +1054,10 @@
           },
           "type" : "mutation"
         } ],
-        "time" : 1573590275582,
+        "time" : 1573679425439,
         "type" : "node"
       } ],
-      "time" : 1573590271458,
+      "time" : 1573679416659,
       "type" : "node"
     } ]
   }

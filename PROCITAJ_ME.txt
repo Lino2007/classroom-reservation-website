@@ -1,0 +1,10 @@
+Da bi se olaksao postupak pokretanja testova asistentu i code review-eru (ukoliko code review zadatak to bude zahtjevao)
+napravljene su batch skripte (tests/batch_scripts) za pokretanje testova za sve slucajeve i stranice.
+
+Da bi skripte radile potrebno je da se projekat klonira u html folder web servera. Posto su u pitanju BAT scripte
+one ce samo raditi na Windows OS-u. Pokrecite skripte BEZ administracijskih prava.
+
+
+
+
+

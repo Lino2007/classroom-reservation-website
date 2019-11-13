@@ -11,7 +11,7 @@
         "nodes" : [ {
           "name" : "Check layout: mobileRezervacija600px.gspec included tags: ",
           "status" : "info",
-          "time" : 1573598130401,
+          "time" : 1573679677771,
           "sections" : [ {
             "name" : "Meni section",
             "place" : {
@@ -397,10 +397,10 @@
           "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1573598122130,
+        "time" : 1573679668977,
         "type" : "node"
       } ],
-      "time" : 1573598117520,
+      "time" : 1573679663448,
       "type" : "node"
     } ]
   }
