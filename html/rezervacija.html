@@ -5,6 +5,7 @@
         <TITLE>Spirala 1</TITLE>
         <link rel="stylesheet" type="text/css" href="../css/rezervacija.css">
         <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<SCRIPT src="../js/kalendar.js"></SCRIPT>
 </HEAD>
 
 <BODY>
@@ -12,9 +13,9 @@
                 <div class="logo"> <img class="htmlslika" src="../img/html-logo.png" alt="slika-logo"></div>
                 <div class="meni">
                        <ul>
-                                <li><a href="#">Početna</a></li>
-                                <li><a href="#" >Sale</a></li>
-                                <li><a href="#">Unos</a></li>
+                                <li><a href="pocetna.html">Početna</a></li>
+                                <li><a href="sale.html" >Sale</a></li>
+                                <li><a href="unos.html">Unos</a></li>
                                 <li><a href="#" class="bezPodvlake">Rezervacije</a></li>
                                 <li><a href="#">Osobe</a></li>
                         </ul>
@@ -35,7 +36,7 @@
                           </div>
                             <div class="kalendar">
                                 <table id="datumi">
-                                      <tr><td colspan="5" id="month">Novembar</td></tr>
+                                      <tr><td colspan="5" id="month">Januar</td></tr>
                                         <tr class="red">
                                           <th>PON</th>
                                           <th>UTO</th>
@@ -93,9 +94,9 @@
                                       </table>
                                     </div>
                                     <div id="btnSection">
-                                      <div class="inner" ><button type="button" class="btnCal" id="prev">Prethodni</button></div>
+                                      <div class="inner" ><button type="button" class="btnCal" id="prev" onclick="callPrev()" >Prethodni</button></div>
                                       <div class="inner" id="spacer"></div>
-                                      <div class="inner" id="rbtn"><button type="button" class="btnCal" id="nxt">Sljedeci</button></div> 
+                                      <div class="inner" id="rbtn"><button type="button" class="btnCal" id="nxt" onclick="callNext()" >Sljedeci</button></div> 
                                     </div>
                     
                        

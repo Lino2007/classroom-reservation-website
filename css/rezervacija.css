@@ -182,6 +182,7 @@ table td {
   
  /*postavka buttona*/
  #btnSection {
+     margin-top: 10%;
     margin-left:7.5%;
    width: 72%;
    text-align: center;
