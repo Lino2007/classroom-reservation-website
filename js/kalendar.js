@@ -92,6 +92,6 @@ let Kalendar = (function(){
             }  
          }
     
-
+            //pozovi farbanje
         
     }
