@@ -22,21 +22,24 @@
                 </div>
                 <div class="sadrzaj">
                   <label id="odb">Odabir sala</label>
+				 
                           <div id= "dropdown">
-                              <label>Sala: </label>
-                             <select> 
+                           <form id="odabir" oninput="Kalendar.ucitajPodatkeIzForme()">
+							    <label>Sala: </label>
+                             <select id="saleSelect"> 
                                  <option value="VA">VA</option>
                                 <option value="MA">MA</option>
                                 <option value="EE1">EE1</option>
                                 <option value="EE2">EE2</option>
                             </select>
-                            <label>Periodična rezervacija: </label> <input type="checkbox" name="vehicle1" value="Bike"><br>
-                            <label>Početak: </label> <input type="time" name="početak"><br>
-                            <label>Kraj: </label> <input type="time" name="kraj">
+							<label>Periodična rezervacija: </label> <input type="checkbox" name="chbox" ><br>
+                            <label>Početak: </label> <input type="time" name="početak"  id="pocetak" ><br>
+                            <label>Kraj: </label> <input type="time" name="kraj"  id="kraj"><br> 
+							</form>
                           </div>
                             <div class="kalendar">
                                 <table id="datumi">
-                                      <tr><td colspan="5" id="month">Januar</td></tr>
+                                      <tr><td colspan="5" id="month">Novembar</td></tr>
                                         <tr class="red">
                                           <th>PON</th>
                                           <th>UTO</th>
@@ -94,9 +97,9 @@
                                       </table>
                                     </div>
                                     <div id="btnSection">
-                                      <div class="inner" ><button type="button" class="btnCal" id="prev" onclick="callPrev()" >Prethodni</button></div>
+                                      <div class="inner" ><button type="button" class="btnCal" id="prev" onclick="Kalendar.callPrev()" >Prethodni</button></div>
                                       <div class="inner" id="spacer"></div>
-                                      <div class="inner" id="rbtn"><button type="button" class="btnCal" id="nxt" onclick="callNext()" >Sljedeci</button></div> 
+                                      <div class="inner" id="rbtn"><button type="button" class="btnCal" id="nxt" onclick="Kalendar.callNext()" >Sljedeci</button></div> 
                                     </div>
                     
                        
