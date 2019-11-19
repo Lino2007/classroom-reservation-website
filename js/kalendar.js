@@ -52,14 +52,14 @@ let Kalendar = (function(){
             predavac: "Predavac 1"
           }, 
           {
-            datum: "31.10.2019.",
+            datum: "30.10.2019.",
             pocetak: "10:00",
             kraj: "13:00",
             naziv: "MA",
             predavac: "Predavac 1"
           },
           {
-            datum: "20.02.2019.",
+            datum: "28.02.2019.",
             pocetak: "10:00",
             kraj: "13:00",
             naziv: "MA",
@@ -90,7 +90,7 @@ let Kalendar = (function(){
     
              function dajMjesecIzObjekta (datum) {
                  console.log (datum.getMonth());
-                    return nizMjeseci[datum.getMonth()-1];
+                    return nizMjeseci[datum.getMonth()];
              }
               
           
@@ -149,6 +149,7 @@ let Kalendar = (function(){
                     iscrtajKalendarImpl(document.getElementById("datumi"),document.getElementById("month") );  //refresh boja
                     for (let i =0; i<periodicna.length; i++) {
                         let dat = new Date(ispraviFormatDatuma(periodicnaZauzeca[i].datum));
+                        console.log(dat.toUTCString());
                         let objectMjesec = dajMjesecIzObjekta(dat); 
                              danZauzeca =  dat.getDate()-1;
                              if (danZauzeca==0) danZauzeca=zadnjiDanUMjesecu.get(objectMjesec);
