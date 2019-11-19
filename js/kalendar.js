@@ -1,6 +1,6 @@
 
 let Kalendar = (function(){
-   
+    var promjenaKalendara = false;
     const mapaMjeseca = new Map([
         ['Januar',  1], ['Februar',  4],['Mart',  4],  ['April',  7],  
         ['Maj',  2],  ['Juni',  5],  ['Juli',  7], ['August', 3] ,
@@ -32,7 +32,15 @@ let Kalendar = (function(){
                 kraj:  "14:00",
                 naziv: "VA",
                 predavac: "Predavac 1"
-                }
+                } ,
+                {
+                    dan: 6,
+                    semestar: "ljetni",
+                    pocetak:  "13:00",
+                    kraj:  "14:00",
+                    naziv: "VA",
+                    predavac: "Predavac 1"
+                    }
             
     ];
 
@@ -52,7 +60,11 @@ let Kalendar = (function(){
             predavac: "Predavac 1"
           }, 
           {
+<<<<<<< HEAD
             datum: "30.10.2019.",
+=======
+            datum: "12.10.2019.",
+>>>>>>> 2021f9b7c94f35cedb7cb49c3c5a1b6b052380a0
             pocetak: "10:00",
             kraj: "13:00",
             naziv: "MA",
@@ -66,12 +78,27 @@ let Kalendar = (function(){
             predavac: "Predavac 1"
           },
           {
-            datum: "17.02.2019.",
+            datum: "21.12.2019.",
             pocetak: "10:00",
             kraj: "13:00",
             naziv: "VA",
             predavac: "Predavac 1"
-          } 
+          } ,
+          {
+            datum: "31.12.2019.",
+            pocetak: "10:00",
+            kraj: "13:00",
+            naziv: "VA",
+            predavac: "Predavac 1"
+          } ,
+          {
+            datum: "01.12.2019.",
+            pocetak: "10:00",
+            kraj: "13:00",
+            naziv: "VA",
+            predavac: "Predavac 1"
+          }  
+          
           ];
     
          function daLiJeLjetni (trenutniMjesec) {
@@ -81,16 +108,28 @@ let Kalendar = (function(){
          }
               
              function ucitajPodatkeIzForme () {
+               
                 pocetak = document.getElementById("pocetak").value;
                 kraj = document.getElementById("kraj").value;
                 opcija = document.getElementById("saleSelect").value;
                 trenutniMjesec= document.getElementById("month").textContent;
+             
                 ucitajPodatkeImpl(periodicnaZauzeca, redovnaZauzeca);
                }
     
              function dajMjesecIzObjekta (datum) {
+<<<<<<< HEAD
                  console.log (datum.getMonth());
                     return nizMjeseci[datum.getMonth()];
+=======
+                let arr = datum.split(".");
+                 return nizMjeseci[parseInt(arr[1])-1];
+             }
+
+             function dajDanIzObjekta (datum) {
+                let arr = datum.split(".");
+                return arr[0];
+>>>>>>> 2021f9b7c94f35cedb7cb49c3c5a1b6b052380a0
              }
               
           
@@ -100,24 +139,29 @@ let Kalendar = (function(){
                     return false;
              } 
 
-             function ispraviFormatDatuma (datum) {
-                 var arr = datum.split(".");
-                 return arr[1] + "." + ++arr[0] + "." + arr[2];
+             function resetujBoje (kalendarRef) {
+                for (let i = 2, row ; row = kalendarRef.rows[i] , i<kalendarRef.rows.length; i++) {
+                    for (let j = 0, col; col = row.cells[j] ; j++) {
+                        let sadrzajKolone = col.innerHTML;
+                        sadrzajKolone=sadrzajKolone.replace("zauzeta", "slobodna");
+                        col.innerHTML=sadrzajKolone;
+                    }
+                }  
              }
         
             function obojiZauzecaImpl(kalendarRef, mjesec, sala, pocetak, kraj){
           //    console.log("Usao sam sa podacima"  +  kalendarRef + " " + mjesec + " "+ sala + " " + pocetak + " " + kraj);
+          console.log (mjesec);
              if (opcija==sala && periodic==true) {
                     
                      if (mjesec== trenutniMjesec && preklapanjeVremena(pocetak, kraj) ) {
                         let poz = mapaMjeseca.get(mjesec) + danZauzeca, counter=1;
-                        
+                       
                         for (let i = 2, row ; row = kalendarRef.rows[i] , i<kalendarRef.rows.length; i++) {
                             for (let j = 0, col; col = row.cells[j] ; j++ , counter++ ) {
-                           //     console.log(poz +" ||||||||| "+ counter);
+  
                                if (poz==counter)  {
-                                
-                                   col.innerHTML= "<td><table class=\"unutrasnja\"><tr><td>"+ danZauzeca +"</td></tr><tr><td class=\"zauzeta\"></td></tr></table></td>"; 
+                                 col.innerHTML= "<td><table class=\"unutrasnja\"><tr><td>"+ danZauzeca +"</td></tr><tr><td class=\"zauzeta\"></td></tr></table></td>"; 
                                     return ;
                                 }
                             }  
@@ -146,8 +190,10 @@ let Kalendar = (function(){
                 function ucitajPodatkeImpl(periodicna, redovna){
                    periodic=true;
                    
-                    iscrtajKalendarImpl(document.getElementById("datumi"),document.getElementById("month") );  //refresh boja
+                /*  if(!(promjenaKalendara))  */ /*iscrtajKalendarImpl(document.getElementById("datumi"),document.getElementById("month") );  */ //refresh boja
+                     resetujBoje(document.getElementById("datumi"));
                     for (let i =0; i<periodicna.length; i++) {
+<<<<<<< HEAD
                         let dat = new Date(ispraviFormatDatuma(periodicnaZauzeca[i].datum));
                         console.log(dat.toUTCString());
                         let objectMjesec = dajMjesecIzObjekta(dat); 
@@ -156,21 +202,25 @@ let Kalendar = (function(){
                             
                               obojiZauzecaImpl(document.getElementById("datumi"), objectMjesec,  periodicnaZauzeca[i].naziv, periodicnaZauzeca[i].pocetak, periodicnaZauzeca[i].kraj);
                           }
+=======
+                          let objectMjesec = dajMjesecIzObjekta(periodicna[i].datum); 
+                          danZauzeca =  parseInt(dajDanIzObjekta(periodicna[i].datum));
+                          obojiZauzecaImpl(document.getElementById("datumi"), objectMjesec,  periodicnaZauzeca[i].naziv, periodicnaZauzeca[i].pocetak, periodicnaZauzeca[i].kraj);
+                     }
+>>>>>>> 2021f9b7c94f35cedb7cb49c3c5a1b6b052380a0
                           periodic=false;
                     
                      for (let i =0; i<redovna.length; i++) {
                              if ((redovna[i].semestar=="zimski" && !(daLiJeLjetni(trenutniMjesec))) || (redovna[i].semestar=="ljetni" && daLiJeLjetni(trenutniMjesec))) {
                                  periodicniDan= redovna[i].dan;
                                  obojiZauzecaImpl(document.getElementById("datumi"), document.getElementById("month"),  redovna[i].naziv, redovna[i].pocetak, redovna[i].kraj);
-                                 
-                             }
-                               
-                                 
-                     }
+                            }
+                    }
                      periodicniDan=-1;
-                      
-                }
+                    }
+
                 function iscrtajKalendarImpl(kalendarRef, mjesec) {
+                 
                     var nazivMjeseca= mjesec.textContent, numberOfRows = kalendarRef.rows.length;
                     var pozicija=nizMjeseci.indexOf(nazivMjeseca) ;
                     if ((direction==1 && pozicija==11) || (pozicija==0 && direction==-1)) return ;
@@ -213,15 +263,17 @@ let Kalendar = (function(){
                         }  
                      }
                      direction=0;
-                  //   ucitajPodatkeImpl(periodicnaZauzeca, redovnaZauzeca);
+                     ucitajPodatkeIzForme();
                     }
     
                     function callPrev () {
                         direction= -1;
+                        promjenaKalendara= true;
                         iscrtajKalendarImpl(document.getElementById("datumi"),  document.getElementById("month"));
                     }
                     function callNext () {
                         direction= 1;
+                        promjenaKalendara= true;
                         iscrtajKalendarImpl(document.getElementById("datumi"),  document.getElementById("month"));
                     }
                 
@@ -245,7 +297,10 @@ let Kalendar = (function(){
 
   
    
- 
+ window.onload = (event) => {
+   
+ Kalendar.iscrtajKalendar(document.getElementById("datumi"), document.getElementById("month"));
+};
    
 
   

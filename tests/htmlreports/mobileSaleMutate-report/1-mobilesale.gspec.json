@@ -11,7 +11,7 @@
         "nodes" : [ {
           "name" : "Check layout: mobileSale.gspec included tags: ",
           "status" : "info",
-          "time" : 1573679437621,
+          "time" : 1573680956446,
           "sections" : [ {
             "name" : "Meni section",
             "place" : {
@@ -928,7 +928,7 @@
         }, {
           "name" : "Mutation testing: mobileSale.gspec included tags: ",
           "status" : "info",
-          "time" : 1573679437621,
+          "time" : 1573680956446,
           "mutationReport" : {
             "objectMutationStatistics" : {
               "menu_item-2" : {
@@ -1054,10 +1054,10 @@
           },
           "type" : "mutation"
         } ],
-        "time" : 1573679425439,
+        "time" : 1573680949229,
         "type" : "node"
       } ],
-      "time" : 1573679416659,
+      "time" : 1573680944411,
       "type" : "node"
     } ]
   }
