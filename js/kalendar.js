@@ -141,7 +141,7 @@ let Kalendar = (function(){
       
           function obojiZauzecaImpl(kalendarRef, mjesec, sala, pocetak, kraj){
         //    console.log("Usao sam sa podacima"  +  kalendarRef + " " + mjesec + " "+ sala + " " + pocetak + " " + kraj);
-        console.log (mjesec);
+      //  console.log (mjesec);
            if (opcija==sala && periodic==true) {
                   
                    if (mjesec== trenutniMjesec && preklapanjeVremena(pocetak, kraj) ) {
@@ -228,8 +228,8 @@ let Kalendar = (function(){
                            }
                       }  
                    }
-                  
-                    if (dayCounter<daniMjesec) {
+                   
+                    if (dayCounter<=daniMjesec) {
                        newRow= kalendarRef.insertRow (numberOfRows);
                        newRow.innerHTML = "<tr class=\"red\"> <td></td><td></td><td></td> <td></td> <td></td><td></td><td></td></tr>";
                       for (var j = 0, col; col = newRow.cells[j] ; j++, dayCounter++) {
