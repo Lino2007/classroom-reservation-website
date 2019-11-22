@@ -23,7 +23,7 @@ let Kalendar = (function(){
    var periodicnaZauzeca = [ ];
   
        function daLiJeLjetni (trenutniMjesec) {
-           for (let i=2; i<=8; i++) 
+           for (let i=1; i<=8; i++) 
                  if (trenutniMjesec==nizMjeseci[i]) return true;
            return false;
        }
@@ -137,7 +137,7 @@ let Kalendar = (function(){
            //---------------------------------------------------
               function ucitajPodatkeImpl(periodicna, redovna){
                  periodic=true;
-                 
+                 periodicnaZauzeca=[]; redovnaZauzeca=[];
               /*  if(!(promjenaKalendara))  */ /*iscrtajKalendarImpl(document.getElementById("datumi"),document.getElementById("month") );  */ //refresh boja
                    resetujBoje(document.getElementById("datumi"));
                   for (let i =0; i<periodicna.length; i++) {
@@ -332,7 +332,7 @@ var peroidic = [
  
 window.onload = (event) => {
  
-//Kalendar.iscrtajKalendar(document.getElementById("datumi"), 10);
+Kalendar.iscrtajKalendar(document.getElementById("datumi"), 10);
 
 //Kalendar.ucitajPodatke(peroidic, redoic);
 //Kalendar.ucitajPodatkeIzForme ();
