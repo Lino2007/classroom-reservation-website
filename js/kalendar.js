@@ -284,21 +284,21 @@ var peroidic = [
           datum: "21.12.2019.",
           pocetak: "10:00",
           kraj: "13:00",
-          naziv: "VA",
+          naziv: "VA-1",
           predavac: "Predavac 1"
         } ,
         {
           datum: "31.12.2019.",
           pocetak: "10:00",
           kraj: "13:00",
-          naziv: "VA",
+          naziv: "VA-1",
           predavac: "Predavac 1"
         } ,
         {
           datum: "01.12.2019.",
           pocetak: "10:00",
           kraj: "13:00",
-          naziv: "VA",
+          naziv: "VA-1",
           predavac: "Predavac 1"
         }  
          
@@ -309,7 +309,7 @@ var peroidic = [
           semestar: "zimski",
           pocetak:  "12:00",
           kraj:  "14:00",
-          naziv: "VA",
+          naziv: "VA-1",
           predavac: "Predavac 1"
           },
           {
@@ -317,7 +317,7 @@ var peroidic = [
               semestar: "zimski",
               pocetak:  "13:00",
               kraj:  "14:00",
-              naziv: "VA",
+              naziv: "VA-1",
               predavac: "Predavac 1"
               } ,
               {
@@ -325,7 +325,7 @@ var peroidic = [
                   semestar: "ljetni",
                   pocetak:  "13:00",
                   kraj:  "14:00",
-                  naziv: "VA",
+                  naziv: "VA-1",
                   predavac: "Predavac 1"
                   }];
 
