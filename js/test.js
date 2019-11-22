@@ -2,6 +2,9 @@
 let assert = chai.assert;
 describe('datumi', function() {
     describe ('iscrtajKalendar()' , function() {
+		
+ 	
+		//Testovi za 2. zadatak
              it ('Pozivanje iscrtajKalendar za mjesec sa 30 dana- mjesec juni', function () {
             //u mjesecu junu imamo 30 dana (zadnja nedjelja), pa bi zadnja celija trebala imati vrijednost 30
              Kalendar.iscrtajKalendar (document.getElementById("datumi"), 5);
@@ -27,11 +30,11 @@ describe('datumi', function() {
 		let red =  tabele.getElementsByClassName("red")[1];
         let celija = red.getElementsByTagName("td");  //cetvrti td u prvom redu mora imati vrijednost 1
         
-        var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+        var firstDay = new Date(date.getFullYear(), date.getMonth(), 1); 
          /*vrijednost za petak se nalazi u petoj celiji (indexa 4) u SVAKOM redu (klase red), posto je getDay() = 5 onda je ocekivano da 
 		  se trazeni sadrzaj nalazi u td indexa 4 (getDay()-1)
 		ukoliko vrijeme pregledanja bude decembar onda ce na sestoj poziciji (nedjelja) biti prvi dan  (textcontext=1) */
-        firstDay= firstDay.getDay()-1;
+       firstDay= firstDay.getDay()-1;
 	
 		assert.equal(celija[firstDay].textContent, 1, "Petak je prvi u mjesecu novembru ili nedjelja u mjesecu decembru (ovisno kad se spirala pregleda) .");
            
@@ -110,45 +113,32 @@ describe('datumi', function() {
 		}
 	   }); 
 	   
-	  
+	  });
 	  
 	   
 	   
-    });
- /*describe('crtaj()', function() {
-   it('should draw 3 rows when parameter are 2,3', function() {
-     Tabela.crtaj(2,3);
-     let tabele = document.getElementsByTagName("table");
-     let tabela = tabele[tabele.length-1]
-     let redovi = tabela.getElementsByTagName("tr");
-     assert.equal(redovi.length, 3,"Broj redova treba biti 3");
-   });
-   it('should draw 2 columns in row 2 when parameter are 2,3', function() {
-       Tabela.crtaj(2,3);
-       let tabele = document.getElementsByTagName("table");
-       let tabela = tabele[tabele.length-1]
-       let redovi = tabela.getElementsByTagName("tr");
-       let kolone = redovi[2].getElementsByTagName("td");
-       let brojPrikazanih = 0;
-       for(let i=0;i<kolone.length;i++){
-           let stil = window.getComputedStyle(kolone[i])
-           if(stil.display!=='none') brojPrikazanih++;
-       }
-       assert.equal(brojPrikazanih, 2,"Broj kolona treba biti 2");
-     });
- }); 
- 
- describe('Kalendar', function() {
- describe('iscrtajKalendar()', function() {
-   it('Pozivanje iscrtajKalendar za mjesec sa 30 dana - April (provjera redova)', function() {
-     Kalendar.iscrtajKalendar(document.getElementsByClassName("cal")[0], 3);
-     let tabele = document.getElementsByClassName("tabela1");
-     let tabela = tabele[tabele.length-1];
-     let brojRedova = tabela.querySelectorAll("body>div>table>tr");
-     assert.equal(brojRedova.length, 8,"Broj redova treba biti 8");
-   });
- 
- 
- 
- */
+  
+   
+ describe ('obojiZauzeca()' , function() {
+   
+   //Testovi za 1. zadatak
+		 it ('Pozivanje obojiZauzeca kada podaci nisu ucitani', function () {
+			 document.getElementById("pocetak").value="05:00";
+			  document.getElementById("kraj").value="23:00";
+			  document.getElementById("saleSelect").value="MA";
+			 Kalendar.iscrtajKalendar(document.getElementById("datumi"), 1);
+			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 1, "VA" , "01:00", "23:00");
+			 
+			  let tabele =  document.getElementsByTagName("table")[0];
+			  let celije = tabele.getElementsByClassName("unutrasnja");
+			  
+			//provjeravam da li je svaka celija slobodna
+			 for (let i=0; i< celije.length ; i++) {
+				 let obojenje= celije[0].getElementsByTagName("td")[1];
+				 assert.equal(obojenje.className, "slobodna");
+			 }
+			 
+		 }); 
+  });
+   
 });

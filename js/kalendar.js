@@ -16,85 +16,11 @@ let Kalendar = (function(){
  const nizMjeseci =  ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'];
  var periodic= false, refresh = false;
   var redovnaZauzeca = [
-      {
-          dan: 1,
-          semestar: "zimski",
-          pocetak:  "12:00",
-          kraj:  "14:00",
-          naziv: "MA",
-          predavac: "Predavac 1"
-          },
-          {
-              dan: 3,
-              semestar: "zimski",
-              pocetak:  "13:00",
-              kraj:  "14:00",
-              naziv: "VA",
-              predavac: "Predavac 1"
-              } ,
-              {
-                  dan: 6,
-                  semestar: "ljetni",
-                  pocetak:  "13:00",
-                  kraj:  "14:00",
-                  naziv: "VA",
-                  predavac: "Predavac 1"
-                  }
+      
           
   ];
 
-   var periodicnaZauzeca = [
-        {
-          datum: "12.02.2019.",
-          pocetak: "15:00",
-          kraj: "17:00",
-          naziv: "MA",
-          predavac: "Predavac 1"
-        },
-        {
-          datum: "01.10.2019.",
-          pocetak: "9:00",
-          kraj: "11:00",
-          naziv: "MA",
-          predavac: "Predavac 1"
-        }, 
-        {
-          datum: "12.10.2019.",
-          pocetak: "10:00",
-          kraj: "13:00",
-          naziv: "MA",
-          predavac: "Predavac 1"
-        },
-        {
-          datum: "20.02.2019.",
-          pocetak: "10:00",
-          kraj: "13:00",
-          naziv: "MA",
-          predavac: "Predavac 1"
-        },
-        {
-          datum: "21.12.2019.",
-          pocetak: "10:00",
-          kraj: "13:00",
-          naziv: "VA",
-          predavac: "Predavac 1"
-        } ,
-        {
-          datum: "31.12.2019.",
-          pocetak: "10:00",
-          kraj: "13:00",
-          naziv: "VA",
-          predavac: "Predavac 1"
-        } ,
-        {
-          datum: "01.12.2019.",
-          pocetak: "10:00",
-          kraj: "13:00",
-          naziv: "VA",
-          predavac: "Predavac 1"
-        }  
-        
-        ];
+   var periodicnaZauzeca = [ ];
   
        function daLiJeLjetni (trenutniMjesec) {
            for (let i=2; i<=8; i++) 
@@ -109,8 +35,15 @@ let Kalendar = (function(){
               opcija = document.getElementById("saleSelect").value;
               trenutniMjesec= document.getElementById("month").textContent;
            
-              ucitajPodatkeImpl(periodicnaZauzeca, redovnaZauzeca);
+              obojiZauzecaImpl(document.getElementById("datumi"),  nizMjeseci.indexOf(trenutniMjesec), opcija,pocetak, kraj);
              }
+			 
+			 function ucitajPodatkeIzFormeStandardno () {
+				  pocetak = document.getElementById("pocetak").value;
+              kraj = document.getElementById("kraj").value;
+              opcija = document.getElementById("saleSelect").value;
+              trenutniMjesec= document.getElementById("month").textContent;
+			 }
   
            function dajMjesecIzObjekta (datum) {
               let arr = datum.split(".");
@@ -140,19 +73,25 @@ let Kalendar = (function(){
            }
       
           function obojiZauzecaImpl(kalendarRef, mjesec, sala, pocetak, kraj){
-        //    console.log("Usao sam sa podacima"  +  kalendarRef + " " + mjesec + " "+ sala + " " + pocetak + " " + kraj);
-      //  console.log (mjesec);
-           if (opcija==sala && periodic==true) {
-                  
-                   if (mjesec== trenutniMjesec && preklapanjeVremena(pocetak, kraj) ) {
-                      let poz = mapaMjeseca.get(mjesec) + danZauzeca, counter=1;
-                     
+			  ucitajPodatkeIzFormeStandardno();
+	         resetujBoje(document.getElementById("datumi"));
+			for (let k =0; k<periodicnaZauzeca.length; k++) {
+				
+                        let objectMjesec = dajMjesecIzObjekta(periodicnaZauzeca[k].datum); 
+                        danZauzeca =  parseInt(dajDanIzObjekta(periodicnaZauzeca[k].datum)); 
+           if (sala==periodicnaZauzeca[k].naziv ) {
+
+                   if (mjesec== nizMjeseci.indexOf(objectMjesec) && preklapanjeVremena(periodicnaZauzeca[k].pocetak, periodicnaZauzeca[k].kraj) ) {
+                                
+                      let poz = mapaMjeseca.get(objectMjesec) + danZauzeca, counter=1;
+                            console.log("Pozicija je poz" + poz );
                       for (let i = 2, row ; row = kalendarRef.rows[i] , i<kalendarRef.rows.length; i++) {
                           for (let j = 0, col; col = row.cells[j] ; j++ , counter++ ) {
-
+                                 
                              if (poz==counter)  {
+								 					 
                                col.innerHTML= "<td><table class=\"unutrasnja\"><tr><td>"+ danZauzeca +"</td></tr><tr><td class=\"zauzeta\"></td></tr></table></td>"; 
-                                  return ;
+                              
                               }
                           }  
                       }
@@ -160,9 +99,14 @@ let Kalendar = (function(){
                  } 
               
              }
-          
-          if (opcija==sala && periodic!=true) {
-              if (preklapanjeVremena(pocetak, kraj) && periodicniDan!=-1 ) {
+			}
+			
+			for (let k =0; k<redovnaZauzeca.length; k++) {
+				
+              if (sala==redovnaZauzeca[k].naziv && ((redovnaZauzeca[k].semestar=="zimski" && !(daLiJeLjetni(nizMjeseci[mjesec]))) || (redovnaZauzeca[k].semestar=="ljetni" && daLiJeLjetni(nizMjeseci[mjesec]))) ) {
+              console.log ("shit");
+			  periodicniDan= redovnaZauzeca[k].dan;
+			  if (preklapanjeVremena(redovnaZauzeca[k].pocetak, redovnaZauzeca[k].kraj) && periodicniDan!=-1 ) {
                 for (let i = 2, row ; row = kalendarRef.rows[i] , i<kalendarRef.rows.length; i++) {
                      for (let j = 0, col; col = row.cells[j] ; j++ ) {
                         if (col.textContent!="" && j==periodicniDan) {
@@ -173,6 +117,20 @@ let Kalendar = (function(){
                   
             } 
           }
+			}
+          
+        /*  if (opcija==sala && periodic!=true) {
+              if (preklapanjeVremena(pocetak, kraj) && periodicniDan!=-1 ) {
+                for (let i = 2, row ; row = kalendarRef.rows[i] , i<kalendarRef.rows.length; i++) {
+                     for (let j = 0, col; col = row.cells[j] ; j++ ) {
+                        if (col.textContent!="" && j==periodicniDan) {
+                          col.innerHTML= "<td><table class=\"unutrasnja\"><tr><td>"+ col.textContent +"</td></tr><tr><td class=\"zauzeta\"></td></tr></table></td>"; 
+                        }
+                     }  
+                 }
+                  
+            } 
+          } */
 
            }
 
@@ -183,19 +141,14 @@ let Kalendar = (function(){
               /*  if(!(promjenaKalendara))  */ /*iscrtajKalendarImpl(document.getElementById("datumi"),document.getElementById("month") );  */ //refresh boja
                    resetujBoje(document.getElementById("datumi"));
                   for (let i =0; i<periodicna.length; i++) {
-                        let objectMjesec = dajMjesecIzObjekta(periodicna[i].datum); 
-                        danZauzeca =  parseInt(dajDanIzObjekta(periodicna[i].datum));
-                        obojiZauzecaImpl(document.getElementById("datumi"), objectMjesec,  periodicnaZauzeca[i].naziv, periodicnaZauzeca[i].pocetak, periodicnaZauzeca[i].kraj);
+                          periodicnaZauzeca.push(periodicna[i]);
                    }
-                        periodic=false;
+                   
                   
                    for (let i =0; i<redovna.length; i++) {
-                           if ((redovna[i].semestar=="zimski" && !(daLiJeLjetni(trenutniMjesec))) || (redovna[i].semestar=="ljetni" && daLiJeLjetni(trenutniMjesec))) {
-                               periodicniDan= redovna[i].dan;
-                               obojiZauzecaImpl(document.getElementById("datumi"), document.getElementById("month"),  redovna[i].naziv, redovna[i].pocetak, redovna[i].kraj);
-                          }
+                          redovnaZauzeca.push(redovna[i]);
                   }
-                   periodicniDan=-1;
+             
                   }
 
               function iscrtajKalendarImpl(kalendarRef, mjesec) {
@@ -275,11 +228,114 @@ let Kalendar = (function(){
   }());
   //primjer korištenja modula
   //Kalendar.obojiZauzeca(document.getElementById(“kalendar”),1,”1-15”,”12:00”,”13:30”);
+var peroidic = [
 
+ 
+        {
+          datum: "12.02.2019.",
+          pocetak: "15:00",
+          kraj: "17:00",
+          naziv: "MA",
+          predavac: "Predavac 1"
+        },
+        {
+          datum: "01.10.2019.",
+          pocetak: "9:00",
+          kraj: "11:00",
+          naziv: "MA",
+          predavac: "Predavac 1"
+        }, 
+        {
+          datum: "12.10.2019.",
+          pocetak: "10:00",
+          kraj: "13:00",
+          naziv: "MA",
+          predavac: "Predavac 1"
+        },
+		 {
+          datum: "31.10.2019.",
+          pocetak: "10:00",
+          kraj: "13:00",
+          naziv: "MA",
+          predavac: "Predavac 1"
+        },
+		 {
+          datum: "30.10.2019.",
+          pocetak: "10:00",
+          kraj: "13:00",
+          naziv: "MA",
+          predavac: "Predavac 1"
+        },
+		{
+          datum: "29.10.2019.",
+          pocetak: "10:00",
+          kraj: "13:00",
+          naziv: "MA",
+          predavac: "Predavac 1"
+        },
+        {
+          datum: "20.02.2019.",
+          pocetak: "10:00",
+          kraj: "13:00",
+          naziv: "MA",
+          predavac: "Predavac 1"
+        },
+        {
+          datum: "21.12.2019.",
+          pocetak: "10:00",
+          kraj: "13:00",
+          naziv: "VA",
+          predavac: "Predavac 1"
+        } ,
+        {
+          datum: "31.12.2019.",
+          pocetak: "10:00",
+          kraj: "13:00",
+          naziv: "VA",
+          predavac: "Predavac 1"
+        } ,
+        {
+          datum: "01.12.2019.",
+          pocetak: "10:00",
+          kraj: "13:00",
+          naziv: "VA",
+          predavac: "Predavac 1"
+        }  
+         
+        ];
+     var redoic = [
+	 {
+          dan: 1,
+          semestar: "zimski",
+          pocetak:  "12:00",
+          kraj:  "14:00",
+          naziv: "VA",
+          predavac: "Predavac 1"
+          },
+          {
+              dan: 3,
+              semestar: "zimski",
+              pocetak:  "13:00",
+              kraj:  "14:00",
+              naziv: "VA",
+              predavac: "Predavac 1"
+              } ,
+              {
+                  dan: 6,
+                  semestar: "ljetni",
+                  pocetak:  "13:00",
+                  kraj:  "14:00",
+                  naziv: "VA",
+                  predavac: "Predavac 1"
+                  }];
 
  
 window.onload = (event) => {
  
-Kalendar.iscrtajKalendar(document.getElementById("datumi"), 10);
+//Kalendar.iscrtajKalendar(document.getElementById("datumi"), 10);
+
+//Kalendar.ucitajPodatke(peroidic, redoic);
+//Kalendar.ucitajPodatkeIzForme ();
 };
+ 
  
