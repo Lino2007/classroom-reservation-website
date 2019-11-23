@@ -173,6 +173,116 @@ let Kalendar = (function () {
     return new Date(year, month, 0).getDate();
   }
 
+  var per = [
+
+
+    {
+      datum: "12.02.2019.",
+      pocetak: "15:00",
+      kraj: "17:00",
+      naziv: "VA1",
+      predavac: "Predavac 1"
+    },
+          {
+            datum: "01.10.2019.",
+            pocetak: "15:00",
+            kraj: "17:00",
+            naziv: "MA",
+            predavac: "Predavac 1"
+          }, 
+          {
+            datum: "12.10.2019.",
+            pocetak: "15:00",
+            kraj: "17:00",
+            naziv: "MA",
+            predavac: "Predavac 1"
+          },
+       {
+            datum: "31.10.2019.",
+            pocetak: "15:00",
+            kraj: "17:00",
+            naziv: "MA",
+            predavac: "Predavac 1"
+          },
+       {
+            datum: "30.10.2019.",
+            pocetak: "10:00",
+            kraj: "13:00",
+            naziv: "MA",
+            predavac: "Predavac 1"
+          },
+      {
+            datum: "29.10.2019.",
+            pocetak: "10:00",
+            kraj: "13:00",
+            naziv: "MA",
+            predavac: "Predavac 1"
+          },
+          {
+            datum: "20.02.2019.",
+            pocetak: "10:00",
+            kraj: "13:00",
+            naziv: "VA1",
+            predavac: "Predavac 1"
+          },
+          {
+            datum: "21.11.2019.",
+            pocetak: "15:00",
+            kraj: "17:00",
+            naziv: "VA1",
+            predavac: "Predavac 1"
+          } ,
+          {
+            datum: "31.12.2019.",
+            pocetak: "15:00",
+            kraj: "17:00",
+            naziv: "VA1",
+            predavac: "Predavac 1"
+          } ,
+          {
+            datum: "01.12.2019.",
+            pocetak: "15:00",
+            kraj: "17:00",
+            naziv: "VA1",
+            predavac: "Predavac 1"
+          }   
+  
+  ];
+  var red = [
+    {
+      dan: 1,
+      semestar: "zimski",
+      pocetak: "15:00",
+      kraj: "17:00",
+      naziv: "VA1",
+      predavac: "Predavac 1"
+    },
+    {
+      dan: 3,
+      semestar: "ljetni",
+      pocetak: "15:00",
+      kraj: "17:00",
+      naziv: "VA1",
+      predavac: "Predavac 1"
+    },
+    {
+      dan: 6,
+      semestar: "zimski",
+      pocetak: "13:00",
+      kraj: "14:00",
+      naziv: "VA2",
+      predavac: "Predavac 1"
+    }];
+  
+  
+  window.onload = (event) => {
+    Kalendar.iscrtajKalendar(document.getElementById("datumi"), 10);
+    Kalendar.ucitajPodatke(per, red);
+    Kalendar.ucitajPodatkeIzForme ();
+  };
+  
+  
+
  return {
     obojiZauzeca: obojiZauzecaImpl,
     ucitajPodatke: ucitajPodatkeImpl,
@@ -182,116 +292,4 @@ let Kalendar = (function () {
     ucitajPodatkeIzForme: ucitajPodatkeIzForme
   }
 }());
-//primjer korištenja modula
-//Kalendar.obojiZauzeca(document.getElementById(“kalendar”),1,”1-15”,”12:00”,”13:30”);
-var peroidic = [
-
-
-  {
-    datum: "12.02.2019.",
-    pocetak: "15:00",
-    kraj: "17:00",
-    naziv: "VA1",
-    predavac: "Predavac 1"
-  }/*,
-        {
-          datum: "01.10.2019.",
-          pocetak: "9:00",
-          kraj: "11:00",
-          naziv: "MA",
-          predavac: "Predavac 1"
-        }, 
-        {
-          datum: "12.10.2019.",
-          pocetak: "10:00",
-          kraj: "13:00",
-          naziv: "MA",
-          predavac: "Predavac 1"
-        },
-		 {
-          datum: "31.10.2019.",
-          pocetak: "10:00",
-          kraj: "13:00",
-          naziv: "MA",
-          predavac: "Predavac 1"
-        },
-		 {
-          datum: "30.10.2019.",
-          pocetak: "10:00",
-          kraj: "13:00",
-          naziv: "MA",
-          predavac: "Predavac 1"
-        },
-		{
-          datum: "29.10.2019.",
-          pocetak: "10:00",
-          kraj: "13:00",
-          naziv: "MA",
-          predavac: "Predavac 1"
-        },
-        {
-          datum: "20.02.2019.",
-          pocetak: "10:00",
-          kraj: "13:00",
-          naziv: "VA1",
-          predavac: "Predavac 1"
-        },
-        {
-          datum: "21.12.2019.",
-          pocetak: "10:00",
-          kraj: "13:00",
-          naziv: "VA1",
-          predavac: "Predavac 1"
-        } ,
-        {
-          datum: "31.12.2019.",
-          pocetak: "10:00",
-          kraj: "13:00",
-          naziv: "VA1",
-          predavac: "Predavac 1"
-        } ,
-        {
-          datum: "01.12.2019.",
-          pocetak: "10:00",
-          kraj: "13:00",
-          naziv: "VA1",
-          predavac: "Predavac 1"
-        }   */
-
-];
-var redoic = [
-  {
-    dan: 1,
-    semestar: "zimski",
-    pocetak: "15:00",
-    kraj: "17:00",
-    naziv: "VA1",
-    predavac: "Predavac 1"
-  },
-  {
-    dan: 3,
-    semestar: "ljetni",
-    pocetak: "15:00",
-    kraj: "17:00",
-    naziv: "VA1",
-    predavac: "Predavac 1"
-  },
-  {
-    dan: 6,
-    semestar: "zimski",
-    pocetak: "13:00",
-    kraj: "14:00",
-    naziv: "VA1",
-    predavac: "Predavac 1"
-  }];
-
-
-window.onload = (event) => {
-
-  Kalendar.iscrtajKalendar(document.getElementById("datumi"), 1);
-
-  //Kalendar.ucitajPodatke(peroidic, redoic);
- // Kalendar.obojiZauzeca(document.getElementById("datumi"), 1, "VA1", "12:00", "15:00");
-  //Kalendar.ucitajPodatkeIzForme ();
-};
 
