@@ -10,7 +10,8 @@ describe('datumi', function() {
              Kalendar.iscrtajKalendar (document.getElementById("datumi"), 5);
            let tabele =  document.getElementsByTagName("table");
            let tabela = tabele[tabele.length-1];
-           let element = tabela.querySelector ("tbody>tr>td");
+		   let element = tabela.querySelector ("tbody>tr>td");
+		   console.log (element.innerHTML);
             assert.equal (30, element.innerHTML, "Vrijednost zadnje celija tabele juna je vrijednosti 30");
         });
 
@@ -19,7 +20,7 @@ describe('datumi', function() {
            let tabele =  document.getElementsByTagName("table");
            let tabela = tabele[tabele.length-1];
            let element = tabela.querySelector ("tbody>tr>td");
-          // console.log (tabele.length);
+        
             assert.equal (31, element.innerHTML, "Vrijednost zadnje celija tabele oktobra je vrijednosti 31");
         });
 
@@ -123,11 +124,8 @@ describe('datumi', function() {
    
    //Testovi za 1. zadatak
 		 it ('Pozivanje obojiZauzeca kada podaci nisu ucitani', function () {
-			 document.getElementById("pocetak").value="05:00";
-			  document.getElementById("kraj").value="23:00";
-			  document.getElementById("saleSelect").value="MA";
 			 Kalendar.iscrtajKalendar(document.getElementById("datumi"), 1);
-			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 1, "VA" , "01:00", "23:00");
+			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 1, "VA" , "05:00", "23:00");
 			 
 			  let tabele =  document.getElementsByTagName("table")[0];
 			  let celije = tabele.getElementsByClassName("unutrasnja");
@@ -141,9 +139,6 @@ describe('datumi', function() {
 		 }); 
 		 
 		  it ('Pozivanje obojiZauzeca gdje u zauzecima postoje duple vrijednosti istog termina', function () {
-			 document.getElementById("pocetak").value="13:00";
-			  document.getElementById("kraj").value="15:00";
-			  document.getElementById("saleSelect").value="0-01";
 			  //duplicirani termini za isti period
 			let dupliciraniTermini=[ {
             datum: "12.02.2019.",
@@ -161,7 +156,7 @@ describe('datumi', function() {
            } ];
 			 Kalendar.iscrtajKalendar(document.getElementById("datumi"), 1);
 			 Kalendar.ucitajPodatke ( dupliciraniTermini, []);
-			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 1, "0-01" , "14:00", "14:45");
+			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 1, "0-01" , "13:00", "15:00");
 			 
 			  let tabele =  document.getElementsByTagName("table")[0];
 			  //index 11 je 12.02.
@@ -173,9 +168,6 @@ describe('datumi', function() {
 		 }); 
 		 
 		  it ('Pozivanje obojiZauzeca kada u podacima postoji periodicno zauzece za drugi semestar', function () {
-			 document.getElementById("pocetak").value="09:00";
-			  document.getElementById("kraj").value="15:00";
-			  document.getElementById("saleSelect").value="MA";
 			  //duplicirani termini za isti period
 			let zauzeceDrugogSemestra=[ {
           dan: 1,
@@ -188,7 +180,7 @@ describe('datumi', function() {
            ];
 			 Kalendar.iscrtajKalendar(document.getElementById("datumi"), 0);
 			 Kalendar.ucitajPodatke ([], zauzeceDrugogSemestra);
-			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 0, "MA" , "13:00", "14:20");
+			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 0, "MA" , "09:00", "15:00");
 			 //prvo provjeravam da li se boji zauzece u semestru u kojem se ono treba obojiti
 			 //utorak je prvi u januaru i on se treba obojiti (jer je dan=1)
 			 let tabele =  document.getElementsByTagName("table")[0];
@@ -197,7 +189,7 @@ describe('datumi', function() {
 			 
 			 //pokusavam isto u ljetnom semestru
 			  Kalendar.iscrtajKalendar(document.getElementById("datumi"), 5);
-			  Kalendar.obojiZauzeca(document.getElementById("datumi"), 5, "MA" , "13:00", "14:20");
+			  Kalendar.obojiZauzeca(document.getElementById("datumi"), 5, "MA" , "09:00", "15:00");
 			  
 			  celije = tabele.getElementsByClassName("unutrasnja")[3];  //u junu utorak je 3.
 
@@ -209,11 +201,7 @@ describe('datumi', function() {
 		 
 		 
 		  it ('Pozivanje oboji zauzece kada u podacima postoji zauzece termina, ali u drugom mjesecu ', function () {
-			 document.getElementById("pocetak").value="17:00";
-			  document.getElementById("kraj").value="19:00";
-			  document.getElementById("saleSelect").value="EE-1";
-			 
-			let zauzeceDrugogMjeseca=[ 
+			 	let zauzeceDrugogMjeseca=[ 
 		 {
           datum: "31.10.2019.",
           pocetak: "16:00",
@@ -231,7 +219,7 @@ describe('datumi', function() {
            ];
 			 Kalendar.iscrtajKalendar(document.getElementById("datumi"), 9);
 			 Kalendar.ucitajPodatke ( zauzeceDrugogMjeseca , []);
-			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 9, "EE-1" , "16:00", "18:20");
+			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 9, "EE-1" , "17:00", "19:00");
 			 //prvo provjeravam da li se boji zauzece u mjesecu oktobru
 			 let tabele =  document.getElementsByTagName("table")[0];
 		     let celije = tabele.getElementsByClassName("unutrasnja")[29];
@@ -241,7 +229,7 @@ describe('datumi', function() {
 			 
 			 //pokusavam isto u ljetnom semestru
 			  Kalendar.iscrtajKalendar(document.getElementById("datumi"), 5);
-			   Kalendar.obojiZauzeca(document.getElementById("datumi"), 5, "EE-1" , "16:00", "18:20");
+			  Kalendar.obojiZauzeca(document.getElementById("datumi"), 5, "EE-1" , "17:00", "19:00");
 			  
 			  celije = tabele.getElementsByClassName("unutrasnja");  
 
@@ -254,10 +242,7 @@ describe('datumi', function() {
 			 
 		 }); 
 		 
-		  it ('Pozivanje kada su u podacima svi termini u mjesecu zauzeti xx ', function () {
-			 document.getElementById("pocetak").value="01:00";
-			  document.getElementById("kraj").value="23:00";
-			  document.getElementById("saleSelect").value="VA1";
+		  it ('Pozivanje kada su u podacima svi termini u mjesecu zauzeti ', function () {
 
 			let potpunoZauzece=[ 
 			{
@@ -321,7 +306,7 @@ describe('datumi', function() {
            ];
 			 Kalendar.iscrtajKalendar(document.getElementById("datumi"), 9);
 			 Kalendar.ucitajPodatke ( [], potpunoZauzece);
-			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 9, "VA1" , "01:00", "15:20");
+			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 9, "VA1" , "01:00", "23:00");
 
 			 let tabele =  document.getElementsByTagName("table")[0];
 		     let celije = tabele.getElementsByClassName("unutrasnja"); 
@@ -335,10 +320,7 @@ describe('datumi', function() {
 		 }); 
 		 
 		 
-		  it ('Pozivanje kada su u podacima svi termini u mjesecu zauzeti ', function () {
-			 document.getElementById("pocetak").value="03:00";
-			  document.getElementById("kraj").value="11:00";
-			
+		  it ('Dva puta uzastopno pozivanje obojiZauzece', function () {
 			let potpunoZauzece=[ 
 			{
           dan: 0,
@@ -351,7 +333,7 @@ describe('datumi', function() {
            ];
 			 Kalendar.iscrtajKalendar(document.getElementById("datumi"), 10);
 			 Kalendar.ucitajPodatke ( [], potpunoZauzece);
-			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 10, "VA1" , "01:00", "15:20");
+			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 10, "VA1" , "03:00", "11:20");
 
 			 let tabele =  document.getElementsByTagName("table")[0];
 			 let red = tabele.getElementsByClassName("red");
@@ -366,7 +348,7 @@ describe('datumi', function() {
 				 assert.equal(obojenje.className, "zauzeta");
 			 }
 			 //ponovni poziv
-			  Kalendar.obojiZauzeca(document.getElementById("datumi"), 10, "VA1" , "01:00", "15:20");
+			  Kalendar.obojiZauzeca(document.getElementById("datumi"), 10, "VA1" , "03:00", "11:20");
 			 
 			   //ista provjera
 			   for (let i=2; i< 6 ; i++) {
@@ -380,11 +362,7 @@ describe('datumi', function() {
 		 
 		 
 		  it ('Pozivanje ucitajPodatke, obojiZazeca, ucitajPodatke (drugi podaci), obojiZauzeca ', function () {
-			 document.getElementById("pocetak").value="10:00";
-			  document.getElementById("kraj").value="11:00";
-			  document.getElementById("saleSelect").value="VA2";
-		
-			let zauzece1=[ 
+		let zauzece1=[ 
 			{
           datum: "01.08.2019.",
           pocetak: "10:30",
@@ -428,11 +406,7 @@ describe('datumi', function() {
 		 it ('Pozivanje obojiZauzeca nad periodicnim i vanrednim zauzecima (overlap) ', function () {
 			 //pozivam obojiZauzeca nad periodicnim i vanrednim zauzecima u istom vremenu
 			 //ocekivano: presjek ova dva tipa zauzeca ne smije utjecati na finalno obojenje (mora ostati zauzeto)
-			 document.getElementById("pocetak").value="05:00";
-			  document.getElementById("kraj").value="11:00";
-			  document.getElementById("saleSelect").value="VA2"; 
-			  
-			let zauzece1=[ 
+				let zauzece1=[ 
 				{
           dan: 1,
           semestar: "ljetni",
@@ -472,11 +446,7 @@ describe('datumi', function() {
 		  it ('Pozivanje obojiZauzeca nad periodicnim zauzecima za dva mjeseca istog semestra ', function () {
 			 //pozivam obojiZauzeca nad periodicnim zauzecima 
 			 //ocekivano: ukoliko je ljetni semestar onda ce oba mjeseca tog semestra biti obojena za specificirani dan
-			 document.getElementById("pocetak").value="05:00";
-			  document.getElementById("kraj").value="11:00";
-			  document.getElementById("saleSelect").value="VA2"; 
-			  
-			let zauzece1=[ 
+        let zauzece1=[ 
 				{
           dan: 1,
           semestar: "ljetni",
@@ -520,9 +490,6 @@ describe('datumi', function() {
 		
 		 }); 
 		 
-		 
-		 
-		 
-  });
+	});
    
 });
