@@ -364,7 +364,7 @@ describe('datumi', function() {
 		  it ('Pozivanje ucitajPodatke, obojiZazeca, ucitajPodatke (drugi podaci), obojiZauzeca ', function () {
 		let zauzece1=[ 
 			{
-          datum: "01.08.2019.",
+          datum: "01.10.2019.",
           pocetak: "10:30",
           kraj: "12:00",
           naziv: "VA2",
@@ -374,16 +374,16 @@ describe('datumi', function() {
 		   
 		   let zauzece2=[ 
 			{
-          datum: "05.08.2019.",
+          datum: "05.10.2019.",
           pocetak: "10:30",
           kraj: "12:00",
           naziv: "VA2",
           predavac: "Predavac 1"
         }
            ];
-			 Kalendar.iscrtajKalendar(document.getElementById("datumi"), 7);
+			 Kalendar.iscrtajKalendar(document.getElementById("datumi"), 9);
 			 Kalendar.ucitajPodatke ( zauzece1, []);
-			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 7, "VA2" , "10:00", "11:00");
+			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 9, "VA2" , "10:00", "11:00");
 
 			 let tabele =  document.getElementsByTagName("table")[0];
 			 let celija = tabele.getElementsByClassName("unutrasnja")[0];
@@ -393,11 +393,13 @@ describe('datumi', function() {
 			assert.equal (celija.getElementsByTagName("td")[1].className, "zauzeta");
 			
 			
-			 Kalendar.iscrtajKalendar(document.getElementById("datumi"), 7);
+		
 			 Kalendar.ucitajPodatke ( zauzece2, []);
-			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 7, "VA2" , "10:00", "11:00");
+			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 9, "VA2" , "10:00", "11:00");
 			 celija = tabele.getElementsByClassName("unutrasnja")[4];
 			 assert.equal (celija.getElementsByTagName("td")[1].className, "zauzeta");
+			 celija = tabele.getElementsByClassName("unutrasnja")[1];
+			 assert.equal (celija.getElementsByTagName("td")[1].className, "slobodna");
 			
 		
 		 }); 
@@ -408,7 +410,7 @@ describe('datumi', function() {
 			 //ocekivano: presjek ova dva tipa zauzeca ne smije utjecati na finalno obojenje (mora ostati zauzeto)
 				let zauzece1=[ 
 				{
-          dan: 1,
+          dan: 0,
           semestar: "ljetni",
           pocetak:  "09:00",
           kraj:  "12:00",
@@ -419,22 +421,22 @@ describe('datumi', function() {
 		   
 		   let zauzece2=[ 
 			{
-          datum: "06.08.2019.",
+          datum: "01.04.2019.",
           pocetak: "09:00",
           kraj: "12:00",
           naziv: "VA2",
           predavac: "Predavac 1"
         }
            ];
-			 Kalendar.iscrtajKalendar(document.getElementById("datumi"), 7);
+			 Kalendar.iscrtajKalendar(document.getElementById("datumi"), 3);
 			 Kalendar.ucitajPodatke ( zauzece2 , zauzece1);
-			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 7, "VA2" , "05:00", "11:00");
+			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 3, "VA2" , "05:00", "11:00");
 
 			 let tabele =  document.getElementsByTagName("table")[0];
-			 let celija = tabele.getElementsByClassName("unutrasnja")[5];
+			 let celija = tabele.getElementsByClassName("unutrasnja")[0];
 		     
 			
-		   //provjeravam da li je 6.8 korektno obojen  
+		   //provjeravam da li je 1.4 korektno obojen  
 			assert.equal (celija.getElementsByTagName("td")[1].className, "zauzeta");
 			
 		
@@ -456,16 +458,16 @@ describe('datumi', function() {
           predavac: "Predavac 1"
           }
            ];
-		    Kalendar.iscrtajKalendar(document.getElementById("datumi"), 7);
+		    Kalendar.iscrtajKalendar(document.getElementById("datumi"), 4);
 			 Kalendar.ucitajPodatke ( [] , zauzece1);
-			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 7, "VA2" , "05:00", "11:00");
+			 Kalendar.obojiZauzeca(document.getElementById("datumi"), 4, "VA2" , "05:00", "11:00");
 
 		   
 			 let tabele =  document.getElementsByTagName("table")[0];
 			 let red = tabele.getElementsByClassName("red");
 		     
 			
-		   //provjeravam da li su svi utorci zauzeti u augustu	  
+		   //provjeravam da li su svi utorci zauzeti u maju	  
 			  for (let i=2; i< 6 ; i++) {
 				 
 				  let celije = red[i].getElementsByClassName("unutrasnja")[1]; 

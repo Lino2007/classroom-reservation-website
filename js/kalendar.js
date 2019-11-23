@@ -12,8 +12,16 @@ let Kalendar = (function () {
   var trenutniMjesec, pocetak, kraj, opcija;
 
   function daLiJeLjetni(trenutniMjesec) {
-    for (let i = 1; i <= 8; i++)
+    for (let i = 1; i <= 5; i++)
       if (trenutniMjesec == nizMjeseci[i]) return true;
+    return false;
+  }
+
+  function daLiJeZimski(trenutniMjesec) {
+    for (let i = 9; i <= 11; i++)
+      if (trenutniMjesec == nizMjeseci[i]) return true;
+    
+      if (trenutniMjesec == nizMjeseci[0]) return true;
     return false;
   }
 
@@ -78,7 +86,7 @@ let Kalendar = (function () {
 
     //obojenja za redovna zauzeca
     for (let k = 0; k < redovnaZauzeca.length; k++) {
-        if (sala == redovnaZauzeca[k].naziv && ((redovnaZauzeca[k].semestar == "zimski" && !(daLiJeLjetni(nizMjeseci[mjesec]))) || (redovnaZauzeca[k].semestar == "ljetni" && daLiJeLjetni(nizMjeseci[mjesec])))) {
+        if (sala == redovnaZauzeca[k].naziv && ((redovnaZauzeca[k].semestar == "zimski" && daLiJeZimski(nizMjeseci[mjesec])) || (redovnaZauzeca[k].semestar == "ljetni" && daLiJeLjetni(nizMjeseci[mjesec])))) {
         periodicniDan = redovnaZauzeca[k].dan;
        if (preklapanjeVremena(redovnaZauzeca[k].pocetak, redovnaZauzeca[k].kraj, this.pocetak, this.kraj) && periodicniDan != -1) {
          for (let i = 2, row; row = kalendarRef.rows[i], i < kalendarRef.rows.length; i++) {
