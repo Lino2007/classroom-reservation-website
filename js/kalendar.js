@@ -276,7 +276,8 @@ let Kalendar = (function () {
   
   
   window.onload = (event) => {
-    Kalendar.iscrtajKalendar(document.getElementById("datumi"), 10);
+    var d = new Date();
+    Kalendar.iscrtajKalendar(document.getElementById("datumi"), d.getMonth());
     Kalendar.ucitajPodatke(per, red);
     Kalendar.ucitajPodatkeIzForme ();
   };
