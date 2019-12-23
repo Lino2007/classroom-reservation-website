@@ -181,7 +181,7 @@ let Kalendar = (function () {
     return new Date(year, month, 0).getDate();
   }
 
-  var per = [
+  /*var per = [
 
 
     {
@@ -255,7 +255,7 @@ let Kalendar = (function () {
             predavac: "Predavac 1"
           }   
   
-  ];
+  ]; 
   var red = [
     {
       dan: 1,
@@ -282,7 +282,7 @@ let Kalendar = (function () {
       predavac: "Predavac 1"
     }];
   
-  
+  */
   window.onload = (event) => {
     var d = new Date();
     Kalendar.iscrtajKalendar(document.getElementById("datumi"), d.getMonth());
