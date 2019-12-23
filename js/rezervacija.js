@@ -27,7 +27,7 @@ let Pozivi= (function(){
     };
     
     function proslijediPodatke() {
-       
+      
        // confirm("Da li je sve ok?");
     }
 
