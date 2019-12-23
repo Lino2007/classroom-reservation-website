@@ -28,4 +28,8 @@ app.get ('/unos' , function (req, res) {
     res.sendFile(path.join(__dirname, '../html/unos.html'));
 });
 
+app.post ('/rezervacija', function(req, res) {
+    console.log("saljemo podatke");
+}); 
+
 app.listen(8080);

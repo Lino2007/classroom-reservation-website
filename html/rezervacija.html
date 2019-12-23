@@ -5,7 +5,8 @@
         <TITLE>Spirala 1</TITLE>
         <link rel="stylesheet" type="text/css" href="../css/rezervacija.css">
         <META http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<SCRIPT src="../js/kalendar.js"></SCRIPT>
+		<SCRIPT src="../js/rezervacija.js"></SCRIPT>
+		<SCRIPT src="../js/kalendar.js"></SCRIPT>	
 </HEAD>
 
 <BODY>
@@ -24,7 +25,8 @@
                   <label id="odb">Odabir sala</label>
 				 
                           <div id= "dropdown">
-                           <form id="odabir" oninput="Kalendar.ucitajPodatkeIzForme()">
+                           <form id="odabir"  oninput="Pozivi.proslijediPodatkeImpl()">
+						   <!--oninput="Kalendar.ucitajPodatkeIzForme()"-->
 							    <label>Sala: </label>
                              <select id="saleSelect"> 
                                  <option value="VA1">VA1</option>
@@ -120,10 +122,9 @@
                                       <div class="inner" id="spacer"></div>
                                       <div class="inner" id="rbtn"><button type="button" class="btnCal" id="nxt" onclick="Kalendar.callNext()" >Sljedeci</button></div> 
                                     </div>
-                    
-                       
-                </div>
+                   </div>
         </div>
+		
 </BODY>
 
 </HTML>
