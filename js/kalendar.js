@@ -283,12 +283,12 @@ let Kalendar = (function () {
     }];
   
   */
-  window.onload = (event) => {
+  /*window.onload = (event) => {
     var d = new Date();
     Kalendar.iscrtajKalendar(document.getElementById("datumi"), d.getMonth());
     Kalendar.ucitajPodatke(per, red);
     Kalendar.ucitajPodatkeIzForme ();
-  };
+  }; */
   
   
 
