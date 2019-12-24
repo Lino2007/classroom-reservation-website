@@ -76,7 +76,7 @@ let Kalendar = (function () {
           for (let i = 2, row; row = kalendarRef.rows[i], i < kalendarRef.rows.length; i++) {
             for (let j = 0, col; col = row.cells[j]; j++ , counter++) {
                 if (poz == counter) {
-                col.innerHTML = "<td><table class=\"unutrasnja\"><tr><td>" + danZauzeca + "</td></tr><tr><td class=\"zauzeta\"></td></tr></table></td>";
+                col.innerHTML = "<td><table class=\"unutrasnja\" onclick='rezervirajTermin(" + danZauzeca +")'><tr><td>" + danZauzeca + "</td></tr><tr><td class=\"zauzeta\"></td></tr></table></td>";
               }
             }
           }
@@ -92,7 +92,8 @@ let Kalendar = (function () {
          for (let i = 2, row; row = kalendarRef.rows[i], i < kalendarRef.rows.length; i++) {
             for (let j = 0, col; col = row.cells[j]; j++) {
               if (col.textContent != "" && j == periodicniDan) {
-              col.innerHTML = "<td><table class=\"unutrasnja\"><tr><td>" + col.textContent + "</td></tr><tr><td class=\"zauzeta\"></td></tr></table></td>";
+              console.log(col.textContent);
+              col.innerHTML = "<td><table class=\"unutrasnja\" onclick='rezervirajTermin(" + col.textContent +")'><tr><td>" + col.textContent + "</td></tr><tr><td class=\"zauzeta\"></td></tr></table></td>";
               }
             }
           }
@@ -130,7 +131,7 @@ let Kalendar = (function () {
     //crtanje dana u prvom redu
     for (var j = 0; j < 7; j++) {
       if (j >= mapaMjeseca.get(nazivMjeseca)) {
-        targetRow.innerHTML += "<td><table class=\"unutrasnja\"><tr><td>" + dayCounter++ + "</td></tr><tr><td class=\"slobodna\"></td></tr></table></td>";
+        targetRow.innerHTML += "<td><table class=\"unutrasnja\" onclick='rezervirajTermin(" + dayCounter +")'><tr><td>" + dayCounter++ + "</td></tr><tr><td class=\"slobodna\"></td></tr></table></td>";
       }
       else {
         targetRow.innerHTML += "<td></td>";
@@ -141,7 +142,7 @@ let Kalendar = (function () {
     for (var i = 3, row; row = kalendarRef.rows[i], i < numberOfRows; i++) {
       for (var j = 0, col; col = row.cells[j]; j++ , dayCounter++) {
         if (dayCounter <= daniMjesec) {
-          col.innerHTML = "<td><table class=\"unutrasnja\"><tr><td>" + dayCounter + "</td></tr><tr><td class=\"slobodna\"></td></tr></table></td>";
+          col.innerHTML = "<td><table class=\"unutrasnja\" onclick='rezervirajTermin(" + dayCounter +")'><tr><td>" + dayCounter + "</td></tr><tr><td class=\"slobodna\"></td></tr></table></td>";
         }
         else {
           col.innerHTML = "<td></td>";
@@ -155,7 +156,7 @@ let Kalendar = (function () {
       newRow.innerHTML = "<tr class=\"red\"> <td></td><td></td><td></td> <td></td> <td></td><td></td><td></td></tr>";
       for (var j = 0, col; col = newRow.cells[j]; j++ , dayCounter++) {
         if (dayCounter <= daniMjesec) {
-          col.innerHTML = "<td><table class=\"unutrasnja\"><tr><td>" + dayCounter + "</td></tr><tr><td class=\"slobodna\"></td></tr></table></td>";
+          col.innerHTML = "<td><table class=\"unutrasnja\" onclick='rezervirajTermin(" + dayCounter +")'><tr><td>" + dayCounter + "</td></tr><tr><td class=\"slobodna\"></td></tr></table></td>";
         }
         else {
           col.innerHTML = "<td></td>";
@@ -180,117 +181,6 @@ let Kalendar = (function () {
   function daysInMonth(month, year) {
     return new Date(year, month, 0).getDate();
   }
-
-  /*var per = [
-
-
-    {
-      datum: "12.02.2019.",
-      pocetak: "15:00",
-      kraj: "17:00",
-      naziv: "VA1",
-      predavac: "Predavac 1"
-    },
-          {
-            datum: "01.10.2019.",
-            pocetak: "15:00",
-            kraj: "17:00",
-            naziv: "MA",
-            predavac: "Predavac 1"
-          }, 
-          {
-            datum: "12.10.2019.",
-            pocetak: "15:00",
-            kraj: "17:00",
-            naziv: "MA",
-            predavac: "Predavac 1"
-          },
-       {
-            datum: "31.10.2019.",
-            pocetak: "15:00",
-            kraj: "17:00",
-            naziv: "MA",
-            predavac: "Predavac 1"
-          },
-       {
-            datum: "30.10.2019.",
-            pocetak: "10:00",
-            kraj: "13:00",
-            naziv: "MA",
-            predavac: "Predavac 1"
-          },
-      {
-            datum: "29.10.2019.",
-            pocetak: "10:00",
-            kraj: "13:00",
-            naziv: "MA",
-            predavac: "Predavac 1"
-          },
-          {
-            datum: "20.02.2019.",
-            pocetak: "10:00",
-            kraj: "13:00",
-            naziv: "VA1",
-            predavac: "Predavac 1"
-          },
-          {
-            datum: "21.11.2019.",
-            pocetak: "15:00",
-            kraj: "17:00",
-            naziv: "VA1",
-            predavac: "Predavac 1"
-          } ,
-          {
-            datum: "31.12.2019.",
-            pocetak: "15:00",
-            kraj: "17:00",
-            naziv: "VA1",
-            predavac: "Predavac 1"
-          } ,
-          {
-            datum: "01.12.2019.",
-            pocetak: "15:00",
-            kraj: "17:00",
-            naziv: "VA1",
-            predavac: "Predavac 1"
-          }   
-  
-  ]; 
-  var red = [
-    {
-      dan: 1,
-      semestar: "zimski",
-      pocetak: "15:00",
-      kraj: "17:00",
-      naziv: "VA1",
-      predavac: "Predavac 1"
-    },
-    {
-      dan: 3,
-      semestar: "ljetni",
-      pocetak: "15:00",
-      kraj: "17:00",
-      naziv: "VA1",
-      predavac: "Predavac 1"
-    },
-    {
-      dan: 6,
-      semestar: "zimski",
-      pocetak: "13:00",
-      kraj: "14:00",
-      naziv: "VA2",
-      predavac: "Predavac 1"
-    }];
-  
-  */
- /* window.onload = (event) => {
-    var d = new Date();
-    Kalendar.iscrtajKalendar(document.getElementById("datumi"), d.getMonth());
-   /// Kalendar.ucitajPodatke(per, red);
-    Kalendar.ucitajPodatkeIzForme ();
-  };  */
-  
-  
 
  return {
     obojiZauzeca: obojiZauzecaImpl,
