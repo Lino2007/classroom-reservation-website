@@ -31,29 +31,52 @@ app.get ('/unos' , function (req, res) {
 });
 
 app.post ('/rezervacija', function(req, res) {
-   provjeriZauzeca (req.body);
+  let jsonResponse= provjeriZauzeca (req.body);
+  
+  if (!(jsonResponse["valid"])) {
+      jsonResponse["alert"] = "Nije moguće rezervisati salu " +req.body["opcija"] +"za navedeni datum "+ jsonResponse["stringDatuma"] + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] ;
+  }
+  else {
+    console.log (jsonResponse["periodicnaZauzeca"]);
+       azurirajJSON (jsonResponse);
+  }
 
+  res.json (jsonResponse);
+ // console.log (JSON.stringify(jsonResponse));
+   // if (!(jsonResponse["valid"])) throw "Nije moguće rezervisati salu " +req.body["opcija"] +"za navedeni datum "+ jsonResponse["stringDatuma"] + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] ;
  // Kalendar.ucitajPodatke();
 
 }); 
 
+function azurirajJSON (js_respa) {
+    fs.readFile('../json/zauzeca.json', 'utf8', function (errx, data) {
+        if (errx) throw errx;
+       let obj = JSON.parse(data);
+        obj.periodicna = js_respa["periodicnaZauzeca"];
+        obj.vanredna = js_respa["vanrednaZauzeca"];
+       
+        fs.writeFile("../json/zauzeca.json", JSON.stringify(obj), function(err) {
+            if(err) {
+                throw err;
+            }
+            console.log("OK");
+        }); 
+      });
+} 
+
 function provjeriSemestar (trenutniMjesec) {
-    let ljetni=false, zimski=false;
     for (let i = 1; i <= 5; i++)
     if (trenutniMjesec == nizMjeseci[i]) {
         return "ljetni";
     } 
-  
-  for (let i = 9; i <= 11; i++)
+   for (let i = 9; i <= 11; i++)
       if (trenutniMjesec == nizMjeseci[i] || trenutniMjesec == nizMjeseci[0]) {
          return "zimski";
       }
-   
     return null;
 }
 
 function preklapanjeTermina(poc, kr, pocetak, kraj) {
-   // console.log( poc + "|||"  + kr + "|*|" + pocetak + "|||" + kraj);
     if ((poc >= pocetak && poc < kraj) || (kr > pocetak && kr <= kraj) || (poc <= pocetak && kr >= kraj))  return true;
      return false;
   }
@@ -65,27 +88,38 @@ function provjeriZauzeca (podaci) {
       let odabraniDan =  podaci["odabraniDan"] -1;
       //način kako je specificirano oznacavanje dana u spirali 2 je nekonzistentno sa Date tipom u JS-u
       if (periodicniDan==-2) periodicniDan=5;
-       else if (periodicniDan==-1) periodicniDan=6;
+      else if (periodicniDan==-1) periodicniDan=6;
       
       if (tipSemestra==null) return ;
-
+       
+      let stringDana = (odabraniDan < 10 ? "0" : "") + odabraniDan, stringMjeseca = (mon< 10 ? "0" : "") + mon;
+      let stringDatuma = stringDana + "." + stringMjeseca + ".2019."; 
       //provjera periodicnih zauzeca
       for (let i =0 ; i<periodicnaZauzeca.length ; i++) {
          if (tipSemestra== periodicnaZauzeca[i]["semestar"] && periodicniDan==periodicnaZauzeca[i]["dan"] && 
          preklapanjeTermina(periodicnaZauzeca[i]["pocetak"],periodicnaZauzeca[i]["kraj"], podaci["pocetak"], podaci["kraj"]) && podaci["opcija"]==periodicnaZauzeca[i]["naziv"]) {
-            console.log("Neispunjenje uslova bacamo error!");
+            return {valid: false , stringDatuma : stringDatuma};
          }
       }
-      let stringDana = (odabraniDan < 10 ? "0" : "") + odabraniDan, stringMjeseca = (mon< 10 ? "0" : "") + mon;
-      let stringDatuma = stringDana + "." + stringMjeseca + ".2019."; 
-    
+      
+      
       //provjera vanrednih zauzeca
      for (let i =0 ; i<vanrednaZauzeca.length ; i++) {
         if (podaci["opcija"]==vanrednaZauzeca[i]["naziv"] && stringDatuma==vanrednaZauzeca[i]["datum"] && 
         preklapanjeTermina(vanrednaZauzeca[i]["pocetak"],vanrednaZauzeca[i]["kraj"], podaci["pocetak"], podaci["kraj"]) ) {
-           console.log("Neispunjenje uslova bacamo error!");
+            return {valid: false ,  stringDatuma : stringDatuma};
         }
-     } 
+     }
+     
+     if (podaci["periodicnost"]== true ) {
+        
+         periodicnaZauzeca.push({dan:periodicniDan , semestar:tipSemestra , pocetak: podaci["pocetak"], kraj: podaci["kraj"], naziv:podaci["opcija"], predavac:"Predavac" });
+     }
+     else 
+     vanrednaZauzeca.push({datum:stringDatuma , pocetak: podaci["pocetak"], kraj: podaci["kraj"], naziv:podaci["opcija"], predavac:"Predavac" });
+
+     return {valid: true , periodicnaZauzeca: periodicnaZauzeca , vanrednaZauzeca : vanrednaZauzeca};
+
 }
 
 app.listen(8080);

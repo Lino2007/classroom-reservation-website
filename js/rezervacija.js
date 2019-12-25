@@ -1,4 +1,4 @@
-var pocetak, kraj, opcija, trenutniMjesec;
+var pocetak, kraj, opcija, trenutniMjesec , periodicnost;
 
 window.onload = (event) => {
     var d = new Date();
@@ -17,6 +17,7 @@ function ucitajFormu () {
    kraj = document.getElementById("kraj").value;
    opcija = document.getElementById("saleSelect").value;
    trenutniMjesec = document.getElementById("month").textContent;
+   periodicnost = document.getElementById("periodicnost").checked;
    return validirajFormu();
 }
 
@@ -29,7 +30,7 @@ function rezervirajTermin (odabraniDan) {
     let potvrda = confirm("Da li želite rezervisati odabrani termin?");
     
     if (potvrda) {
-        Pozivi.posaljiTermin ({pocetak:pocetak , kraj:kraj, opcija:opcija, trenutniMjesec:trenutniMjesec, odabraniDan:odabraniDan});
+        Pozivi.posaljiTermin ({pocetak:pocetak , kraj:kraj, opcija:opcija, trenutniMjesec:trenutniMjesec, odabraniDan:odabraniDan, periodicnost:periodicnost});
     }
    // alert (potvrda ? "Prihvatili ste rezervaciju!" : "Niste prihvatili rezervaciju!");
 }

@@ -31,10 +31,23 @@ var Pozivi= (function(){
             contentType: 'application/json',
             data: JSON.stringify(podaci),
             dataType: 'json',
-            error: function (x,y,z) {
-              console.log(x);
-              console.log(y);
-              console.log(z);
+            success:function(data) {
+              
+               if (data["valid"]) {
+               zauzecaJsonObjekt["periodicna"] = data["periodicnaZauzeca"];
+               zauzecaJsonObjekt["vanredna"]= data["vanrednaZauzeca"];
+               Kalendar.ucitajPodatke(zauzecaJsonObjekt["vanredna"],  zauzecaJsonObjekt["periodicna"] );
+               Kalendar.ucitajPodatkeIzForme ();
+               }
+               else {
+                   alert(data["alert"]);
+               }
+              }
+              ,
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            /* var text = (XMLHttpRequest.responseText).getTagById("pre").innerHTML;
+             console.log (text);
+             alert(XMLHttpRequest.responseText); */
             }
         });
     }

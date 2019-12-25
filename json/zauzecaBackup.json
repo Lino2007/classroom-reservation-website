@@ -1,0 +1,96 @@
+{
+  "vanredna": [ {
+      "datum": "12.02.2019.",
+      "pocetak": "15:00",
+      "kraj": "17:00",
+      "naziv": "VA1",
+      "predavac": "Predavac 1"
+    },
+          {
+            "datum": "01.10.2019.",
+            "pocetak": "15:00",
+            "kraj": "17:00",
+            "naziv": "MA",
+            "predavac": "Predavac 1"
+          }, 
+          {
+            "datum": "12.10.2019.",
+            "pocetak": "15:00",
+            "kraj": "17:00",
+            "naziv": "MA",
+            "predavac": "Predavac 1"
+          },
+       {
+            "datum": "31.10.2019.",
+            "pocetak": "15:00",
+            "kraj": "17:00",
+            "naziv": "MA",
+            "predavac": "Predavac 1"
+          },
+       {
+            "datum": "30.10.2019.",
+            "pocetak": "10:00",
+            "kraj": "13:00",
+            "naziv": "MA",
+            "predavac": "Predavac 1"
+          },
+      {
+            "datum": "29.10.2019.",
+            "pocetak": "10:00",
+            "kraj": "13:00",
+            "naziv": "MA",
+            "predavac": "Predavac 1"
+          },
+          {
+            "datum": "20.02.2019.",
+            "pocetak": "10:00",
+            "kraj": "13:00",
+            "naziv": "VA1",
+            "predavac": "Predavac 1"
+          },
+          {
+            "datum": "21.11.2019.",
+            "pocetak": "15:00",
+            "kraj": "17:00",
+            "naziv": "VA1",
+            "predavac": "Predavac 1"
+          } ,
+          {
+            "datum": "31.12.2019.",
+            "pocetak": "15:00",
+            "kraj": "17:00",
+            "naziv": "VA1",
+            "predavac": "Predavac 1"
+          } ,
+          {
+            "datum": "01.12.2019.",
+            "pocetak": "15:00",
+            "kraj": "17:00",
+            "naziv": "VA1",
+            "predavac": "Predavac 1"
+          }   ],
+  "periodicna": [ {
+      "dan": 1,
+      "semestar": "zimski",
+      "pocetak": "15:00",
+      "kraj": "17:00",
+      "naziv": "VA1",
+      "predavac": "Predavac 1"
+    },
+    {
+      "dan": 3,
+      "semestar": "ljetni",
+      "pocetak": "15:00",
+      "kraj": "17:00",
+      "naziv": "VA1",
+      "predavac": "Predavac 1"
+    },
+    {
+      "dan": 6,
+      "semestar": "zimski",
+      "pocetak": "13:00",
+      "kraj": "14:00",
+      "naziv": "VA2",
+      "predavac": "Predavac 1"
+    }]
+}
