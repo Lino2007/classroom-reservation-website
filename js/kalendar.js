@@ -1,4 +1,4 @@
-let Kalendar = (function () {
+var Kalendar = (function () {
  
   const mapaMjeseca = new Map([
     ['Januar', 1], ['Februar', 4], ['Mart', 4], ['April', 7],
@@ -11,16 +11,23 @@ let Kalendar = (function () {
   var direction = 0, danZauzeca = -1, periodicniDan = -1;
   var trenutniMjesec, pocetak, kraj, opcija;
 
+  function provjeriZauzece (termin) {
+     let poc = termin["pocetak"], kr = termin["kraj"] ,naziv = termin["opcija"] , dan = termin["odabraniDan"], mon = termin["trenutniMjesec"];
+     console.log( poc + " " + kraj  + " " + naziv + " " + dan + " " + mon );
+  }
   function daLiJeLjetni(trenutniMjesec) {
     for (let i = 1; i <= 5; i++)
       if (trenutniMjesec == nizMjeseci[i]) return true;
     return false;
   }
 
+  function isp () {
+    console.log ("Ispisi nesto");
+  }
+
   function daLiJeZimski(trenutniMjesec) {
     for (let i = 9; i <= 11; i++)
       if (trenutniMjesec == nizMjeseci[i]) return true;
-    
       if (trenutniMjesec == nizMjeseci[0]) return true;
     return false;
   }
@@ -188,7 +195,9 @@ let Kalendar = (function () {
     iscrtajKalendar: iscrtajKalendarImpl,
     callPrev: callPrev,
     callNext: callNext,
-    ucitajPodatkeIzForme: ucitajPodatkeIzForme
+    ucitajPodatkeIzForme: ucitajPodatkeIzForme,
+    provjeriZauzece,
+    isp
   }
 }());
 

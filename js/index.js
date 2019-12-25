@@ -4,7 +4,9 @@ const app = express();
 const path= require('path');
 const url = require('url');
 const fs = require('fs');
+var tools = require("./kalendar.js");
 
+app.use(bodyParser.json());
 app.use( '/',express.static(__dirname + '/../'));
 app.use( '/',express.static(__dirname));
 
@@ -29,7 +31,11 @@ app.get ('/unos' , function (req, res) {
 });
 
 app.post ('/rezervacija', function(req, res) {
-    console.log("saljemo podatke");
+    console.log("Dobio sam podatke");
+    console.log(req.body);
+   Kalendar.provjeriZauzece(req.body);
+  
+
 }); 
 
 app.listen(8080);

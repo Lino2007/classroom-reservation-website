@@ -1,5 +1,5 @@
+var pocetak, kraj, opcija, trenutniMjesec;
 
-var pocetak, kraj,opcija, trenutniMjesec;
 window.onload = (event) => {
     var d = new Date();
     Kalendar.iscrtajKalendar(document.getElementById("datumi"), d.getMonth());
@@ -26,5 +26,9 @@ function rezervirajTermin (odabraniDan) {
         return ;
     }
     let potvrda = confirm("Da li želite rezervisati odabrani termin?");
-    alert (potvrda ? "Prihvatili ste rezervaciju!" : "Niste prihvatili rezervaciju!");
+    
+    if (potvrda) {
+        Pozivi.posaljiTermin ({pocetak:pocetak , kraj:kraj, opcija:opcija, trenutniMjesec:trenutniMjesec, odabraniDan:odabraniDan});
+    }
+   // alert (potvrda ? "Prihvatili ste rezervaciju!" : "Niste prihvatili rezervaciju!");
 }

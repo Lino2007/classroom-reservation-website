@@ -20,14 +20,27 @@ var Pozivi= (function(){
         return arr= [periodicna, vanredna];
     }
   
-    function proslijediPodatke() {
-      
-        // confirm("Da li je sve ok?");
-     }
+    function posaljiTermin (podaci) {
+        $.ajax({
+            url: '/rezervacija',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(podaci),
+            dataType: 'json',
+            error: function (x,y,s) {
+              console.log("err");
+            }
+        });
+    }
+
+    function tvt () {
+        console.log("tvt is here");
+    }
  
      return {
-         proslijediPodatkeImpl: proslijediPodatke,
-         ucitajPodatkeIzJSON
+         ucitajPodatkeIzJSON,
+         posaljiTermin,
+         tvt
      }
  
  }());
