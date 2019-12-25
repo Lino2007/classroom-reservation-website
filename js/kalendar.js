@@ -188,7 +188,7 @@ var Kalendar = (function () {
   function daysInMonth(month, year) {
     return new Date(year, month, 0).getDate();
   }
-
+  
  return {
     obojiZauzeca: obojiZauzecaImpl,
     ucitajPodatke: ucitajPodatkeImpl,
@@ -196,8 +196,7 @@ var Kalendar = (function () {
     callPrev: callPrev,
     callNext: callNext,
     ucitajPodatkeIzForme: ucitajPodatkeIzForme,
-    provjeriZauzece,
-    isp
+  
   }
 }());
 

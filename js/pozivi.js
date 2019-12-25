@@ -1,7 +1,7 @@
 var Pozivi= (function(){
-  
+    var periodicna=[], vanredna=[];
+    var zauzecaJsonObjekt; //JSON objekt u koji spremamo zauzeca.json
     function ucitajPodatkeIzJSON () {
-        let periodicna=[], vanredna=[];
         let jsonFile = new XMLHttpRequest();
         jsonFile.open("GET", "json/zauzeca.json", false);
         jsonFile.onreadystatechange = function ()
@@ -10,9 +10,9 @@ var Pozivi= (function(){
             {
                 if(jsonFile.status === 200 || jsonFile.status == 0)
                 {
-                    let jsonObjekt = JSON.parse(jsonFile.responseText);
-                    periodicna= jsonObjekt["periodicna"];
-                    vanredna= jsonObjekt["vanredna"];
+                    zauzecaJsonObjekt = JSON.parse(jsonFile.responseText);
+                   periodicna= zauzecaJsonObjekt["periodicna"];
+                    vanredna= zauzecaJsonObjekt["vanredna"];
                 }
             }
         }
@@ -21,14 +21,20 @@ var Pozivi= (function(){
     }
   
     function posaljiTermin (podaci) {
+        //ucitavam i sve termine da ne moram opet otvarati zauzeca.json
+        podaci["periodicna"]=zauzecaJsonObjekt["periodicna"];
+        podaci["vanredna"]=zauzecaJsonObjekt["vanredna"];
+       
         $.ajax({
             url: '/rezervacija',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(podaci),
             dataType: 'json',
-            error: function (x,y,s) {
-              console.log("err");
+            error: function (x,y,z) {
+              console.log(x);
+              console.log(y);
+              console.log(z);
             }
         });
     }

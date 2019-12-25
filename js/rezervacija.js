@@ -4,7 +4,7 @@ window.onload = (event) => {
     var d = new Date();
     Kalendar.iscrtajKalendar(document.getElementById("datumi"), d.getMonth());
     let arr= Pozivi.ucitajPodatkeIzJSON();
-    Kalendar.ucitajPodatke(arr[0], arr[1]);
+    Kalendar.ucitajPodatke(arr[1], arr[0]);
     Kalendar.ucitajPodatkeIzForme ();
 };
 
@@ -19,6 +19,7 @@ function ucitajFormu () {
    trenutniMjesec = document.getElementById("month").textContent;
    return validirajFormu();
 }
+
 
 function rezervirajTermin (odabraniDan) {
     if (!ucitajFormu()) { 

@@ -1,5 +1,5 @@
 {
-  "periodicna": [ {
+  "vanredna": [ {
       "datum": "12.02.2019.",
       "pocetak": "15:00",
       "kraj": "17:00",
@@ -69,7 +69,7 @@
             "naziv": "VA1",
             "predavac": "Predavac 1"
           }   ],
-  "vanredna": [ {
+  "periodicna": [ {
       "dan": 1,
       "semestar": "zimski",
       "pocetak": "15:00",
