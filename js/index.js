@@ -37,7 +37,7 @@ app.post ('/rezervacija', function(req, res) {
       jsonResponse["alert"] = "Nije moguće rezervisati salu " +req.body["opcija"] +"za navedeni datum "+ jsonResponse["stringDatuma"] + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] ;
   }
   else {
-    console.log (jsonResponse["periodicnaZauzeca"]);
+  
        azurirajJSON (jsonResponse);
   }
 
@@ -80,6 +80,18 @@ function preklapanjeTermina(poc, kr, pocetak, kraj) {
     if ((poc >= pocetak && poc < kraj) || (kr > pocetak && kr <= kraj) || (poc <= pocetak && kr >= kraj))  return true;
      return false;
   }
+function vratiPeriodDatuma  (dateStr) {
+     let arr = dateStr.split(".");
+       // return arr[0];
+    let mjesec = parseInt(arr[1], 10) , dan = parseInt(arr[0], 10);
+    
+    mjesec--;
+     let datr = new Date (2019, mjesec , dan );
+     let val = datr.getDay()-1;
+      if (val==-1) val=6;  
+   return val;
+      
+}
 
 function provjeriZauzeca (podaci) {
       let periodicnaZauzeca= podaci["periodicna"], vanrednaZauzeca= podaci["vanredna"];
@@ -96,8 +108,9 @@ function provjeriZauzeca (podaci) {
       let stringDatuma = stringDana + "." + stringMjeseca + ".2019."; 
       //provjera periodicnih zauzeca
       for (let i =0 ; i<periodicnaZauzeca.length ; i++) {
-         if (tipSemestra== periodicnaZauzeca[i]["semestar"] && periodicniDan==periodicnaZauzeca[i]["dan"] && 
-         preklapanjeTermina(periodicnaZauzeca[i]["pocetak"],periodicnaZauzeca[i]["kraj"], podaci["pocetak"], podaci["kraj"]) && podaci["opcija"]==periodicnaZauzeca[i]["naziv"]) {
+         if (tipSemestra== periodicnaZauzeca[i]["semestar"] && podaci["opcija"]==periodicnaZauzeca[i]["naziv"]
+          && periodicniDan==periodicnaZauzeca[i]["dan"] && 
+          preklapanjeTermina(periodicnaZauzeca[i]["pocetak"],periodicnaZauzeca[i]["kraj"], podaci["pocetak"], podaci["kraj"])) {
             return {valid: false , stringDatuma : stringDatuma};
          }
       }
@@ -105,8 +118,10 @@ function provjeriZauzeca (podaci) {
       
       //provjera vanrednih zauzeca
      for (let i =0 ; i<vanrednaZauzeca.length ; i++) {
-        if (podaci["opcija"]==vanrednaZauzeca[i]["naziv"] && stringDatuma==vanrednaZauzeca[i]["datum"] && 
-        preklapanjeTermina(vanrednaZauzeca[i]["pocetak"],vanrednaZauzeca[i]["kraj"], podaci["pocetak"], podaci["kraj"]) ) {
+      
+        console.log( vratiPeriodDatuma(vanrednaZauzeca[i]["datum"] )  +  " periodsdas");
+        if (podaci["opcija"]==vanrednaZauzeca[i]["naziv"] &&  preklapanjeTermina(vanrednaZauzeca[i]["pocetak"],vanrednaZauzeca[i]["kraj"], podaci["pocetak"], podaci["kraj"])  
+       &&  (stringDatuma==vanrednaZauzeca[i]["datum"]   || ( podaci["periodicnost"]==true &&  vratiPeriodDatuma(vanrednaZauzeca[i]["datum"] ) == periodicniDan))) {
             return {valid: false ,  stringDatuma : stringDatuma};
         }
      }

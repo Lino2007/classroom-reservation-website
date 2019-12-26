@@ -21,9 +21,6 @@ var Kalendar = (function () {
     return false;
   }
 
-  function isp () {
-    console.log ("Ispisi nesto");
-  }
 
   function daLiJeZimski(trenutniMjesec) {
     for (let i = 9; i <= 11; i++)

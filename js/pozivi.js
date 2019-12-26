@@ -52,14 +52,10 @@ var Pozivi= (function(){
         });
     }
 
-    function tvt () {
-        console.log("tvt is here");
-    }
- 
+
      return {
          ucitajPodatkeIzJSON,
-         posaljiTermin,
-         tvt
+         posaljiTermin
      }
  
  }());
