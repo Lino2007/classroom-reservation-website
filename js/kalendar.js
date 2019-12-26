@@ -96,7 +96,7 @@ var Kalendar = (function () {
          for (let i = 2, row; row = kalendarRef.rows[i], i < kalendarRef.rows.length; i++) {
             for (let j = 0, col; col = row.cells[j]; j++) {
               if (col.textContent != "" && j == periodicniDan) {
-              console.log(col.textContent);
+           
               col.innerHTML = "<td><table class=\"unutrasnja\" onclick='rezervirajTermin(" + col.textContent +")'><tr><td>" + col.textContent + "</td></tr><tr><td class=\"zauzeta\"></td></tr></table></td>";
               }
             }

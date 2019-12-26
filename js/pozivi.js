@@ -52,10 +52,37 @@ var Pozivi= (function(){
         });
     }
 
+    function prvoUcitavanjeSlika () {
+        let slike;
+        let jsonDat = {   firstLoad : true};
+      
+        $.ajax({
+            url: '/pocetna',
+            type: 'POST',
+            contentType: 'application/json',
+            data:  JSON.stringify(jsonDat),
+            dataType: 'json',
+            success: function(data) {
+               console.log("success");
+                slike = data;
+                napuniCache(slike);
+                prikaziSlike(slike);
+            } ,
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log(errorThrown);
+                /* var text = (XMLHttpRequest.responseText).getTagById("pre").innerHTML;
+                 console.log (text);
+                 alert(XMLHttpRequest.responseText); */
+                }
+    });
+         
+    }
+
 
      return {
          ucitajPodatkeIzJSON,
-         posaljiTermin
+         posaljiTermin,
+         prvoUcitavanjeSlika
      }
  
  }());

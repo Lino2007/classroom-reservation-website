@@ -11,11 +11,35 @@ app.use( '/',express.static(__dirname + '/../'));
 app.use( '/',express.static(__dirname));
 
 app.get ('/' , function (req, res) {
+  
     res.sendFile(path.join(__dirname, '../html/pocetna.html'));
-});
+}); 
 
 app.get ('/pocetna' , function (req, res) {
-    res.sendFile(path.join(__dirname, '../html/pocetna.html'));
+     
+     res.sendFile(path.join(__dirname, '../html/pocetna.html'));
+   
+
+});
+
+app.post ('/pocetna' , function (req, res) {
+    let jsonResponse= req.body, listURL = [];
+    console.log(req.body);
+    if (!(jsonResponse.hasOwnProperty('firstLoad'))) throw "Pogrešan header!";
+    else if (jsonResponse["firstLoad"]) {
+       let i =1;
+       fs.readdirSync('../img').forEach(file => {
+         
+           if (i==4) return ;
+           listURL.push({ slika: "../img/" + file});
+           i++;
+         });
+       res.json(listURL);
+    }
+    else {
+
+    }
+
 });
 
 app.get ('/rezervacija' , function (req, res) {
@@ -34,7 +58,10 @@ app.post ('/rezervacija', function(req, res) {
   let jsonResponse= provjeriZauzeca (req.body);
   
   if (!(jsonResponse["valid"])) {
+      if (jsonResponse["stringDatuma"]!="")
       jsonResponse["alert"] = "Nije moguće rezervisati salu " +req.body["opcija"] +"za navedeni datum "+ jsonResponse["stringDatuma"] + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] ;
+      else
+      jsonResponse["alert"] = "Nije moguće praviti periodične rezervacije u periodu van zimskog ili ljetnog semestra!";
   }
   else {
   
@@ -65,6 +92,7 @@ function azurirajJSON (js_respa) {
 } 
 
 function provjeriSemestar (trenutniMjesec) {
+  
     for (let i = 1; i <= 5; i++)
     if (trenutniMjesec == nizMjeseci[i]) {
         return "ljetni";
@@ -93,6 +121,11 @@ function vratiPeriodDatuma  (dateStr) {
       
 }
 
+function vratiSemestarIzBrojaMjeseca (mj) {
+    let arr = mj.split(".");
+    let br = parseInt(arr[1])-1;
+    return (br<=5) ? "ljetni" : "zimski";
+}
 function provjeriZauzeca (podaci) {
       let periodicnaZauzeca= podaci["periodicna"], vanrednaZauzeca= podaci["vanredna"];
       let datum = new Date (2019, nizMjeseci.indexOf(podaci["trenutniMjesec"]), ++podaci["odabraniDan"]) ;
@@ -102,7 +135,7 @@ function provjeriZauzeca (podaci) {
       if (periodicniDan==-2) periodicniDan=5;
       else if (periodicniDan==-1) periodicniDan=6;
       
-      if (tipSemestra==null) return ;
+      if (tipSemestra==null  &&  (podaci["periodicnost"]))   return {valid: false , stringDatuma : ""};
        
       let stringDana = (odabraniDan < 10 ? "0" : "") + odabraniDan, stringMjeseca = (mon< 10 ? "0" : "") + mon;
       let stringDatuma = stringDana + "." + stringMjeseca + ".2019."; 
@@ -111,6 +144,7 @@ function provjeriZauzeca (podaci) {
          if (tipSemestra== periodicnaZauzeca[i]["semestar"] && podaci["opcija"]==periodicnaZauzeca[i]["naziv"]
           && periodicniDan==periodicnaZauzeca[i]["dan"] && 
           preklapanjeTermina(periodicnaZauzeca[i]["pocetak"],periodicnaZauzeca[i]["kraj"], podaci["pocetak"], podaci["kraj"])) {
+              console.log ("Prva petlja");
             return {valid: false , stringDatuma : stringDatuma};
          }
       }
@@ -118,11 +152,14 @@ function provjeriZauzeca (podaci) {
       
       //provjera vanrednih zauzeca
      for (let i =0 ; i<vanrednaZauzeca.length ; i++) {
-      
-        console.log( vratiPeriodDatuma(vanrednaZauzeca[i]["datum"] )  +  " periodsdas");
-        if (podaci["opcija"]==vanrednaZauzeca[i]["naziv"] &&  preklapanjeTermina(vanrednaZauzeca[i]["pocetak"],vanrednaZauzeca[i]["kraj"], podaci["pocetak"], podaci["kraj"])  
-       &&  (stringDatuma==vanrednaZauzeca[i]["datum"]   || ( podaci["periodicnost"]==true &&  vratiPeriodDatuma(vanrednaZauzeca[i]["datum"] ) == periodicniDan))) {
-            return {valid: false ,  stringDatuma : stringDatuma};
+       
+         let semestarMjeseca = vratiSemestarIzBrojaMjeseca(vanrednaZauzeca[i]["datum"] );
+         
+      if (podaci["opcija"]==vanrednaZauzeca[i]["naziv"] &&  preklapanjeTermina(vanrednaZauzeca[i]["pocetak"],vanrednaZauzeca[i]["kraj"], podaci["pocetak"], podaci["kraj"])  
+       &&  (stringDatuma==vanrednaZauzeca[i]["datum"]   || ( podaci["periodicnost"]==true &&  vratiPeriodDatuma(vanrednaZauzeca[i]["datum"]) == periodicniDan && semestarMjeseca==tipSemestra)
+        )) {
+         
+        return {valid: false ,  stringDatuma : stringDatuma};
         }
      }
      
@@ -130,8 +167,7 @@ function provjeriZauzeca (podaci) {
         
          periodicnaZauzeca.push({dan:periodicniDan , semestar:tipSemestra , pocetak: podaci["pocetak"], kraj: podaci["kraj"], naziv:podaci["opcija"], predavac:"Predavac" });
      }
-     else 
-     vanrednaZauzeca.push({datum:stringDatuma , pocetak: podaci["pocetak"], kraj: podaci["kraj"], naziv:podaci["opcija"], predavac:"Predavac" });
+     else vanrednaZauzeca.push({datum:stringDatuma , pocetak: podaci["pocetak"], kraj: podaci["kraj"], naziv:podaci["opcija"], predavac:"Predavac" });
 
      return {valid: true , periodicnaZauzeca: periodicnaZauzeca , vanrednaZauzeca : vanrednaZauzeca};
 
