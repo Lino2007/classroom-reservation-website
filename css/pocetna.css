@@ -88,16 +88,16 @@ margin-left: 1%;
 
 /*postavljanje fiksne velicine na slikama*/
   .slike img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
 
  .slike {
-   margin-top: 1%;
+   margin-top: 5%;
    display: grid;
-   grid-gap: 1em;
+   grid-gap: 5em;
    align-items: center;
-   grid-template-columns: repeat(3, 150px);
+   grid-template-columns:repeat(3, 150px);
  }
   
   /* Responsive layout */
@@ -154,4 +154,47 @@ margin-left: 1%;
   
   
 
+         /*postavka da buttoni budu uredno rasporedjeni*/
+         #btnSection {
+          margin-top: 5%;
+          margin-left:1%;
+          width: 55%;
+          text-align: center;
+          margin-right: 30%;
+          }
           
+          #btnSection {
+            margin-top: 10%;
+           margin-left:7.5%;
+          width: 72%;
+          text-align: center;
+           margin-right: 20%;
+          
+         } 
+       
+         .inner {
+             display: inline-block;
+             margin-left: 0%;
+             width: 0%;
+            
+         }
+       
+         .inner #rbtn {
+             margin-left: 65%;
+         }
+       
+         #spacer {
+             margin-left: 14%;
+             width: 64%;
+         }
+       
+         .btnCal {
+             width: 100px;
+             height: 40px;
+             border: groove blue 2px;
+             background: rgb(253, 241, 169);
+             font-family: Consolas;
+             color: blue;
+             font-weight: bold;
+             font-size: 12pt;
+         }
