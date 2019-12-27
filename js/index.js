@@ -19,7 +19,6 @@ app.get ('/pocetna' , function (req, res) {
      
      res.sendFile(path.join(__dirname, '../html/pocetna.html'));
    
-
 });
 
 app.post ('/pocetna' , function (req, res) {
@@ -27,19 +26,35 @@ app.post ('/pocetna' , function (req, res) {
     console.log(req.body);
     if (!(jsonResponse.hasOwnProperty('firstLoad'))) throw "Pogrešan header!";
     else if (jsonResponse["firstLoad"]) {
-       let i =1;
+       let i =0, ptr=0;
        fs.readdirSync('../img').forEach(file => {
          
-           if (i==4) return ;
+           if (i<3) {
+               ptr= i+1;
            listURL.push({ slika: "../img/" + file});
+           }
            i++;
          });
-       res.json(listURL);
+       res.json({listURL : listURL , ptr: ptr , velicina: i});
     }
     else {
-
+        console.log("Učitajem nove slike");
+        let ptr= jsonResponse["ptr"], vel= jsonResponse["velicina"];
+        let limit = ptr+ 2, i=0, newPtr= ptr;
+        fs.readdirSync('../img').forEach(file => {
+          if (i>=ptr &&  i<=limit) { listURL.push({ slika: "../img/" + file});
+         newPtr++;
+        }
+             i++;
+            if (i==limit ) return ;
+          });
+          res.json({listURL : listURL , ptr: newPtr});
     }
 
+});
+
+app.get ('/zauzeca.json' , function (req, res) {
+    res.sendFile(path.join(__dirname, '../json/zauzeca.json'));
 });
 
 app.get ('/rezervacija' , function (req, res) {
@@ -136,8 +151,8 @@ function provjeriZauzeca (podaci) {
       else if (periodicniDan==-1) periodicniDan=6;
       
       if (tipSemestra==null  &&  (podaci["periodicnost"]))   return {valid: false , stringDatuma : ""};
-       
-      let stringDana = (odabraniDan < 10 ? "0" : "") + odabraniDan, stringMjeseca = (mon< 10 ? "0" : "") + mon;
+      
+      let stringDana = (odabraniDan < 10 ? "0" : "") + odabraniDan, stringMjeseca = (mon< 10 ? "0" : "") + mon; 
       let stringDatuma = stringDana + "." + stringMjeseca + ".2019."; 
       //provjera periodicnih zauzeca
       for (let i =0 ; i<periodicnaZauzeca.length ; i++) {

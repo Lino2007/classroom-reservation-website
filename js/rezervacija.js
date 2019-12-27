@@ -4,8 +4,7 @@ window.onload = (event) => {
     var d = new Date();
     Kalendar.iscrtajKalendar(document.getElementById("datumi"), d.getMonth());
     let arr= Pozivi.ucitajPodatkeIzJSON();
-    Kalendar.ucitajPodatke(arr[1], arr[0]);
-    Kalendar.ucitajPodatkeIzForme ();
+
 };
 
 function validirajFormu () {
@@ -20,7 +19,7 @@ function ucitajFormu () {
    periodicnost = document.getElementById("periodicnost").checked;
    return validirajFormu();
 }
-
+ // a 
 
 function rezervirajTermin (odabraniDan) {
     if (!ucitajFormu()) { 
@@ -28,7 +27,10 @@ function rezervirajTermin (odabraniDan) {
         return ;
     }
     let potvrda = confirm("Da li želite rezervisati odabrani termin?");
-    
+     let chc =Kalendar.provjeraZauzeca(odabraniDan);
+     if (chc)  {alert("Klijent strana je detektovala zauzece");
+     return ;
+}
     if (potvrda) {
         Pozivi.posaljiTermin ({pocetak:pocetak , kraj:kraj, opcija:opcija, trenutniMjesec:trenutniMjesec, odabraniDan:odabraniDan, periodicnost:periodicnost});
     }

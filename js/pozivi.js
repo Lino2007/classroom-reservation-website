@@ -2,8 +2,10 @@ var Pozivi= (function(){
     var periodicna=[], vanredna=[];
     var zauzecaJsonObjekt; //JSON objekt u koji spremamo zauzeca.json
     function ucitajPodatkeIzJSON () {
+
+      
         let jsonFile = new XMLHttpRequest();
-        jsonFile.open("GET", "json/zauzeca.json", false);
+        jsonFile.open("GET", "json/zauzeca.json", true);
         jsonFile.onreadystatechange = function ()
         {
             if(jsonFile.readyState === 4)
@@ -13,11 +15,14 @@ var Pozivi= (function(){
                     zauzecaJsonObjekt = JSON.parse(jsonFile.responseText);
                    periodicna= zauzecaJsonObjekt["periodicna"];
                     vanredna= zauzecaJsonObjekt["vanredna"];
+                    console.log("Dobar dan");
+                    Kalendar.ucitajPodatke(vanredna, periodicna);
+                    Kalendar.ucitajPodatkeIzForme ();
                 }
             }
-        }
+        } /////
         jsonFile.send(null);
-        return arr= [periodicna, vanredna];
+        //return arr= [periodicna, vanredna];
     }
   
     function posaljiTermin (podaci) {
@@ -54,7 +59,7 @@ var Pozivi= (function(){
 
     function prvoUcitavanjeSlika () {
         let slike;
-        let jsonDat = {   firstLoad : true};
+        let jsonDat = {   firstLoad : true };
       
         $.ajax({
             url: '/pocetna',
@@ -63,10 +68,13 @@ var Pozivi= (function(){
             data:  JSON.stringify(jsonDat),
             dataType: 'json',
             success: function(data) {
-               console.log("success");
+            
                 slike = data;
-                napuniCache(slike);
-                prikaziSlike(slike);
+                postaviVelicinu(slike["velicina"]);
+                postaviPointer (slike["ptr"]);
+                napuniCache(slike["listURL"]);
+                prikaziSlike(slike["listURL"]);
+
             } ,
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 console.log(errorThrown);
@@ -79,10 +87,34 @@ var Pozivi= (function(){
     }
 
 
+
+    function ucitajNoveSlike (pointer) {
+     
+       let slike;
+       let jsonDat = {firstLoad: false , ptr: pointer};
+       $.ajax({
+        url: '/pocetna',
+        type: 'POST',
+        contentType: 'application/json',
+        data:  JSON.stringify(jsonDat),
+        dataType: 'json',
+        success: function(data) {
+            slike = data;
+            postaviPointer (slike["ptr"]);
+            napuniCache(slike["listURL"]);
+            prikaziSlike(slike["listURL"]);
+
+        } ,
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            console.log(errorThrown);
+         }
+}); }
+
      return {
          ucitajPodatkeIzJSON,
          posaljiTermin,
-         prvoUcitavanjeSlika
+         prvoUcitavanjeSlika,
+         ucitajNoveSlike
      }
  
  }());

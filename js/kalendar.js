@@ -186,6 +186,10 @@ var Kalendar = (function () {
     return new Date(year, month, 0).getDate();
   }
   
+  function provjeraZauzeca (odabraniDan) {
+    let txt =document.getElementsByClassName('unutrasnja')[odabraniDan-1].innerHTML;
+    return txt.includes("zauzeta");
+  }
  return {
     obojiZauzeca: obojiZauzecaImpl,
     ucitajPodatke: ucitajPodatkeImpl,
@@ -193,6 +197,7 @@ var Kalendar = (function () {
     callPrev: callPrev,
     callNext: callNext,
     ucitajPodatkeIzForme: ucitajPodatkeIzForme,
+    provjeraZauzeca
   
   }
 }());

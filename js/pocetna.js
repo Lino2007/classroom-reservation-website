@@ -1,18 +1,32 @@
-var slikeCache = [];
+var slikeCache = [] , velicina, pointer, sljedeciBlok;
 
 
 window.onload = (event) => {
- //  slikeCache = 
- if (window.location.href == "http://localhost:8080/") window.location.href='/pocetna';
- //console.log(window.location.href);
-  Pozivi.prvoUcitavanjeSlika();
-
+    velicina=pointer=0;
+    slikeCache=[];
+    if (window.location.href == "http://localhost:8080/") window.location.href='/pocetna';
+    Pozivi.prvoUcitavanjeSlika();
 };
 
 
+function postaviVelicinu (vel) {
+    velicina=vel;
+}
+
+function postaviPointer (ptr) {
+   pointer=ptr;
+   if (pointer == velicina) {document.getElementById("nxt").disabled = true;
+  }
+   else document.getElementById("nxt").disabled = false;
+}
 function napuniCache (slike) {
-     slikeCache = $.extend(slikeCache, slike);
-     console.log (slikeCache);
+    if (pointer != velicina) {
+      
+         slikeCache = $.extend(slikeCache, slike);
+
+    }
+    console.log(slikeCache);
+    console.log(slikeCache.length);
 }
 
 function prikaziSlike (listaSlika) {
@@ -22,7 +36,17 @@ function prikaziSlike (listaSlika) {
          imgContent += "<img src='"+ listaSlika[i]["slika"] + "' alt='" + i + "slika'>\n";
      }
     targetDiv.innerHTML =  imgContent;
+
+    console.log(velicina + " " + pointer);
 }
+
+function sljedeci () {
+    if (slikeCache.length!=velicina && )
+    Pozivi.ucitajNoveSlike(pointer);
+}
+ 
+//document.getElementById("myBtn").disabled = true;
+
 
 
 /*
