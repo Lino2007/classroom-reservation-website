@@ -185,6 +185,11 @@ var Kalendar = (function () {
   function daysInMonth(month, year) {
     return new Date(year, month, 0).getDate();
   }
+
+  function formirajDatum (day, mon) {
+     let monVal = nizMjeseci.indexOf(mon) +1 ;
+     return ((day> 10) ? "" : "0") + day + "/" + ((monVal>10) ? "": "0") + monVal + "/2019";
+  }
   
   function provjeraZauzeca (odabraniDan) {
     let txt =document.getElementsByClassName('unutrasnja')[odabraniDan-1].innerHTML;
@@ -197,7 +202,8 @@ var Kalendar = (function () {
     callPrev: callPrev,
     callNext: callNext,
     ucitajPodatkeIzForme: ucitajPodatkeIzForme,
-    provjeraZauzeca
+    provjeraZauzeca,
+    formirajDatum
   
   }
 }());

@@ -1,9 +1,9 @@
-var pocetak, kraj, opcija, trenutniMjesec , periodicnost;
+var pocetak, kraj, opcija, trenutniMjesec , periodicnost, dan;
 
 window.onload = (event) => {
     var d = new Date();
     Kalendar.iscrtajKalendar(document.getElementById("datumi"), d.getMonth());
-    let arr= Pozivi.ucitajPodatkeIzJSON();
+     Pozivi.ucitajPodatkeIzJSON(true);
 
 };
 
@@ -22,17 +22,28 @@ function ucitajFormu () {
  // a 
 
 function rezervirajTermin (odabraniDan) {
+   
     if (!ucitajFormu()) { 
         alert("Greška: Nespravni podaci u formi.");
         return ;
     }
+    dan= odabraniDan;
     let potvrda = confirm("Da li želite rezervisati odabrani termin?");
-     let chc =Kalendar.provjeraZauzeca(odabraniDan);
-     if (chc)  {alert("Klijent strana je detektovala zauzece");
+  let chc =Kalendar.provjeraZauzeca(odabraniDan);
+     if (chc)  {
+     let dat = Kalendar.formirajDatum(odabraniDan, trenutniMjesec);
+     alert("Nije moguće rezervisati salu " + opcija + " za navedeni datum " + dat + " i termin od " + pocetak + " do " + kraj + "!");
+      Pozivi.ucitajPodatkeIzJSON(true); 
      return ;
-}
-    if (potvrda) {
-        Pozivi.posaljiTermin ({pocetak:pocetak , kraj:kraj, opcija:opcija, trenutniMjesec:trenutniMjesec, odabraniDan:odabraniDan, periodicnost:periodicnost});
+      
     }
-   // alert (potvrda ? "Prihvatili ste rezervaciju!" : "Niste prihvatili rezervaciju!");
+    if (potvrda) {
+        Pozivi.ucitajPodatkeIzJSON(false);
+       // Pozivi.posaljiTermin ({pocetak:pocetak , kraj:kraj, opcija:opcija, trenutniMjesec:trenutniMjesec, odabraniDan:odabraniDan, periodicnost:periodicnost});
+    }
+  
+}
+
+function slanjeTermina () {
+    Pozivi.posaljiTermin ({pocetak:pocetak , kraj:kraj, opcija:opcija, trenutniMjesec:trenutniMjesec, odabraniDan:dan, periodicnost:periodicnost});
 }

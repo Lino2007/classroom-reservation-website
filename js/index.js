@@ -110,8 +110,12 @@ app.post('/rezervacija', function (req, res) {
     let jsonResponse = provjeriZauzeca(req.body);
 
     if (!(jsonResponse["valid"])) {
+        console.log (jsonResponse["stringDatuma"]);
+    
+      jsonResponse["stringDatuma"] = jsonResponse["stringDatuma"].replace('.', '/'); 
+      jsonResponse["stringDatuma"] = jsonResponse["stringDatuma"].replace('.', '/'); 
         if (jsonResponse["stringDatuma"] != "")
-            jsonResponse["alert"] = "Nije moguće rezervisati salu " + req.body["opcija"] + "za navedeni datum " + jsonResponse["stringDatuma"] + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"];
+            jsonResponse["alert"] = "Nije moguće rezervisati salu " + req.body["opcija"] + " za navedeni datum " + jsonResponse["stringDatuma"].replace('.', ' ') + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"];
         else
             jsonResponse["alert"] = "Nije moguće praviti periodične rezervacije u periodu van zimskog ili ljetnog semestra!";
     }

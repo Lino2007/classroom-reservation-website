@@ -1,7 +1,23 @@
 var Pozivi= (function(){
     var periodicna=[], vanredna=[];
     var zauzecaJsonObjekt; //JSON objekt u koji spremamo zauzeca.json
-    function ucitajPodatkeIzJSON () {
+
+
+
+    $.ajax({
+        url: '/pocetna/slike/:nazivSlike',
+        type: 'GET',
+        contentType: 'application/json',
+        success: function(data) {
+          console.log("Ucitano");
+
+        } ,
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            console.log(errorThrown);
+         }
+});
+
+    function ucitajPodatkeIzJSON (param) {
 
       
         let jsonFile = new XMLHttpRequest();
@@ -16,13 +32,18 @@ var Pozivi= (function(){
                    periodicna= zauzecaJsonObjekt["periodicna"];
                     vanredna= zauzecaJsonObjekt["vanredna"];
                     console.log("Dobar dan");
+                    if (param) {
                     Kalendar.ucitajPodatke(vanredna, periodicna);
                     Kalendar.ucitajPodatkeIzForme ();
+                    }
+                    else {
+                        slanjeTermina();
+                    }
                 }
             }
         } /////
         jsonFile.send(null);
-        //return arr= [periodicna, vanredna];
+      
     }
   
     function posaljiTermin (podaci) {
@@ -39,20 +60,21 @@ var Pozivi= (function(){
             success:function(data) {
               
                if (data["valid"]) {
-               zauzecaJsonObjekt["periodicna"] = data["periodicnaZauzeca"];
+             /*  zauzecaJsonObjekt["periodicna"] = data["periodicnaZauzeca"];
                zauzecaJsonObjekt["vanredna"]= data["vanrednaZauzeca"];
                Kalendar.ucitajPodatke(zauzecaJsonObjekt["vanredna"],  zauzecaJsonObjekt["periodicna"] );
-               Kalendar.ucitajPodatkeIzForme ();
+               Kalendar.ucitajPodatkeIzForme (); */
+                ucitajPodatkeIzJSON(true);
                }
                else {
                    alert(data["alert"]);
+                   //ponovo refreshamo
+                   ucitajPodatkeIzJSON(true);
                }
               }
               ,
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-            /* var text = (XMLHttpRequest.responseText).getTagById("pre").innerHTML;
-             console.log (text);
-             alert(XMLHttpRequest.responseText); */
+        
             }
         });
     }
@@ -78,9 +100,6 @@ var Pozivi= (function(){
             } ,
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 console.log(errorThrown);
-                /* var text = (XMLHttpRequest.responseText).getTagById("pre").innerHTML;
-                 console.log (text);
-                 alert(XMLHttpRequest.responseText); */
                 }
     });
          
