@@ -5,7 +5,7 @@ const path = require('path');
 const url = require('url');
 const fs = require('fs');
 const nizMjeseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'];
-var globalPointer=0;
+
 app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/../'));
 app.use('/', express.static(__dirname));
@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '../html/pocetna.html'));
 });
 
-app.get('/pocetna', function (req, res) {
+app.get('/pocetna.html', function (req, res) {
 
     res.sendFile(path.join(__dirname, '../html/pocetna.html'));
 
@@ -25,27 +25,17 @@ app.get('/pocetna', function (req, res) {
 app.get('/pocetna/slike/:nazivSlike', function (req, res) {
      let nazivSlike = req.params["nazivSlike"];
      let fajlPath = '../img/' + nazivSlike;
-     console.log(fajlPath);
+    // console.log(fajlPath);
     if (!(fs.existsSync(fajlPath))) throw "Greška odabrana slika ne postoji ";
    res.sendFile(path.join(__dirname, '../img/' + nazivSlike));
 
 });
 
-app.get('/pocetna/slike', function (req, res) {
-    let nazivSlike = req.params["nazivSlike"];
-    let fajlPath = '../img/' + nazivSlike;
-    res.writeHeader(200, {"Content-Type": "text/html"});  
-    res.write("<img src='../../img/css-image.png' alt='0slika'>");  
-    res.end();  
-  //  console.log(fajlPath);
-   //if (!(fs.existsSync(fajlPath))) throw "Greška odabrana slika ne postoji ";
- // res.sendFile(path.join(__dirname, '../img/' + nazivSlike));
-//<img src="../img/css-image.png" alt="0slika">
-});
 
-app.post('/pocetna', function (req, res) {
+
+app.post('/pocetna.html', function (req, res) {
     let jsonResponse = req.body, listURL = [];
-    console.log(req.body);
+   // console.log(req.body);
     if (!(jsonResponse.hasOwnProperty('firstLoad'))) {
         let novaVelicina =0;
         fs.readdir('../img', (err, files) => {
@@ -67,12 +57,12 @@ app.post('/pocetna', function (req, res) {
                 i++;
             });
             globalPointer=0;
-            console.log(listURL.length + " izaso" + i);
+           // console.log(listURL.length + " izaso" + i);
             res.json({ listURL: listURL, ptr: ptr, velicina: i });
         });
     }
     else {
-        console.log("usao");
+       // console.log("usao");
         let ptr = jsonResponse["ptr"], vel = jsonResponse["velicina"];
         let limit = ptr + 2, i = 0, newPtr = ptr;
         fs.readdir('../img', (err, files) => {
@@ -94,30 +84,32 @@ app.get('/zauzeca.json', function (req, res) {
     res.sendFile(path.join(__dirname, '../json/zauzeca.json'));
 });
 
-app.get('/rezervacija', function (req, res) {
+app.get('/rezervacija.html', function (req, res) {
     res.sendFile(path.join(__dirname, '../html/rezervacija.html'));
 });
 
-app.get('/sale', function (req, res) {
+app.get('/sale.html', function (req, res) {
     res.sendFile(path.join(__dirname, '../html/sale.html'));
 });
 
-app.get('/unos', function (req, res) {
+app.get('/unos.html', function (req, res) {
     res.sendFile(path.join(__dirname, '../html/unos.html'));
 });
 
-app.post('/rezervacija', function (req, res) {
+app.post('/rezervacija.html', function (req, res) {
     let jsonResponse = provjeriZauzeca(req.body);
 
     if (!(jsonResponse["valid"])) {
-        console.log (jsonResponse["stringDatuma"]);
+     //   console.log (jsonResponse["stringDatuma"]);
     
       jsonResponse["stringDatuma"] = jsonResponse["stringDatuma"].replace('.', '/'); 
       jsonResponse["stringDatuma"] = jsonResponse["stringDatuma"].replace('.', '/'); 
         if (jsonResponse["stringDatuma"] != "")
-            jsonResponse["alert"] = "Nije moguće rezervisati salu " + req.body["opcija"] + " za navedeni datum " + jsonResponse["stringDatuma"].replace('.', ' ') + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"];
-        else
-            jsonResponse["alert"] = "Nije moguće praviti periodične rezervacije u periodu van zimskog ili ljetnog semestra!";
+            jsonResponse["alert"] = "Nije moguće rezervisati salu " + req.body["opcija"] + " za navedeni datum " + jsonResponse["stringDatuma"].replace('.', ' ') + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] + "!";
+        else {
+            let strv= "Nije moguće rezervisati salu " + req.body["opcija"] + " za navedeni datum " + jsonResponse["stringDatuma"].replace('.', ' ') + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] + "!";
+            jsonResponse["alert"] = strv + "\n (Nije moguće praviti periodične rezervacije u periodu van zimskog ili ljetnog semestra!)";
+        }
     }
     else {
 
@@ -142,7 +134,7 @@ function azurirajJSON(js_respa) {
             if (err) {
                 throw err;
             }
-            console.log("OK");
+          //  console.log("OK");
         });
     });
 }
@@ -153,8 +145,9 @@ function provjeriSemestar(trenutniMjesec) {
         if (trenutniMjesec == nizMjeseci[i]) {
             return "ljetni";
         }
+    if  (trenutniMjesec == nizMjeseci[0]) return "zimski";
     for (let i = 9; i <= 11; i++)
-        if (trenutniMjesec == nizMjeseci[i] || trenutniMjesec == nizMjeseci[0]) {
+        if (trenutniMjesec == nizMjeseci[i]) {
             return "zimski";
         }
     return null;
@@ -178,9 +171,14 @@ function vratiPeriodDatuma(dateStr) {
 }
 
 function vratiSemestarIzBrojaMjeseca(mj) {
+ //   console.log(mj);
     let arr = mj.split(".");
+   // console.log(arr[1]);
+   // console.log(parseInt(arr[1]));
     let br = parseInt(arr[1]) - 1;
-    return (br <= 5) ? "ljetni" : "zimski";
+  //  console.log("ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇ");
+    
+    return (br <= 5 && br!=0) ? "ljetni" : "zimski";
 }
 function provjeriZauzeca(podaci) {
     let periodicnaZauzeca = podaci["periodicna"], vanrednaZauzeca = podaci["vanredna"];
@@ -200,7 +198,7 @@ function provjeriZauzeca(podaci) {
         if (tipSemestra == periodicnaZauzeca[i]["semestar"] && podaci["opcija"] == periodicnaZauzeca[i]["naziv"]
             && periodicniDan == periodicnaZauzeca[i]["dan"] &&
             preklapanjeTermina(periodicnaZauzeca[i]["pocetak"], periodicnaZauzeca[i]["kraj"], podaci["pocetak"], podaci["kraj"])) {
-            console.log("Prva petlja");
+          
             return { valid: false, stringDatuma: stringDatuma };
         }
     }

@@ -4,7 +4,7 @@ var Pozivi= (function(){
 
 
 
-    $.ajax({
+  /*  $.ajax({
         url: '/pocetna/slike/:nazivSlike',
         type: 'GET',
         contentType: 'application/json',
@@ -15,7 +15,7 @@ var Pozivi= (function(){
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             console.log(errorThrown);
          }
-});
+}); */
 
     function ucitajPodatkeIzJSON (param) {
 
@@ -31,7 +31,7 @@ var Pozivi= (function(){
                     zauzecaJsonObjekt = JSON.parse(jsonFile.responseText);
                    periodicna= zauzecaJsonObjekt["periodicna"];
                     vanredna= zauzecaJsonObjekt["vanredna"];
-                    console.log("Dobar dan");
+                  
                     if (param) {
                     Kalendar.ucitajPodatke(vanredna, periodicna);
                     Kalendar.ucitajPodatkeIzForme ();
@@ -52,7 +52,7 @@ var Pozivi= (function(){
         podaci["vanredna"]=zauzecaJsonObjekt["vanredna"];
        
         $.ajax({
-            url: '/rezervacija',
+            url: '/rezervacija.html',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(podaci),
@@ -84,7 +84,7 @@ var Pozivi= (function(){
         let jsonDat = {   firstLoad : true };
       
         $.ajax({
-            url: '/pocetna',
+            url: '/pocetna.html',
             type: 'POST',
             contentType: 'application/json',
             data:  JSON.stringify(jsonDat),
@@ -112,7 +112,7 @@ var Pozivi= (function(){
        let slike;
        let jsonDat = {firstLoad: false , ptr: pointer};
        $.ajax({
-        url: '/pocetna',
+        url: '/pocetna.html',
         type: 'POST',
         contentType: 'application/json',
         data:  JSON.stringify(jsonDat),
@@ -133,7 +133,7 @@ var Pozivi= (function(){
     function provjeriBrojSlika (sljedeci) {
         let jsonDat = {};
         $.ajax({
-            url: '/pocetna',
+            url: '/pocetna.html',
             type: 'POST',
             contentType: 'application/json',
             data:  JSON.stringify(jsonDat),

@@ -6,7 +6,7 @@ window.onload = (event) => {
     slikeCache=[];
     console.log ("!!");
     document.getElementById("prev").disabled = true;
-    if (window.location.href == "http://localhost:8080/") window.location.href='/pocetna';
+    if (window.location.href == "http://localhost:8080/") window.location.href='/pocetna.html';
     Pozivi.prvoUcitavanjeSlika();
 };
 
@@ -108,11 +108,4 @@ function prethodniCallBack (novaVelicina) {
 function prethodni () {
     Pozivi.provjeriBrojSlika(false);
 }
-//document.getElementById("myBtn").disabled = true;
 
-
-
-/*
-<img src="../img/css-image.png" alt="css-slika1" >
-                                    <img  src="../img/html-image.jpg" alt="html-slika1">
-                                    <img  src="../img/php-image.jpg" alt="php-slika1"> */

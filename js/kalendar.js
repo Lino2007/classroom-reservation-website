@@ -188,7 +188,7 @@ var Kalendar = (function () {
 
   function formirajDatum (day, mon) {
      let monVal = nizMjeseci.indexOf(mon) +1 ;
-     return ((day> 10) ? "" : "0") + day + "/" + ((monVal>10) ? "": "0") + monVal + "/2019";
+     return ((day>= 10) ? "" : "0") + day + "/" + ((monVal>=10) ? "": "0") + monVal + "/2019";
   }
   
   function provjeraZauzeca (odabraniDan) {
