@@ -50,36 +50,50 @@ function prikaziSlike (listaSlika) {
   
 }
 
+function sljedeciCallBack (novaVelicina) {
+    if (novaVelicina!=velicina) {
+        alert("Dodane su nove slike u folder ili su obrisane. Refresham.");
+        window.location.href='/pocetna';
+        return ;
+    }
+    if (slikeCache.length != velicina && Math.abs(cachePointer-pointer)<=3)
+    {
+     Pozivi.ucitajNoveSlike(pointer); }
+    else {
+        let arr = [];
+        cachePointer += 3;
+        let pushAhead = cachePointer;
+        console.log ("Cache pointer(sljedeci else): " + cachePointer +  "Glavni pointer(sljedeci else):" + pointer);
+     for (let i = 0 ; i <3 && pushAhead<slikeCache.length ; i++)  arr.push (slikeCache[pushAhead++]);
+     prikaziSlike(arr);
+     if (cachePointer!= 0) document.getElementById("prev").disabled = false;
+     if (  Math.abs(cachePointer-pointer)<3 || (velicina%3==0 && Math.abs(cachePointer-pointer)==3 && velicina==pointer)) {
+         console.log( Math.abs(cachePointer-pointer)<3 );
+         console.log(velicina%3==0);
+         console.log(Math.abs(cachePointer-pointer)==3);
+ 
+        console.log("Blokada ELSE sljedeci");
+        document.getElementById("nxt").disabled = true;
+   }
+    }
+}
+
 function sljedeci () {
-    
+    Pozivi.provjeriBrojSlika(true);
   //  if (slikeCache.length!=velicina && )
  
-   if (slikeCache.length != velicina && Math.abs(cachePointer-pointer)<=3)
-   {
-    Pozivi.ucitajNoveSlike(pointer); }
-   else {
-       let arr = [];
-       cachePointer += 3;
-       let pushAhead = cachePointer;
-       console.log ("Cache pointer(sljedeci else): " + cachePointer +  "Glavni pointer(sljedeci else):" + pointer);
-    for (let i = 0 ; i <3 && pushAhead<slikeCache.length ; i++)  arr.push (slikeCache[pushAhead++]);
-    prikaziSlike(arr);
-    if (cachePointer!= 0) document.getElementById("prev").disabled = false;
-    if (  Math.abs(cachePointer-pointer)<3 || (velicina%3==0 && Math.abs(cachePointer-pointer)==3 && velicina==pointer)) {
-        console.log( Math.abs(cachePointer-pointer)<3 );
-        console.log(velicina%3==0);
-        console.log(Math.abs(cachePointer-pointer)==3);
-
-       console.log("Blokada ELSE sljedeci");
-       document.getElementById("nxt").disabled = true;
-  }
-   }
+  
 
 }
  
 
-function prethodni () {
-
+function prethodniCallBack (novaVelicina) {
+    if (novaVelicina!=velicina) {
+        alert("Dodane su nove slike u folder ili su obrisane. Refresham.");
+        window.location.href='/pocetna';
+        return ;
+    }
+       
     if (document.getElementById("nxt").disabled) document.getElementById("nxt").disabled=false;
     cachePointer -= 3;
    let pushBackVal = cachePointer, arr = [];
@@ -88,7 +102,11 @@ function prethodni () {
   for (let i = 0 ; i <3 ; i++)  arr.push (slikeCache[pushBackVal++]);
   prikaziSlike( arr);
 
-  console.log ("Cache pointer(prethodni): " + cachePointer);
+  
+}
+
+function prethodni () {
+    Pozivi.provjeriBrojSlika(false);
 }
 //document.getElementById("myBtn").disabled = true;
 

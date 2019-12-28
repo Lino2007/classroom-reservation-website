@@ -5,7 +5,7 @@ const path = require('path');
 const url = require('url');
 const fs = require('fs');
 const nizMjeseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'];
-
+var globalPointer=0;
 app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/../'));
 app.use('/', express.static(__dirname));
@@ -22,11 +22,40 @@ app.get('/pocetna', function (req, res) {
 });
 
 
+app.get('/pocetna/slike/:nazivSlike', function (req, res) {
+     let nazivSlike = req.params["nazivSlike"];
+     let fajlPath = '../img/' + nazivSlike;
+     console.log(fajlPath);
+    if (!(fs.existsSync(fajlPath))) throw "Greška odabrana slika ne postoji ";
+   res.sendFile(path.join(__dirname, '../img/' + nazivSlike));
+
+});
+
+app.get('/pocetna/slike', function (req, res) {
+    let nazivSlike = req.params["nazivSlike"];
+    let fajlPath = '../img/' + nazivSlike;
+    res.writeHeader(200, {"Content-Type": "text/html"});  
+    res.write("<img src='../../img/css-image.png' alt='0slika'>");  
+    res.end();  
+  //  console.log(fajlPath);
+   //if (!(fs.existsSync(fajlPath))) throw "Greška odabrana slika ne postoji ";
+ // res.sendFile(path.join(__dirname, '../img/' + nazivSlike));
+//<img src="../img/css-image.png" alt="0slika">
+});
 
 app.post('/pocetna', function (req, res) {
     let jsonResponse = req.body, listURL = [];
     console.log(req.body);
-    if (!(jsonResponse.hasOwnProperty('firstLoad'))) throw "Pogrešan header!";
+    if (!(jsonResponse.hasOwnProperty('firstLoad'))) {
+        let novaVelicina =0;
+        fs.readdir('../img', (err, files) => {
+            files.forEach(file => {
+                novaVelicina++;
+            });
+        res.json({ novaVelicina:novaVelicina });
+        });
+        
+    }
     else if (jsonResponse["firstLoad"]) {
         let i = 0, ptr = 0;
         fs.readdir('../img', (err, files) => {
@@ -37,6 +66,7 @@ app.post('/pocetna', function (req, res) {
                 }
                 i++;
             });
+            globalPointer=0;
             console.log(listURL.length + " izaso" + i);
             res.json({ listURL: listURL, ptr: ptr, velicina: i });
         });

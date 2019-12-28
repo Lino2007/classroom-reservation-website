@@ -110,11 +110,33 @@ var Pozivi= (function(){
          }
 }); }
 
+
+    function provjeriBrojSlika (sljedeci) {
+        let jsonDat = {};
+        $.ajax({
+            url: '/pocetna',
+            type: 'POST',
+            contentType: 'application/json',
+            data:  JSON.stringify(jsonDat),
+            dataType: 'json',
+            success: function(data) {
+                if (sljedeci)  sljedeciCallBack(data["novaVelicina"]);
+                else prethodniCallBack(data["novaVelicina"]);
+    
+            } ,
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log(errorThrown);
+             }
+    });
+
+    }
+ 
      return {
          ucitajPodatkeIzJSON,
          posaljiTermin,
          prvoUcitavanjeSlika,
-         ucitajNoveSlike
+         ucitajNoveSlike,
+         provjeriBrojSlika
      }
  
  }());
