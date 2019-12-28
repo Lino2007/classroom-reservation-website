@@ -1,9 +1,11 @@
-var slikeCache = [] , velicina, pointer, sljedeciBlok;
+var slikeCache = [] , velicina, pointer, sljedeciBlok, cachePointer;
 
 
 window.onload = (event) => {
     velicina=pointer=0;
     slikeCache=[];
+    console.log ("!!");
+    document.getElementById("prev").disabled = true;
     if (window.location.href == "http://localhost:8080/") window.location.href='/pocetna';
     Pozivi.prvoUcitavanjeSlika();
 };
@@ -15,21 +17,29 @@ function postaviVelicinu (vel) {
 
 function postaviPointer (ptr) {
    pointer=ptr;
-   if (pointer == velicina) {document.getElementById("nxt").disabled = true;
+   if (pointer == velicina) {
+    console.log("Blokada postaviPointer sljedeci");
+       document.getElementById("nxt").disabled = true;
   }
    else document.getElementById("nxt").disabled = false;
 }
 function napuniCache (slike) {
-    if (pointer != velicina) {
-      
-         slikeCache = $.extend(slikeCache, slike);
+    console.log ("PUNJENJE CACHE-A");
+         for (let i =0 ; i<slike.length ; i++) {
+             slikeCache.push(slike[i]);
+         }
+         cachePointer= slikeCache.length - slike.length;
+         console.log ("Cache pointer(napuni slike):" + cachePointer);
+       //  slikeCache = $.extend(slikeCache, slike);
 
-    }
-    console.log(slikeCache);
-    console.log(slikeCache.length);
+   if (cachePointer!=0) document.getElementById("prev").disabled = false;
+
+   console.log ("Cache pointer(sljedeci if): " + cachePointer +  "Glavni pointer(sljedeci if):" + pointer);
+  
 }
 
 function prikaziSlike (listaSlika) {
+    console.log(listaSlika);
     let imgContent = "" , targetDiv = document.getElementsByClassName("slike")[0];
     //targetDiv.innerHTML = "";
    for (let i = 0; i<listaSlika.length; i++) {
@@ -37,14 +47,49 @@ function prikaziSlike (listaSlika) {
      }
     targetDiv.innerHTML =  imgContent;
 
-    console.log(velicina + " " + pointer);
+  
 }
 
 function sljedeci () {
-    if (slikeCache.length!=velicina && )
-    Pozivi.ucitajNoveSlike(pointer);
+    
+  //  if (slikeCache.length!=velicina && )
+ 
+   if (slikeCache.length != velicina && Math.abs(cachePointer-pointer)<=3)
+   {
+    Pozivi.ucitajNoveSlike(pointer); }
+   else {
+       let arr = [];
+       cachePointer += 3;
+       let pushAhead = cachePointer;
+       console.log ("Cache pointer(sljedeci else): " + cachePointer +  "Glavni pointer(sljedeci else):" + pointer);
+    for (let i = 0 ; i <3 && pushAhead<slikeCache.length ; i++)  arr.push (slikeCache[pushAhead++]);
+    prikaziSlike(arr);
+    if (cachePointer!= 0) document.getElementById("prev").disabled = false;
+    if (  Math.abs(cachePointer-pointer)<3 || (velicina%3==0 && Math.abs(cachePointer-pointer)==3 && velicina==pointer)) {
+        console.log( Math.abs(cachePointer-pointer)<3 );
+        console.log(velicina%3==0);
+        console.log(Math.abs(cachePointer-pointer)==3);
+
+       console.log("Blokada ELSE sljedeci");
+       document.getElementById("nxt").disabled = true;
+  }
+   }
+
 }
  
+
+function prethodni () {
+
+    if (document.getElementById("nxt").disabled) document.getElementById("nxt").disabled=false;
+    cachePointer -= 3;
+   let pushBackVal = cachePointer, arr = [];
+   if (cachePointer<=0)  document.getElementById("prev").disabled = true;
+ 
+  for (let i = 0 ; i <3 ; i++)  arr.push (slikeCache[pushBackVal++]);
+  prikaziSlike( arr);
+
+  console.log ("Cache pointer(prethodni): " + cachePointer);
+}
 //document.getElementById("myBtn").disabled = true;
 
 
