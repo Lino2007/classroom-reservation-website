@@ -4,24 +4,11 @@ var Pozivi= (function(){
 
 
 
-  /*  $.ajax({
-        url: '/pocetna/slike/:nazivSlike',
-        type: 'GET',
-        contentType: 'application/json',
-        success: function(data) {
-          console.log("Ucitano");
-
-        } ,
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-            console.log(errorThrown);
-         }
-}); */
-
     function ucitajPodatkeIzJSON (param) {
 
       
         let jsonFile = new XMLHttpRequest();
-        jsonFile.open("GET", "json/zauzeca.json", true);
+        jsonFile.open("GET", "/zauzeca.json", true);
         jsonFile.onreadystatechange = function ()
         {
             if(jsonFile.readyState === 4)

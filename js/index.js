@@ -22,7 +22,8 @@ app.get('/pocetna.html', function (req, res) {
 });
 
 
-app.get('/pocetna/slike/:nazivSlike', function (req, res) {
+//Path za slanje jedne slike sa servera
+app.get('/slike/:nazivSlike', function (req, res) {
      let nazivSlike = req.params["nazivSlike"];
      let fajlPath = '../img/' + nazivSlike;
     // console.log(fajlPath);
@@ -68,6 +69,7 @@ app.post('/pocetna.html', function (req, res) {
         fs.readdir('../img', (err, files) => {
             files.forEach(file => {
                 if (i >= ptr && i <= limit) {
+                   // console.log(file);
                     listURL.push({ slika: "../img/" + file });
                     newPtr++;
                 }
@@ -117,9 +119,7 @@ app.post('/rezervacija.html', function (req, res) {
     }
 
     res.json(jsonResponse);
-    // console.log (JSON.stringify(jsonResponse));
-    // if (!(jsonResponse["valid"])) throw "Nije moguće rezervisati salu " +req.body["opcija"] +"za navedeni datum "+ jsonResponse["stringDatuma"] + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] ;
-    // Kalendar.ucitajPodatke();
+  
 
 });
 
