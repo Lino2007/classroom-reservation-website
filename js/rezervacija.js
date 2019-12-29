@@ -2,7 +2,8 @@ var pocetak, kraj, opcija, trenutniMjesec , periodicnost, dan;
 
 window.onload = (event) => {
     var d = new Date();
-    Kalendar.iscrtajKalendar(document.getElementById("datumi"), d.getMonth());
+    //ne idem u sljedeci mjesec jer je to vec 2020, ovaj kalendar je za 2019
+    Kalendar.iscrtajKalendar(document.getElementById("datumi"), 11);
      Pozivi.ucitajPodatkeIzJSON(true);
 
 };
