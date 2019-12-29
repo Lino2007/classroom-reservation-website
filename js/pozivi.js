@@ -71,7 +71,7 @@ var Pozivi= (function(){
         let jsonDat = {   firstLoad : true };
       
         $.ajax({
-            url: '/pocetna.html',
+            url: '/slike',
             type: 'POST',
             contentType: 'application/json',
             data:  JSON.stringify(jsonDat),
@@ -99,7 +99,7 @@ var Pozivi= (function(){
        let slike;
        let jsonDat = {firstLoad: false , ptr: pointer};
        $.ajax({
-        url: '/pocetna.html',
+        url: '/slike',
         type: 'POST',
         contentType: 'application/json',
         data:  JSON.stringify(jsonDat),
@@ -120,7 +120,7 @@ var Pozivi= (function(){
     function provjeriBrojSlika (sljedeci) {
         let jsonDat = {};
         $.ajax({
-            url: '/pocetna.html',
+            url: '/slike',
             type: 'POST',
             contentType: 'application/json',
             data:  JSON.stringify(jsonDat),

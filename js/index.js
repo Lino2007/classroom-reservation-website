@@ -34,7 +34,7 @@ app.get('/slike/:nazivSlike', function (req, res) {
 
 
 
-app.post('/pocetna.html', function (req, res) {
+app.post('/slike', function (req, res) {
     let jsonResponse = req.body, listURL = [];
    // console.log(req.body);
     if (!(jsonResponse.hasOwnProperty('firstLoad'))) {
