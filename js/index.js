@@ -5,6 +5,29 @@ const path = require('path');
 const url = require('url');
 const fs = require('fs');
 const nizMjeseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'];
+const db = require('./db.js');
+
+db.sequelize.sync().then(function(){
+    init();
+});
+
+// #region Inicijalizacija Baze
+function init() {
+     //formiram listu osoblja
+       db.osoblje.create({ime:'Neko', prezime:'Nekić', uloga:'profesor'});
+       db.osoblje.create({ime:'Drugi', prezime:'Neko', uloga:'asistent'});
+       db.osoblje.create({ime:'Test', prezime:'Test', uloga:'asistent'});
+       //formiram listu termina
+       db.termin.create({redovni:false, dan:null, datum:'01.01.2020.', semestar:null, pocetak:'12:00' , kraj:"13:00"});
+       db.termin.create({redovni:true, dan:0, datum:null, semestar:'zimski', pocetak:'13:00' , kraj:"14:00"});
+       //formiram listu sala
+       db.sala.create({naziv:"1-11", zaduzenaOsoba:1});
+       db.sala.create({naziv:"1-15", zaduzenaOsoba:2});
+
+       db.rezervacija.create({termin:1 , sala:1, osoba:1});
+       db.rezervacija.create({termin:2, sala:1 , osoba:3});
+}
+// #endregion
 
 app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/../'));
@@ -88,6 +111,17 @@ app.get('/zauzeca.json', function (req, res) {
 
 app.get('/rezervacija.html', function (req, res) {
     res.sendFile(path.join(__dirname, '../html/rezervacija.html'));
+});
+
+
+app.get ('/osoblje' , function (req, res) {
+
+   db.osoblje.findAll({ attributes: ['ime', 'prezime']}).then(function(users) {
+    
+    res.json(users);
+   });
+
+  
 });
 
 app.get('/sale.html', function (req, res) {
@@ -226,5 +260,7 @@ function provjeriZauzeca(podaci) {
     return { valid: true, periodicnaZauzeca: periodicnaZauzeca, vanrednaZauzeca: vanrednaZauzeca };
 
 }
+
+
 
 app.listen(8080);

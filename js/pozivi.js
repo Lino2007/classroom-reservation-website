@@ -32,6 +32,14 @@ var Pozivi= (function(){
         jsonFile.send(null);
       
     }
+
+    function dobaviPodatkeZaSelect () {
+        console.log("pppppppppppp");
+        $.get("/osoblje", function(data, status){
+            console.log(data);
+          return  ucitajSelect(data);
+          });
+    }
   
     function posaljiTermin (podaci) {
         //ucitavam i sve termine da ne moram opet otvarati zauzeca.json
@@ -142,7 +150,8 @@ var Pozivi= (function(){
          posaljiTermin,
          prvoUcitavanjeSlika,
          ucitajNoveSlike,
-         provjeriBrojSlika
+         provjeriBrojSlika,
+         dobaviPodatkeZaSelect
      }
  
  }());
