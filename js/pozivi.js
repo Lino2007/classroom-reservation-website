@@ -4,20 +4,21 @@ var Pozivi= (function(){
 
 
 
-    function ucitajPodatkeIzJSON (param) {
 
-      
+    function ucitajIzBaze (param) {
         let jsonFile = new XMLHttpRequest();
-        jsonFile.open("GET", "/zauzeca.json", true);
+        jsonFile.open("GET", "/baza_zauzeca", true);
         jsonFile.onreadystatechange = function ()
         {
             if(jsonFile.readyState === 4)
             {
                 if(jsonFile.status === 200 || jsonFile.status == 0)
                 {
+                    console.log(jsonFile.responseText);
                     zauzecaJsonObjekt = JSON.parse(jsonFile.responseText);
                    periodicna= zauzecaJsonObjekt["periodicna"];
                     vanredna= zauzecaJsonObjekt["vanredna"];
+                     
                   
                     if (param) {
                     Kalendar.ucitajPodatke(vanredna, periodicna);
@@ -28,15 +29,12 @@ var Pozivi= (function(){
                     }
                 }
             }
-        } /////
+        } 
         jsonFile.send(null);
-      
     }
 
     function dobaviPodatkeZaSelect () {
-        console.log("pppppppppppp");
         $.get("/osoblje", function(data, status){
-            console.log(data);
           return  ucitajSelect(data);
           });
     }
@@ -53,18 +51,14 @@ var Pozivi= (function(){
             data: JSON.stringify(podaci),
             dataType: 'json',
             success:function(data) {
-              
-               if (data["valid"]) {
-             /*  zauzecaJsonObjekt["periodicna"] = data["periodicnaZauzeca"];
-               zauzecaJsonObjekt["vanredna"]= data["vanrednaZauzeca"];
-               Kalendar.ucitajPodatke(zauzecaJsonObjekt["vanredna"],  zauzecaJsonObjekt["periodicna"] );
-               Kalendar.ucitajPodatkeIzForme (); */
-                ucitajPodatkeIzJSON(true);
+              if (data["valid"]) {
+                // ucitajPodatkeIzJSON(true);
+                ucitajIzBaze(true);
                }
                else {
                    alert(data["alert"]);
                    //ponovo refreshamo
-                   ucitajPodatkeIzJSON(true);
+                   ucitajIzBaze(true);
                }
               }
               ,
@@ -73,7 +67,7 @@ var Pozivi= (function(){
             }
         });
     }
-
+// #region Spirala 3 zadatak 3
     function prvoUcitavanjeSlika () {
         let slike;
         let jsonDat = {   firstLoad : true };
@@ -143,15 +137,45 @@ var Pozivi= (function(){
              }
     });
 
-    }
+    }  
+// #endregion
  
+
+
+function ucitajPodatkeIzJSON (param) {
+    let jsonFile = new XMLHttpRequest();
+    jsonFile.open("GET", "/zauzeca.json", true);
+    jsonFile.onreadystatechange = function ()
+    {
+        if(jsonFile.readyState === 4)
+        {
+            if(jsonFile.status === 200 || jsonFile.status == 0)
+            {
+                zauzecaJsonObjekt = JSON.parse(jsonFile.responseText);
+               periodicna= zauzecaJsonObjekt["periodicna"];
+                vanredna= zauzecaJsonObjekt["vanredna"];
+              
+                if (param) {
+                Kalendar.ucitajPodatke(vanredna, periodicna);
+                Kalendar.ucitajPodatkeIzForme ();
+                }
+                else {
+                    slanjeTermina();
+                }
+            }
+        }
+    } 
+    jsonFile.send(null);
+  
+}
      return {
          ucitajPodatkeIzJSON,
          posaljiTermin,
          prvoUcitavanjeSlika,
          ucitajNoveSlike,
          provjeriBrojSlika,
-         dobaviPodatkeZaSelect
+         dobaviPodatkeZaSelect,
+         ucitajIzBaze
      }
  
  }());

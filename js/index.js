@@ -7,35 +7,144 @@ const fs = require('fs');
 const nizMjeseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'];
 const db = require('./db.js');
 
-db.sequelize.sync().then(function(){
-    init();
-});
-
-// #region Inicijalizacija Baze
-function init() {
-     //formiram listu osoblja
-       db.osoblje.create({ime:'Neko', prezime:'Nekić', uloga:'profesor'});
-       db.osoblje.create({ime:'Drugi', prezime:'Neko', uloga:'asistent'});
-       db.osoblje.create({ime:'Test', prezime:'Test', uloga:'asistent'});
-       //formiram listu termina
-       db.termin.create({redovni:false, dan:null, datum:'01.01.2020.', semestar:null, pocetak:'12:00' , kraj:"13:00"});
-       db.termin.create({redovni:true, dan:0, datum:null, semestar:'zimski', pocetak:'13:00' , kraj:"14:00"});
-       //formiram listu sala
-       db.sala.create({naziv:"1-11", zaduzenaOsoba:1});
-       db.sala.create({naziv:"1-15", zaduzenaOsoba:2});
-
-       db.rezervacija.create({termin:1 , sala:1, osoba:1});
-       db.rezervacija.create({termin:2, sala:1 , osoba:3});
-}
-// #endregion
-
 app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/../'));
 app.use('/', express.static(__dirname));
 
-app.get('/', function (req, res) {
+app.get('/osobe.html', function (req, res) {
 
-    res.sendFile(path.join(__dirname, '../html/pocetna.html'));
+    res.sendFile(path.join(__dirname, '../html/osobe.html'));
+
+});
+// #region Inicijalizacija Baze
+/*db.sequelize.sync().then(function(){
+    init();
+});      */
+
+function init() {
+     //formiram listu osoblja
+       db.osoblje.create({ime:'Neko', prezime:'Nekić', uloga:'profesor'});
+      db.osoblje.create({ime:'Drugi', prezime:'Neko', uloga:'asistent'});
+      db.osoblje.create({ime:'Test', prezime:'Test', uloga:'asistent'});
+       //formiram listu termina
+      db.termin.create({redovni:false, dan:null, datum:'01.01.2019.', semestar:null, pocetak:'12:00' , kraj:"13:00"});
+      db.termin.create({redovni:true, dan:0, datum:null, semestar:'zimski', pocetak:'13:00' , kraj:"14:00"});
+       //formiram listu sala
+       db.sala.create({naziv:"VA1", zaduzenaOsoba:1});
+       db.sala.create({naziv:"MA", zaduzenaOsoba:2});
+       db.sala.create({naziv:"VA2", zaduzenaOsoba:1});
+       db.sala.create({naziv:"0-01", zaduzenaOsoba:2});
+       db.sala.create({naziv:"0-02", zaduzenaOsoba:3});
+       db.sala.create({naziv:"0-03", zaduzenaOsoba:2});
+       db.sala.create({naziv:"0-04", zaduzenaOsoba:1});
+       db.sala.create({naziv:"0-05", zaduzenaOsoba:3});
+       db.sala.create({naziv:"0-06", zaduzenaOsoba:1});
+       db.sala.create({naziv:"0-07", zaduzenaOsoba:2});
+       db.sala.create({naziv:"0-08", zaduzenaOsoba:1});
+       db.sala.create({naziv:"0-09", zaduzenaOsoba:3});
+       db.sala.create({naziv:"1-01", zaduzenaOsoba:3});
+       db.sala.create({naziv:"1-02", zaduzenaOsoba:1});
+       db.sala.create({naziv:"1-03", zaduzenaOsoba:3});
+       db.sala.create({naziv:"1-04", zaduzenaOsoba:1});
+       db.sala.create({naziv:"1-05", zaduzenaOsoba:2});
+       db.sala.create({naziv:"1-06", zaduzenaOsoba:3});
+       db.sala.create({naziv:"1-07", zaduzenaOsoba:2});
+       db.sala.create({naziv:"1-08", zaduzenaOsoba:1});
+       db.sala.create({naziv:"1-09", zaduzenaOsoba:3}); 
+
+
+       db.rezervacija.create({terminFK:1 , salaFK:1, osoba:1});
+       db.rezervacija.create({terminFK:2, salaFK:2 , osoba:3});
+}
+// #endregion
+
+
+// #region Spirala 4, Zadatak 1 
+app.get ('/osoblje' , function (req, res) {
+  db.osoblje.findAll({ attributes: ['ime', 'prezime', 'uloga']}).then(function(users) {
+      res.json(users);
+    });
+ });
+
+ app.get('/baza_zauzeca',function (req, res) {
+   //preuzimamo sve podatke (join svih tabela)
+   let odgovor ={};
+   db.rezervacija.findAll({
+     include: [
+         {
+             model: db.termin,
+             as: 'termin'
+         },
+        {
+             model: db.sala,
+             as: 'sala'
+         },
+         {
+             model: db.osoblje
+         } 
+     ]
+   }).then (function(lista){
+       let periodicnaList = [] , vanrednaList=[];
+       //sortiramo zauzeća
+       lista.forEach(function(zauzece){
+            let predavac = zauzece.osoblje.ime + " " + zauzece.osoblje.prezime;
+            if (zauzece.termin.redovni) {
+            periodicnaList.push ({dan: zauzece.termin.dan , semestar:zauzece.termin.semestar, pocetak: zauzece.termin.pocetak,
+            kraj: zauzece.termin.kraj , naziv: zauzece.sala.naziv, predavac: predavac, uloga: zauzece.osoblje.uloga });
+            }
+            else {
+            vanrednaList.push({datum: zauzece.termin.datum ,pocetak: zauzece.termin.pocetak,
+                kraj: zauzece.termin.kraj,  naziv: zauzece.sala.naziv, predavac: predavac ,uloga: zauzece.osoblje.uloga  });
+            }
+       });
+   
+       odgovor["periodicna"]= periodicnaList;
+       odgovor["vanredna"] = vanrednaList;
+       res.json(odgovor);
+      
+   });
+});
+// #endregion
+
+
+// #region Spirala 4, zadatak 2
+function vratiResponse (res, response) {
+    res.json(response);
+}
+function dodajZauzeceUBazu (zauzece, resp) {
+    let idTermina=0 , idOsobe= 0, idSale=0;
+   let imePrezimeArray = zauzece["predavac"].split(" ");
+   
+   if (zauzece["periodic"])  
+   terminInstance= {redovni:true , dan: zauzece["dan"], datum: null , semestar: zauzece["semestar"], pocetak: zauzece["pocetak"], kraj: zauzece["kraj"]};
+   else 
+   terminInstance = {redovni:false , dan: null, datum: zauzece["datum"] , semestar: null, pocetak: zauzece["pocetak"], kraj: zauzece["kraj"]};
+  
+   db.termin.create(terminInstance).then(terminData => {
+       idTermina=terminData.dataValues.id;
+       db.osoblje.findOne({where:{
+          ime: imePrezimeArray[0] , prezime: imePrezimeArray[1], uloga: zauzece["uloga"]
+         }}).then(osobljeData => {
+           idOsobe= osobljeData.dataValues.id;
+           db.sala.findOne({
+               where: {naziv: zauzece["naziv"]}
+           }).then(salaData => {
+               idSale= salaData.dataValues.id;
+               db.rezervacija.create({
+                   terminFK: idTermina , osoba: idOsobe, salaFK: idSale
+               }).then(function(data){
+                    vratiResponse(resp,zauzece);  
+               });
+           });
+         });
+   });
+}
+// #endregion
+   
+   
+ // #region Spirala 3
+app.get('/', function (req, res) {
+   res.sendFile(path.join(__dirname, '../html/pocetna.html'));
 });
 
 app.get('/pocetna.html', function (req, res) {
@@ -59,7 +168,7 @@ app.get('/slike/:nazivSlike', function (req, res) {
 
 app.post('/slike', function (req, res) {
     let jsonResponse = req.body, listURL = [];
-   // console.log(req.body);
+
     if (!(jsonResponse.hasOwnProperty('firstLoad'))) {
         let novaVelicina =0;
         fs.readdir('../img', (err, files) => {
@@ -81,18 +190,17 @@ app.post('/slike', function (req, res) {
                 i++;
             });
             globalPointer=0;
-           // console.log(listURL.length + " izaso" + i);
+        
             res.json({ listURL: listURL, ptr: ptr, velicina: i });
         });
     }
     else {
-       // console.log("usao");
+   
         let ptr = jsonResponse["ptr"], vel = jsonResponse["velicina"];
         let limit = ptr + 2, i = 0, newPtr = ptr;
         fs.readdir('../img', (err, files) => {
             files.forEach(file => {
                 if (i >= ptr && i <= limit) {
-                   // console.log(file);
                     listURL.push({ slika: "../img/" + file });
                     newPtr++;
                 }
@@ -113,17 +221,6 @@ app.get('/rezervacija.html', function (req, res) {
     res.sendFile(path.join(__dirname, '../html/rezervacija.html'));
 });
 
-
-app.get ('/osoblje' , function (req, res) {
-
-   db.osoblje.findAll({ attributes: ['ime', 'prezime']}).then(function(users) {
-    
-    res.json(users);
-   });
-
-  
-});
-
 app.get('/sale.html', function (req, res) {
     res.sendFile(path.join(__dirname, '../html/sale.html'));
 });
@@ -132,30 +229,37 @@ app.get('/unos.html', function (req, res) {
     res.sendFile(path.join(__dirname, '../html/unos.html'));
 });
 
-app.post('/rezervacija.html', function (req, res) {
-    let jsonResponse = provjeriZauzeca(req.body);
+var _res, _jr;
 
-    if (!(jsonResponse["valid"])) {
-     //   console.log (jsonResponse["stringDatuma"]);
+
+app.post('/rezervacija.html', function (req, res) {
+
     
+    let jsonResponse = provjeriZauzeca(req.body);
+    console.log("Kod rezervacije termina" + JSON.stringify(req.body));
+    if (!(jsonResponse["valid"])) {
       jsonResponse["stringDatuma"] = jsonResponse["stringDatuma"].replace('.', '/'); 
       jsonResponse["stringDatuma"] = jsonResponse["stringDatuma"].replace('.', '/'); 
-        if (jsonResponse["stringDatuma"] != "")
+        if (jsonResponse["stringDatuma"] != "") {
             jsonResponse["alert"] = "Nije moguće rezervisati salu " + req.body["opcija"] + " za navedeni datum " + jsonResponse["stringDatuma"].replace('.', ' ') + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] + "!";
+            jsonResponse["alert"] += "(Zahtjev za zauzece poslao " + jsonResponse["uloga"] + " " + jsonResponse["predavac"];}
         else {
             let strv= "Nije moguće rezervisati salu " + req.body["opcija"] + " za navedeni datum " + jsonResponse["stringDatuma"].replace('.', ' ') + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] + "!";
             jsonResponse["alert"] = strv + "\n (Nije moguće praviti periodične rezervacije u periodu van zimskog ili ljetnog semestra!)";
+            jsonResponse["alert"] += "(Zahtjev za zauzece poslao " + jsonResponse["uloga"] + " " + jsonResponse["predavac"];
         }
+        res.json(jsonResponse);
     }
     else {
-
-        azurirajJSON(jsonResponse);
+       
+       
+      dodajZauzeceUBazu(jsonResponse, res);
+      //azurirajBazu
     }
+   
+  });
 
-    res.json(jsonResponse);
-  
 
-});
 
 function azurirajJSON(js_respa) {
     fs.readFile('../json/zauzeca.json', 'utf8', function (errx, data) {
@@ -168,7 +272,6 @@ function azurirajJSON(js_respa) {
             if (err) {
                 throw err;
             }
-          //  console.log("OK");
         });
     });
 }
@@ -205,13 +308,8 @@ function vratiPeriodDatuma(dateStr) {
 }
 
 function vratiSemestarIzBrojaMjeseca(mj) {
- //   console.log(mj);
     let arr = mj.split(".");
-   // console.log(arr[1]);
-   // console.log(parseInt(arr[1]));
     let br = parseInt(arr[1]) - 1;
-  //  console.log("ˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇˇ");
-    
     return (br <= 5 && br!=0) ? "ljetni" : "zimski";
 }
 function provjeriZauzeca(podaci) {
@@ -223,7 +321,7 @@ function provjeriZauzeca(podaci) {
     if (periodicniDan == -2) periodicniDan = 5;
     else if (periodicniDan == -1) periodicniDan = 6;
 
-    if (tipSemestra == null && (podaci["periodicnost"])) return { valid: false, stringDatuma: "" };
+    if (tipSemestra == null && (podaci["periodicnost"])) return { valid: false, stringDatuma: "" , predavac: podaci["predavac"] , uloga: podaci["uloga"] };
 
     let stringDana = (odabraniDan < 10 ? "0" : "") + odabraniDan, stringMjeseca = (mon < 10 ? "0" : "") + mon;
     let stringDatuma = stringDana + "." + stringMjeseca + ".2019.";
@@ -233,7 +331,7 @@ function provjeriZauzeca(podaci) {
             && periodicniDan == periodicnaZauzeca[i]["dan"] &&
             preklapanjeTermina(periodicnaZauzeca[i]["pocetak"], periodicnaZauzeca[i]["kraj"], podaci["pocetak"], podaci["kraj"])) {
           
-            return { valid: false, stringDatuma: stringDatuma };
+            return { valid: false, stringDatuma: stringDatuma , predavac: podaci["predavac"] , uloga: podaci["uloga"] };
         }
     }
 
@@ -247,20 +345,17 @@ function provjeriZauzeca(podaci) {
             && (stringDatuma == vanrednaZauzeca[i]["datum"] || (podaci["periodicnost"] == true && vratiPeriodDatuma(vanrednaZauzeca[i]["datum"]) == periodicniDan && semestarMjeseca == tipSemestra)
             )) {
 
-            return { valid: false, stringDatuma: stringDatuma };
+            return { valid: false, stringDatuma: stringDatuma ,  predavac: podaci["predavac"] , uloga: podaci["uloga"] };
         }
     }
 
     if (podaci["periodicnost"] == true) {
-
-        periodicnaZauzeca.push({ dan: periodicniDan, semestar: tipSemestra, pocetak: podaci["pocetak"], kraj: podaci["kraj"], naziv: podaci["opcija"], predavac: "Predavac" });
+        return { valid: true ,dan: periodicniDan, semestar: tipSemestra, pocetak: podaci["pocetak"], kraj: podaci["kraj"], naziv: podaci["opcija"],  predavac: podaci["predavac"] , uloga: podaci["uloga"] , periodic: true };
+      
     }
-    else vanrednaZauzeca.push({ datum: stringDatuma, pocetak: podaci["pocetak"], kraj: podaci["kraj"], naziv: podaci["opcija"], predavac: "Predavac" });
-
-    return { valid: true, periodicnaZauzeca: periodicnaZauzeca, vanrednaZauzeca: vanrednaZauzeca };
-
+     return { valid: true , datum: stringDatuma, pocetak: podaci["pocetak"], kraj: podaci["kraj"], naziv: podaci["opcija"],  predavac: podaci["predavac"] , uloga: podaci["uloga"] , periodic:false }; 
 }
-
-
-
 app.listen(8080);
+// #endregion
+
+

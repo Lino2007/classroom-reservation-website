@@ -5,7 +5,7 @@ module.exports = function(sequelize,DataTypes){
         redovni:Sequelize.BOOLEAN,
         dan:Sequelize.INTEGER,
         datum:Sequelize.STRING,
-        semestar:Sequelize.INTEGER,
+        semestar:Sequelize.STRING,
         pocetak:Sequelize.TIME,
         kraj:Sequelize.TIME
     })

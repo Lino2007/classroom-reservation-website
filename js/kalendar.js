@@ -9,7 +9,7 @@ var Kalendar = (function () {
   var redovnaZauzeca = [];
   var neperiodicnaZauzeca = [];
   var direction = 0, danZauzeca = -1, periodicniDan = -1;
-  var trenutniMjesec, pocetak, kraj, opcija;
+  var trenutniMjesec, pocetak, kraj, opcija, osobljeOpcija;
 
   function provjeriZauzece (termin) {
      let poc = termin["pocetak"], kr = termin["kraj"] ,naziv = termin["opcija"] , dan = termin["odabraniDan"], mon = termin["trenutniMjesec"];
@@ -33,8 +33,13 @@ var Kalendar = (function () {
     pocetak = document.getElementById("pocetak").value;
     kraj = document.getElementById("kraj").value;
     opcija = document.getElementById("saleSelect").value;
+   
     trenutniMjesec = document.getElementById("month").textContent;
     obojiZauzecaImpl(document.getElementById("datumi"), nizMjeseci.indexOf(trenutniMjesec), opcija, pocetak, kraj);
+  }
+
+  function dajPredavaca () {
+    return document.getElementById("osobljeSelect").value;
   }
  
   function dajMjesecIzObjekta(datum) {
