@@ -38,6 +38,14 @@ var Pozivi= (function(){
           return  ucitajSelect(data);
           });
     }
+
+
+
+    function dobaviPodatkeZaTabelu () {
+        $.get("/osoblje_lokacija", function(data, status){
+             return  ucitajTabelu(data);
+            });
+    }
   
     function posaljiTermin (podaci) {
         //ucitavam i sve termine da ne moram opet otvarati zauzeca.json
@@ -175,7 +183,8 @@ function ucitajPodatkeIzJSON (param) {
          ucitajNoveSlike,
          provjeriBrojSlika,
          dobaviPodatkeZaSelect,
-         ucitajIzBaze
+         ucitajIzBaze,
+         dobaviPodatkeZaTabelu
      }
  
  }());

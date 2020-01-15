@@ -19,6 +19,16 @@
    position: relative;
   }
   
+  #tabelaOsoblja  {
+    margin-left: 10%;
+    border: solid 2px black; 
+    border-collapse:collapse;
+}
+
+#tabelaOsoblja th {
+  border: solid 2px black; 
+  border-collapse:collapse;
+}
   .htmlslika {
     top: 75px;
     display: table-cell;

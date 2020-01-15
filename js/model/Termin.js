@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 
 module.exports = function(sequelize,DataTypes){
-    const Termin = sequelize.define("termin",{
+    const Termin = sequelize.define("Termin",{
         redovni:Sequelize.BOOLEAN,
         dan:Sequelize.INTEGER,
         datum:Sequelize.STRING,

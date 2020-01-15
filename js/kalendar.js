@@ -1,9 +1,9 @@
 var Kalendar = (function () {
  
   const mapaMjeseca = new Map([
-    ['Januar', 1], ['Februar', 4], ['Mart', 4], ['April', 7],
-    ['Maj', 2], ['Juni', 5], ['Juli', 7], ['August', 3],
-    ['Septembar', 6], ['Oktobar', 1], ['Novembar', 4], ['Decembar', 6]
+    ['Januar', 2], ['Februar', 5], ['Mart', 6], ['April', 2],
+    ['Maj', 4], ['Juni', 7], ['Juli', 2], ['August', 5],
+    ['Septembar', 1], ['Oktobar', 3], ['Novembar', 6], ['Decembar', 1]
   ]);
   const nizMjeseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'];
   var redovnaZauzeca = [];
@@ -132,7 +132,7 @@ var Kalendar = (function () {
     var numberOfRows = kalendarRef.rows.length;
     var pozicija = mjesec;
     if ((direction == 1 && pozicija == 11) || (pozicija == 0 && direction == -1)) return;
-    var daniMjesec = daysInMonth(pozicija + direction + 1, 2019)
+    var daniMjesec = daysInMonth(pozicija + direction + 1, 2020);
     var nazivMjeseca = nizMjeseci[pozicija + direction];
     document.getElementById("month").textContent = nazivMjeseca;
     let dayCounter = 1, targetRow = kalendarRef.rows[2];
@@ -193,7 +193,7 @@ var Kalendar = (function () {
 
   function formirajDatum (day, mon) {
      let monVal = nizMjeseci.indexOf(mon) +1 ;
-     return ((day>= 10) ? "" : "0") + day + "/" + ((monVal>=10) ? "": "0") + monVal + "/2019";
+     return ((day>= 10) ? "" : "0") + day + "/" + ((monVal>=10) ? "": "0") + monVal + "/2020";
   }
   
   function provjeraZauzeca (odabraniDan) {
