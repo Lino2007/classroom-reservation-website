@@ -18,8 +18,8 @@ db.Sala = sequelize.import(__dirname+'/model/Sala.js');
 //definicija relacija
 db.Osoblje.hasMany(db.Rezervacija, {  foreignKey : 'osoba'});
 db.Rezervacija.belongsTo(db.Osoblje, {  foreignKey : 'osoba'});
-db.Termin.hasOne(db.Rezervacija, {  foreignKey:{ name:'termin', type: Sequelize.INTEGER , unique: 'compositeIndex', as:'termin'}});
-db.Rezervacija.belongsTo (db.Termin,  { as:'terminAssociation', foreignKey:{ name:'termin', type: Sequelize.INTEGER , unique: 'compositeIndex'}});
+db.Termin.hasOne(db.Rezervacija, {  foreignKey:{ name:'termin', type: Sequelize.INTEGER , unique: true}});
+db.Rezervacija.belongsTo (db.Termin,  { as:'terminAssociation', foreignKey:{ name:'termin', type: Sequelize.INTEGER , unique: true}});
 db.Sala.hasMany (db.Rezervacija, { foreignKey: 'sala' });
 db.Rezervacija.belongsTo (db.Sala, { foreignKey: 'sala' , as: "salaAssociation"});
 db.Osoblje.hasOne(db.Sala, {foreignKey: 'zaduzenaOsoba' });

@@ -14,7 +14,7 @@ window.onload = (event) => {
 };
 
 
-function ucitajSelect (osoblje) {
+function ucitajSelectOsoblja (osoblje) {
     listaOsoblja=[];
     let select= document.getElementById('osobljeSelect');
     osoblje.forEach(function(item){
@@ -24,16 +24,24 @@ function ucitajSelect (osoblje) {
         select.appendChild(option);
         listaOsoblja.push({naziv: option.value, uloga: item.uloga});
       });
+    Pozivi.dobaviSale();
+}
+
+function ucitajSelectSala (osoblje) {
+    let select= document.getElementById('saleSelect');
+    osoblje.forEach(function(item){
+        let option = document.createElement('option');
+        option.value= item.naziv;
+        option.appendChild(document.createTextNode(option.value));
+        select.appendChild(option);
+      });
       Pozivi.ucitajIzBaze(true);
 }
 
 function dajUlogu (imeOsobe) {
   let uloga = "unknown";
  listaOsoblja.forEach (function(item) {
-       console.log(item.naziv.length  + " "  + imeOsobe.length);
-       console.log("|" +item.naziv + "|");
-       console.log ("|" +imeOsobe + "|");
-       if (item.naziv==imeOsobe) {
+    if (item.naziv==imeOsobe) {
            console.log(item.uloga);
            uloga= item.uloga;
        }
@@ -64,13 +72,14 @@ function rezervirajTermin (odabraniDan) {
     dan= odabraniDan;
     let potvrda = confirm("Da li želite rezervisati odabrani termin?");
     let chc =Kalendar.provjeraZauzeca(odabraniDan);
-     if (chc)  {
+    
+    if (chc)  {
      let dat = Kalendar.formirajDatum(odabraniDan, trenutniMjesec);
-     alert("Nije moguće rezervisati salu " + opcija + " za navedeni datum " + dat + " i termin od " + pocetak + " do " + kraj + "!");
+     let podaciOsobe = "(Zahtjev za rezervisanje poslao " + dajUlogu(imeOsobe)+ " " +imeOsobe + ")";
+     alert("Nije moguće rezervisati salu " + opcija + " za navedeni datum " + dat + " i termin od " + pocetak + " do " + kraj + "!\n" + podaciOsobe);
       Pozivi.ucitajIzBaze(true); 
      return ;
-      
-    }
+   }
     if (potvrda) {
         Pozivi.ucitajIzBaze(false);
     }

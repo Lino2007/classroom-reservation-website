@@ -3,11 +3,25 @@ var Pozivi= (function(){
     var zauzecaJsonObjekt; //JSON objekt u koji spremamo zauzeca.json
 
 
+// #region Spirala 4, Zadatak 1
+    function dobaviPodatkeZaSelect () {
+        $.get("/osoblje", function(data, status){
+          return  ucitajSelectOsoblja(data);
+          });
+    }
 
+    function dobaviSale () {
+        $.get("/sale", function(data, status){
+            return  ucitajSelectSala(data);
+         });
+    }
+// #endregion
+  
 
-    function ucitajIzBaze (param) {
+// #region Spirala 4, Zadatak 2
+function ucitajIzBaze (param) {
         let jsonFile = new XMLHttpRequest();
-        jsonFile.open("GET", "/baza_zauzeca", true);
+        jsonFile.open("GET", "/zauzeca", true);
         jsonFile.onreadystatechange = function ()
         {
             if(jsonFile.readyState === 4)
@@ -33,13 +47,6 @@ var Pozivi= (function(){
         jsonFile.send(null);
     }
 
-    function dobaviPodatkeZaSelect () {
-        $.get("/osoblje", function(data, status){
-          return  ucitajSelect(data);
-          });
-    }
-
-
 
     function dobaviPodatkeZaTabelu () {
         $.get("/osoblje_lokacija", function(data, status){
@@ -48,12 +55,11 @@ var Pozivi= (function(){
     }
   
     function posaljiTermin (podaci) {
-        //ucitavam i sve termine da ne moram opet otvarati zauzeca.json
         podaci["periodicna"]=zauzecaJsonObjekt["periodicna"];
         podaci["vanredna"]=zauzecaJsonObjekt["vanredna"];
        
         $.ajax({
-            url: '/rezervacija.html',
+            url: '/rezervacija',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(podaci),
@@ -68,13 +74,14 @@ var Pozivi= (function(){
                    //ponovo refreshamo
                    ucitajIzBaze(true);
                }
-              }
-              ,
+              },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-        
             }
         });
     }
+// #endregion
+
+
 // #region Spirala 3 zadatak 3
     function prvoUcitavanjeSlika () {
         let slike;
@@ -102,10 +109,7 @@ var Pozivi= (function(){
          
     }
 
-
-
-    function ucitajNoveSlike (pointer) {
-     
+ function ucitajNoveSlike (pointer) {
        let slike;
        let jsonDat = {firstLoad: false , ptr: pointer};
        $.ajax({
@@ -124,7 +128,8 @@ var Pozivi= (function(){
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             console.log(errorThrown);
          }
-}); }
+       }); 
+}
 
 
     function provjeriBrojSlika (sljedeci) {
@@ -148,43 +153,15 @@ var Pozivi= (function(){
     }  
 // #endregion
  
-
-
-function ucitajPodatkeIzJSON (param) {
-    let jsonFile = new XMLHttpRequest();
-    jsonFile.open("GET", "/zauzeca.json", true);
-    jsonFile.onreadystatechange = function ()
-    {
-        if(jsonFile.readyState === 4)
-        {
-            if(jsonFile.status === 200 || jsonFile.status == 0)
-            {
-                zauzecaJsonObjekt = JSON.parse(jsonFile.responseText);
-               periodicna= zauzecaJsonObjekt["periodicna"];
-                vanredna= zauzecaJsonObjekt["vanredna"];
-              
-                if (param) {
-                Kalendar.ucitajPodatke(vanredna, periodicna);
-                Kalendar.ucitajPodatkeIzForme ();
-                }
-                else {
-                    slanjeTermina();
-                }
-            }
-        }
-    } 
-    jsonFile.send(null);
-  
-}
-     return {
-         ucitajPodatkeIzJSON,
+    return {
          posaljiTermin,
          prvoUcitavanjeSlika,
          ucitajNoveSlike,
          provjeriBrojSlika,
          dobaviPodatkeZaSelect,
          ucitajIzBaze,
-         dobaviPodatkeZaTabelu
+         dobaviPodatkeZaTabelu,
+         dobaviSale
      }
  
  }());
