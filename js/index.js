@@ -13,46 +13,62 @@ app.use('/', express.static(__dirname));
 
 
 // #region Inicijalizacija Baze
-db.sequelize.sync({ force: true }).then(function () {
+/*db.sequelize.sync({ force: true }).then(function () {
     init();
-});
+});  */
 
 function init() {
     //formiram listu osoblja
-    db.Osoblje.create({ ime: 'Neko', prezime: 'Nekić', uloga: 'profesor' });
-    db.Osoblje.create({ ime: 'Drugi', prezime: 'Neko', uloga: 'asistent' });
-    db.Osoblje.create({ ime: 'Test', prezime: 'Test', uloga: 'asistent' });
-    //formiram listu Termina
-    db.Termin.create({ redovni: false, dan: null, datum: '05.12.2020.', semestar: null, pocetak: '12:00', kraj: "13:00" });
-    db.Termin.create({ redovni: true, dan: 0, datum: null, semestar: 'zimski', pocetak: '13:00', kraj: "14:00" });
-    //formiram listu Sala
-    db.Sala.create({ naziv: "VA1", zaduzenaOsoba: 1 }).then(f => { 
-    db.Rezervacija.create({ termin: 1, sala: 1, osoba: 1 });
-   });
-    db.Sala.create({ naziv: "VA2", zaduzenaOsoba: 1 }).then(f => { 
-    db.Rezervacija.create({ termin: 2, sala: 2, osoba: 3 });
-    db.Sala.create({ naziv: "MA", zaduzenaOsoba: 1 });
-    db.Sala.create({ naziv: "EE1", zaduzenaOsoba: 1 });
-    db.Sala.create({ naziv: "EE2", zaduzenaOsoba: 1 });
-    db.Sala.create({ naziv: "0-01", zaduzenaOsoba: 2 });
-    db.Sala.create({ naziv: "0-02", zaduzenaOsoba: 3 });
-    db.Sala.create({ naziv: "0-03", zaduzenaOsoba: 2 });
-    db.Sala.create({ naziv: "0-04", zaduzenaOsoba: 1 });
-    db.Sala.create({ naziv: "0-05", zaduzenaOsoba: 3 });
-    db.Sala.create({ naziv: "0-06", zaduzenaOsoba: 1 });
-    db.Sala.create({ naziv: "0-07", zaduzenaOsoba: 2 });
-    db.Sala.create({ naziv: "0-08", zaduzenaOsoba: 1 });
-    db.Sala.create({ naziv: "0-09", zaduzenaOsoba: 3 });
-    db.Sala.create({ naziv: "1-01", zaduzenaOsoba: 3 });
-    db.Sala.create({ naziv: "1-02", zaduzenaOsoba: 1 });
-    db.Sala.create({ naziv: "1-03", zaduzenaOsoba: 3 });
-    db.Sala.create({ naziv: "1-04", zaduzenaOsoba: 1 });
-    db.Sala.create({ naziv: "1-05", zaduzenaOsoba: 2 });
-    db.Sala.create({ naziv: "1-06", zaduzenaOsoba: 3 });
-    db.Sala.create({ naziv: "1-07", zaduzenaOsoba: 2 });
-    db.Sala.create({ naziv: "1-08", zaduzenaOsoba: 1 });
-    db.Sala.create({ naziv: "1-09", zaduzenaOsoba: 3 });
+    db.Osoblje.create({ ime: 'Neko', prezime: 'Nekić', uloga: 'profesor' }).then(function(a){
+        var neko =a;
+        db.Osoblje.create({ ime: 'Drugi', prezime: 'Neko', uloga: 'asistent' }).then(function(d) {
+            var drugi=d;
+            db.Osoblje.create({ ime: 'Test', prezime: 'Test', uloga: 'asistent' }).then(function(){
+                       //formiram listu Termina
+                    
+                    
+                    //formiram listu Sala
+                    db.Termin.create({ redovni: false, dan: null, datum: '05.12.2020.', semestar: null, pocetak: '12:00', kraj: "13:00" }).then (t => {
+                       var ter=t;
+                        db.Sala.create({ naziv: "VA1", zaduzenaOsoba: 1 }).then(f => { 
+                            db.Rezervacija.create({ termin: ter.dataValues.id, sala: f.dataValues.id, osoba: neko.dataValues.id });
+                             });
+                    });
+                    db.Termin.create({ redovni: true, dan: 0, datum: null, semestar: 'zimski', pocetak: '13:00', kraj: "14:00" }).then(t2 => {
+                        var ter2=t2;
+                   db.Sala.create({ naziv: "VA2", zaduzenaOsoba: 1 }).then(f => { 
+                   db.Rezervacija.create({ termin: ter2.dataValues.id, sala: f.dataValues.id, osoba: drugi.dataValues.id });
+                   db.Sala.create({ naziv: "MA", zaduzenaOsoba: 1 });
+                   db.Sala.create({ naziv: "EE1", zaduzenaOsoba: 1 });
+                   db.Sala.create({ naziv: "EE2", zaduzenaOsoba: 1 }).then(function(){
+                   db.Sala.create({ naziv: "0-01", zaduzenaOsoba: 2 });
+                   db.Sala.create({ naziv: "0-02", zaduzenaOsoba: 3 });
+                   db.Sala.create({ naziv: "0-03", zaduzenaOsoba: 2 });
+                   db.Sala.create({ naziv: "0-04", zaduzenaOsoba: 1 });
+                   db.Sala.create({ naziv: "0-05", zaduzenaOsoba: 3 });
+                   db.Sala.create({ naziv: "0-06", zaduzenaOsoba: 1 });
+                   db.Sala.create({ naziv: "0-07", zaduzenaOsoba: 2 });
+                   db.Sala.create({ naziv: "0-08", zaduzenaOsoba: 1 });
+                   db.Sala.create({ naziv: "0-09", zaduzenaOsoba: 3 });
+                   db.Sala.create({ naziv: "1-01", zaduzenaOsoba: 3 });
+                   db.Sala.create({ naziv: "1-02", zaduzenaOsoba: 1 });
+                   db.Sala.create({ naziv: "1-03", zaduzenaOsoba: 3 });
+                   db.Sala.create({ naziv: "1-04", zaduzenaOsoba: 1 });
+                   db.Sala.create({ naziv: "1-05", zaduzenaOsoba: 2 });
+                   db.Sala.create({ naziv: "1-06", zaduzenaOsoba: 3 });
+                   db.Sala.create({ naziv: "1-07", zaduzenaOsoba: 2 });
+                   db.Sala.create({ naziv: "1-08", zaduzenaOsoba: 1 });
+                   db.Sala.create({ naziv: "1-09", zaduzenaOsoba: 3 }); 
+                });
+              });
+     });
+  });
  });
+});
+ 
+    
+
+    
 }
 // #endregion
 
@@ -167,8 +183,34 @@ function dodajZauzeceUBazu(zauzece, resp) {
 }
 
 app.post('/rezervacija', function (req, res) {
-    let jsonResponse = provjeriZauzeca(req.body);
-  
+   console.log(req.body);
+    db.Rezervacija.findAll({
+        include: [ {model: db.Sala,  as: "salaAssociation" },
+            { model: db.Osoblje},
+            { model: db.Termin,as: "terminAssociation"}
+        ]
+    }).then(function (lista) {
+        let periodicnaList = [], vanrednaList = [];
+        lista.forEach(function (zauzece) {
+            let predavac = zauzece.Osoblje.ime + " " + zauzece.Osoblje.prezime;
+            if (zauzece.terminAssociation.redovni) {
+                periodicnaList.push({
+                    dan: zauzece.terminAssociation.dan, semestar: zauzece.terminAssociation.semestar, pocetak: zauzece.terminAssociation.pocetak,
+                    kraj: zauzece.terminAssociation.kraj, naziv: zauzece.salaAssociation.naziv, predavac: predavac, uloga: zauzece.Osoblje.uloga
+                });
+            }
+            else {
+                vanrednaList.push({
+                    datum: zauzece.terminAssociation.datum, pocetak: zauzece.terminAssociation.pocetak,
+                    kraj: zauzece.terminAssociation.kraj, naziv: zauzece.salaAssociation.naziv, predavac: predavac, uloga: zauzece.Osoblje.uloga
+                });
+            }
+        });
+       
+        req.body["periodicna"] = periodicnaList;
+      
+        req.body["vanredna"] = vanrednaList;
+        let jsonResponse = provjeriZauzeca(req.body);
     if (!(jsonResponse["valid"])) {
         jsonResponse["stringDatuma"] = jsonResponse["stringDatuma"].replace('.', '/');
         jsonResponse["stringDatuma"] = jsonResponse["stringDatuma"].replace('.', '/');
@@ -186,7 +228,7 @@ app.post('/rezervacija', function (req, res) {
     else {
         dodajZauzeceUBazu(jsonResponse, res);
     }
-
+});
 });
 
 app.get('/zauzeca', function (req, res) {
@@ -408,3 +450,4 @@ function provjeriZauzeca(podaci) {
 }
 app.listen(8080);
 // #endregion
+module.exports=app;

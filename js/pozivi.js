@@ -1,7 +1,7 @@
 var Pozivi= (function(){
     var periodicna=[], vanredna=[];
     var zauzecaJsonObjekt; //JSON objekt u koji spremamo zauzeca.json
-
+    const nizMjeseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'];
 
 // #region Spirala 4, Zadatak 1
     function dobaviPodatkeZaSelect () {
@@ -55,9 +55,9 @@ function ucitajIzBaze (param) {
     }
   
     function posaljiTermin (podaci) {
-        podaci["periodicna"]=zauzecaJsonObjekt["periodicna"];
-        podaci["vanredna"]=zauzecaJsonObjekt["vanredna"];
-       
+       /* podaci["periodicna"]=zauzecaJsonObjekt["periodicna"];
+        podaci["vanredna"]=zauzecaJsonObjekt["vanredna"]; */
+     
         $.ajax({
             url: '/rezervacija',
             type: 'POST',
