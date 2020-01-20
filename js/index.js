@@ -15,8 +15,7 @@ app.use('/', express.static(__dirname));
 // #region Inicijalizacija Baze
 
 db.sequelize.sync({ force: true }).then(function () {
-  
-    init();
+   init();
  });   
   
  
@@ -119,6 +118,12 @@ function vratiSemestarIzDatuma(mj) {
     return (br <= 5 && br != 0) ? "ljetni" : "zimski";
 }
 function preklapanjeTrenutnogVremenaITermina(poc, kr, trenutnoVrijeme) {
+    console.log("pocetak: " + poc + " kraj: " + kr + "Trenutno vrijeme: " + trenutnoVrijeme);
+    console.log("trenutnoVrijeme >= poc: ");
+    console.log(trenutnoVrijeme >= poc);
+    console.log("trenutnoVrijeme <= kr: ");
+    console.log(trenutnoVrijeme <= kr);
+
     return (trenutnoVrijeme >= poc && trenutnoVrijeme <= kr);
 }
 
@@ -143,6 +148,50 @@ app.get('/sale', function (req, res) {
 
 
 // #region Spirala 4, zadatak 2
+
+app.get('/zauzeca', function (req, res) {
+    //preuzimamo sve podatke (join svih tabela)
+    let odgovor = {};
+
+    db.Rezervacija.findAll({
+        include: [
+            {
+                model: db.Sala,
+                as: "salaAssociation"
+            },
+            {
+                model: db.Osoblje
+            },
+            {
+                model: db.Termin,
+                as: "terminAssociation"
+            }
+        ]
+    }).then(function (lista) {
+        let periodicnaList = [], vanrednaList = [];
+        //sortiramo zauzeća
+        lista.forEach(function (zauzece) {
+            let predavac = zauzece.Osoblje.ime + " " + zauzece.Osoblje.prezime;
+            if (zauzece.terminAssociation.redovni) {
+                periodicnaList.push({
+                    dan: zauzece.terminAssociation.dan, semestar: zauzece.terminAssociation.semestar, pocetak: zauzece.terminAssociation.pocetak,
+                    kraj: zauzece.terminAssociation.kraj, naziv: zauzece.salaAssociation.naziv, predavac: predavac, uloga: zauzece.Osoblje.uloga
+                });
+            }
+            else {
+                vanrednaList.push({
+                    datum: zauzece.terminAssociation.datum, pocetak: zauzece.terminAssociation.pocetak,
+                    kraj: zauzece.terminAssociation.kraj, naziv: zauzece.salaAssociation.naziv, predavac: predavac, uloga: zauzece.Osoblje.uloga
+                });
+            }
+        });
+
+        odgovor["periodicna"] = periodicnaList;
+        odgovor["vanredna"] = vanrednaList;
+        res.json(odgovor);
+
+    });
+});
 
 function vratiResponse(res, response) {
     res.json(response);
@@ -215,12 +264,12 @@ app.post('/rezervacija', function (req, res) {
         jsonResponse["stringDatuma"] = jsonResponse["stringDatuma"].replace('.', '/');
         if (jsonResponse["stringDatuma"] != "") {
             jsonResponse["alert"] = "Nije moguće rezervisati salu " + req.body["opcija"] + " za navedeni datum " + jsonResponse["stringDatuma"].replace('.', ' ') + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] + "!";
-            jsonResponse["alert"] += "(Zahtjev za zauzece poslao " + jsonResponse["uloga"] + " " + jsonResponse["predavac"];
+            jsonResponse["alert"] += "\n(Zahtjev za zauzece poslao " + jsonResponse["uloga"] + " " + jsonResponse["predavac"] + ")";
         }
         else {
             let strv = "Nije moguće rezervisati salu " + req.body["opcija"] + " za navedeni datum " + jsonResponse["stringDatuma"].replace('.', ' ') + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] + "!";
             jsonResponse["alert"] = strv + "\n (Nije moguće praviti periodične rezervacije u periodu van zimskog ili ljetnog semestra!)";
-            jsonResponse["alert"] += "(Zahtjev za zauzece poslao " + jsonResponse["uloga"] + " " + jsonResponse["predavac"];
+            jsonResponse["alert"] += "\n(Zahtjev za zauzece poslao " + jsonResponse["uloga"] + " " + jsonResponse["predavac"] + ")";
         }
         res.json(jsonResponse);
     }
@@ -230,49 +279,6 @@ app.post('/rezervacija', function (req, res) {
 });
 });
 
-app.get('/zauzeca', function (req, res) {
-    //preuzimamo sve podatke (join svih tabela)
-    let odgovor = {};
-
-    db.Rezervacija.findAll({
-        include: [
-            {
-                model: db.Sala,
-                as: "salaAssociation"
-            },
-            {
-                model: db.Osoblje
-            },
-            {
-                model: db.Termin,
-                as: "terminAssociation"
-            }
-        ]
-    }).then(function (lista) {
-        let periodicnaList = [], vanrednaList = [];
-        //sortiramo zauzeća
-        lista.forEach(function (zauzece) {
-            let predavac = zauzece.Osoblje.ime + " " + zauzece.Osoblje.prezime;
-            if (zauzece.terminAssociation.redovni) {
-                periodicnaList.push({
-                    dan: zauzece.terminAssociation.dan, semestar: zauzece.terminAssociation.semestar, pocetak: zauzece.terminAssociation.pocetak,
-                    kraj: zauzece.terminAssociation.kraj, naziv: zauzece.salaAssociation.naziv, predavac: predavac, uloga: zauzece.Osoblje.uloga
-                });
-            }
-            else {
-                vanrednaList.push({
-                    datum: zauzece.terminAssociation.datum, pocetak: zauzece.terminAssociation.pocetak,
-                    kraj: zauzece.terminAssociation.kraj, naziv: zauzece.salaAssociation.naziv, predavac: predavac, uloga: zauzece.Osoblje.uloga
-                });
-            }
-        });
-
-        odgovor["periodicna"] = periodicnaList;
-        odgovor["vanredna"] = vanrednaList;
-        res.json(odgovor);
-
-    });
-});
 
 // #endregion
 
@@ -285,12 +291,12 @@ app.get('/osobe.html', function (req, res) {
 
 app.get('/osoblje_lokacija', function (req, res) {
     let dat = new Date(), osobljeLokacija = [];
-    let stringVremena = dat.getHours() + ":" + dat.getMinutes();
+    let stringVremena = dat.getHours() + ":" + dat.getMinutes() + ":" + dat.getSeconds();
     let periodicniDan = dat.getDay() - 1, mjesecTrenutni = dat.getMonth() + 1, dateString = ((dat.getDate() >= 10) ? "" : "0") + dat.getDate();
     let mjesecTrenutniString = ((mjesecTrenutni >= 10) ? "" : "0") + mjesecTrenutni, strSemestra = numerickaProvjeraSemestra(mjesecTrenutni - 1);
     let datumStr = dateString + "." + mjesecTrenutniString + ".2020.";
     if (periodicniDan == -1) periodicniDan = 6; //jer je u spirali ponedjeljak 0 (u js je ponedjeljak 1)
-
+    console.log(stringVremena + "********");
     db.Osoblje.findAll({ attributes: ['ime', 'prezime', 'uloga'] }).then(function (listaOsoblja) {
         db.Rezervacija.findAll({
             include: [{ model: db.Sala, as: "salaAssociation" }, { model: db.Osoblje }, { model: db.Termin, as: "terminAssociation" }]
@@ -328,6 +334,7 @@ app.get('/osoblje_lokacija', function (req, res) {
 
 
 // #region Spirala 3
+
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '../html/pocetna.html'));
 });
@@ -449,4 +456,6 @@ function provjeriZauzeca(podaci) {
 }
 app.listen(8080);
 // #endregion
+
+
 module.exports=app;

@@ -1,2 +1,1 @@
-var recall= null;
-var loadBaze= true;
+var recall= null; //kontrola ajax poziva (30 s)

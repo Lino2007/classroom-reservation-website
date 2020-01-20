@@ -1,19 +1,12 @@
 var pocetak, kraj, opcija, trenutniMjesec , periodicnost, dan, imeOsobe;
 var listaOsoblja = [];
 window.onload = (event) => {
-  //  clearInterval(recall);
-    if (!recall) clearInterval(recall);
     var d = new Date();
-    //ne idem u sljedeci mjesec jer je to vec 2020, ovaj kalendar je za 2019
-    Kalendar.iscrtajKalendar(document.getElementById("datumi"), 11);
-    // Pozivi.ucitajPodatkeIzJSON(true);
-     //** */
+    Kalendar.iscrtajKalendar(document.getElementById("datumi"), d.getMonth());
      Pozivi.dobaviPodatkeZaSelect();
-  
-
 };
 
-
+// #region Spirala 4
 function ucitajSelectOsoblja (osoblje) {
     listaOsoblja=[];
     let select= document.getElementById('osobljeSelect');
@@ -48,7 +41,11 @@ function dajUlogu (imeOsobe) {
    });
    return uloga;
 }
-//#region Spirala 3
+// #endregion
+
+
+// #region Spirala 3
+
 function validirajFormu () {
   return pocetak!="" && kraj!="" && pocetak<=kraj;
 }
