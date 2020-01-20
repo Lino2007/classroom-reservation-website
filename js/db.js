@@ -2,7 +2,8 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize("DBWT19", "root", "root", {
    host: "127.0.0.1",
    dialect: "mysql",
-   port:"3308"
+   port:"3308",
+   logging: false
 });
 
 const db = {};
@@ -26,5 +27,4 @@ db.Osoblje.hasOne(db.Sala, {foreignKey: 'zaduzenaOsoba' });
 db.Sala.belongsTo(db.Osoblje,  {foreignKey: 'zaduzenaOsoba' }); 
 
 module.exports = db;
-
 

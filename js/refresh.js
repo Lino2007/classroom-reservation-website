@@ -13,11 +13,11 @@ app.use('/', express.static(__dirname));
 
 
 // #region Inicijalizacija Baze
-
+/*
 db.sequelize.sync({ force: true }).then(function () {
   
     init();
- });   
+ });   */
   
  
  function init() {
