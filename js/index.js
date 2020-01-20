@@ -291,7 +291,9 @@ app.get('/osobe.html', function (req, res) {
 
 app.get('/osoblje_lokacija', function (req, res) {
     let dat = new Date(), osobljeLokacija = [];
-    let stringVremena = dat.getHours() + ":" + dat.getMinutes() + ":" + dat.getSeconds();
+    let strSat = (dat.getHours()<10)? ('0' + dat.getHours()) : dat.getHours(), strMin = (dat.getMinutes()<10)? ('0' + dat.getMinutes()) : dat.getMinutes();
+    let strSek = (dat.getSeconds()<10)? ('0' + dat.getSeconds()) : dat.getSeconds();
+    let stringVremena =  strSat + ":" + strMin + ":" + strSek ;
     let periodicniDan = dat.getDay() - 1, mjesecTrenutni = dat.getMonth() + 1, dateString = ((dat.getDate() >= 10) ? "" : "0") + dat.getDate();
     let mjesecTrenutniString = ((mjesecTrenutni >= 10) ? "" : "0") + mjesecTrenutni, strSemestra = numerickaProvjeraSemestra(mjesecTrenutni - 1);
     let datumStr = dateString + "." + mjesecTrenutniString + ".2020.";
