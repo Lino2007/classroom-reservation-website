@@ -18,7 +18,9 @@ var Pozivi= (function(){
 // #endregion
   
 
-// #region Spirala 4, Zadatak 2
+// #region Spirala 4, Zadatak 2 i 3
+
+
 function ucitajIzBaze (param) {
         let jsonFile = new XMLHttpRequest();
         jsonFile.open("GET", "/zauzeca", true);
@@ -47,14 +49,7 @@ function ucitajIzBaze (param) {
         jsonFile.send(null);
     }
 
-
-    function dobaviPodatkeZaTabelu () {
-        $.get("/osoblje_lokacija", function(data, status){
-             return  ucitajTabelu(data);
-            });
-    }
-  
-    function posaljiTermin (podaci) {
+  function posaljiTermin (podaci) {
        /* podaci["periodicna"]=zauzecaJsonObjekt["periodicna"];
         podaci["vanredna"]=zauzecaJsonObjekt["vanredna"]; */
      
@@ -66,7 +61,7 @@ function ucitajIzBaze (param) {
             dataType: 'json',
             success:function(data) {
               if (data["valid"]) {
-                // ucitajPodatkeIzJSON(true);
+               
                 ucitajIzBaze(true);
                }
                else {
@@ -78,6 +73,12 @@ function ucitajIzBaze (param) {
             error: function (XMLHttpRequest, textStatus, errorThrown) {
             }
         });
+    }
+
+    function dobaviPodatkeZaTabelu () {
+        $.get("/osoblje_lokacija", function(data, status){
+             return  ucitajTabelu(data);
+            });
     }
 // #endregion
 

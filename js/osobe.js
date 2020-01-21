@@ -1,6 +1,3 @@
-
-
-
 window.onload = (event) => {
    Pozivi.dobaviPodatkeZaTabelu();
  
@@ -12,7 +9,7 @@ function ucitajTabelu (osoblje) {
     let lista= document.getElementById('listaOsoblja');
     lista.innerHTML= "";
     osoblje.forEach(function(item){
-        lista.innerHTML +="<ul>"+  item.ime + " " + item.prezime + " ("+ item.lokacija +")</ul>";
+        lista.innerHTML +="<ul>"+ item.uloga + " " + item.ime + " " + item.prezime + " ("+ item.lokacija +")</ul>";
     });
      
 }

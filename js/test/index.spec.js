@@ -89,11 +89,6 @@ describe("Test 1: GET /sale", function() {
               .set('content-type', 'application/json')
               .send(redZauz)
               .then(function(res) {
-             /*   if (res.body.hasOwnProperty('alert')) {
-                
-                  done(new Error("Niste pozvali node index.js prije poziva testova!"));
-                } */
-          
                  chai.request('http://localhost:8080')
                  .get('/zauzeca')
                  .end(function(err, res) {
@@ -129,7 +124,7 @@ describe("Test 1: GET /sale", function() {
               let ispravanRezultat={"dan":2,"semestar":"ljetni","pocetak":"16:00:00","kraj":"17:00:00","naziv":"MA","predavac":"Neko Nekić","uloga":"profesor"};
               it("Redovno zauzece se rezervise, dok se vanredno ne rezervise", function(done) {
               
-              // console.log(redZauz);
+            
                 chai.request('http://localhost:8080')
                 .post('/rezervacija')
                 .set('content-type', 'application/json')
@@ -190,7 +185,7 @@ describe("Test 1: GET /sale", function() {
                         //kad se desi konflikt izmedju zauzeca server vraca json response sa alert poljem (umjesto da rezervise termin)
                              var odg = res.body, postojiAlert=false;
                              if (odg.hasOwnProperty('alert')) postojiAlert=true;  //vracen alert
-                             console.log(odg["alert"]);
+                           
                              chai.request('http://localhost:8080')
                              .get('/zauzeca')
                              .end(function(err, res) {
@@ -238,7 +233,7 @@ describe("Test 1: GET /sale", function() {
                             //kad se desi konflikt izmedju zauzeca server vraca json response sa alert poljem (umjesto da rezervise termin)
                                  var odg = res.body, postojiAlert=false;
                                  if (odg.hasOwnProperty('alert')) postojiAlert=true;  //vracen alert
-                                 console.log(odg["alert"]);
+                               
                                  chai.request('http://localhost:8080')
                                  .get('/zauzeca')
                                  .end(function(err, res) {
@@ -287,7 +282,7 @@ describe("Test 1: GET /sale", function() {
                             //kad se desi konflikt izmedju zauzeca server vraca json response sa alert poljem (umjesto da rezervise termin)
                                  var odg = res.body, postojiAlert=false;
                                  if (odg.hasOwnProperty('alert')) postojiAlert=true;  //vracen alert
-                                 console.log(odg["alert"]);
+                               
                                  chai.request('http://localhost:8080')
                                  .get('/zauzeca')
                                  .end(function(err, res) {
@@ -316,7 +311,7 @@ describe("Test 1: GET /sale", function() {
  
                         let Zauz1 = { pocetak: '16:00', kraj: '17:00',opcija: '0-01', trenutniMjesec: 'Juli',odabraniDan: 5, periodicnost: true,predavac: 'Neko Nekić',uloga: 'profesor'};
                         let Zauz2 =  { pocetak: '16:30', kraj: '18:00',opcija: '0-01', trenutniMjesec: 'August',odabraniDan: 2, periodicnost: true,predavac: 'Drugi Neko',uloga: 'asistent'};
-                            let ispravanRezultat={"datum":"05.10.2020.","pocetak":"16:00:00","kraj":"17:00:00","naziv":"0-01","predavac":"Neko Nekić","uloga":"profesor"};
+                        
                             it("Zauzeca se ne evidentiraju", function(done) {
                              var alertZaJuli=false , alertZaAugust= false;
                             // console.log(redZauz);
@@ -342,7 +337,7 @@ describe("Test 1: GET /sale", function() {
 
 
                           describe("Test 10: Kreiranje periodicnih zauzeca na isti dan, ali u razlicitim semestrima", function() {
-                            //ponedjeljak
+                            
                               let Zauz1 = { pocetak: '13:00', kraj: '15:00',opcija: '0-02', trenutniMjesec: 'April',odabraniDan: 6, periodicnost: true,predavac: 'Neko Nekić',uloga: 'profesor'};
                               let Zauz2 =  { pocetak: '12:00', kraj: '18:00',opcija: '0-02', trenutniMjesec: 'Oktobar',odabraniDan: 5, periodicnost: true,predavac: 'Test Test',uloga: 'asistent'};
                               let ispravanRezultat1={"dan":0,"semestar":"ljetni","pocetak":"13:00:00","kraj":"15:00:00","naziv":"0-02","predavac":"Neko Nekić","uloga":"profesor"};

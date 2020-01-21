@@ -1,3 +1,7 @@
+/*-----------------
+Kopija index.js za testiranje, uklonjen je samo region punjenja/inicijalizacije baze jer ne prolazi jedan test kada se paralelno puni baza i izvrsavaju testovi.
+Prije pokretanja testova potrebno je pokrenuti komandu "node index.js" da se neometano popuni baza (sacekati notifikaciju da je baza popunjena), a zatim "npm test".
+------------------*/
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
