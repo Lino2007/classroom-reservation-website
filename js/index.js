@@ -264,7 +264,6 @@ app.post('/rezervacija', function (req, res) {
             else {
                 let strv = "Nije moguće rezervisati salu " + req.body["opcija"] + " za navedeni datum " + jsonResponse["stringDatuma"].replace('.', ' ') + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] + "!";
                 jsonResponse["alert"] = strv + "\n (Nije moguće praviti periodične rezervacije u periodu van zimskog ili ljetnog semestra!)";
-                jsonResponse["alert"] += "\n(Termin je vec rezervisao " + jsonResponse["uloga"] + " " + jsonResponse["predavac"] + ")";
             }
             res.json(jsonResponse);
         }
