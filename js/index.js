@@ -259,12 +259,12 @@ app.post('/rezervacija', function (req, res) {
             jsonResponse["stringDatuma"] = jsonResponse["stringDatuma"].replace('.', '/');
             if (jsonResponse["stringDatuma"] != "") {
                 jsonResponse["alert"] = "Nije moguće rezervisati salu " + req.body["opcija"] + " za navedeni datum " + jsonResponse["stringDatuma"].replace('.', ' ') + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] + "!";
-                jsonResponse["alert"] += "\n(Zahtjev za zauzece poslao " + jsonResponse["uloga"] + " " + jsonResponse["predavac"] + ")";
+                jsonResponse["alert"] += "\n(Termin je vec rezervisao " + jsonResponse["uloga"] + " " + jsonResponse["predavac"] + ")";
             }
             else {
                 let strv = "Nije moguće rezervisati salu " + req.body["opcija"] + " za navedeni datum " + jsonResponse["stringDatuma"].replace('.', ' ') + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] + "!";
                 jsonResponse["alert"] = strv + "\n (Nije moguće praviti periodične rezervacije u periodu van zimskog ili ljetnog semestra!)";
-                jsonResponse["alert"] += "\n(Zahtjev za zauzece poslao " + jsonResponse["uloga"] + " " + jsonResponse["predavac"] + ")";
+                jsonResponse["alert"] += "\n(Termin je vec rezervisao " + jsonResponse["uloga"] + " " + jsonResponse["predavac"] + ")";
             }
             res.json(jsonResponse);
         }
@@ -430,7 +430,7 @@ function provjeriZauzeca(podaci) {
             && periodicniDan == periodicnaZauzeca[i]["dan"] &&
             preklapanjeTermina(periodicnaZauzeca[i]["pocetak"], periodicnaZauzeca[i]["kraj"], podaci["pocetak"], podaci["kraj"])) {
 
-            return { valid: false, stringDatuma: stringDatuma, predavac: podaci["predavac"], uloga: podaci["uloga"] };
+            return { valid: false, stringDatuma: stringDatuma, predavac: periodicnaZauzeca[i]["predavac"], uloga: periodicnaZauzeca[i]["uloga"] };
         }
     }
 
@@ -441,7 +441,7 @@ function provjeriZauzeca(podaci) {
         if (podaci["opcija"] == vanrednaZauzeca[i]["naziv"] && preklapanjeTermina(vanrednaZauzeca[i]["pocetak"], vanrednaZauzeca[i]["kraj"], podaci["pocetak"], podaci["kraj"])
             && (stringDatuma == vanrednaZauzeca[i]["datum"] || (podaci["periodicnost"] == true && vratiPeriodDatuma(vanrednaZauzeca[i]["datum"]) == periodicniDan && semestarMjeseca == tipSemestra)
             )) {
-            return { valid: false, stringDatuma: stringDatuma, predavac: podaci["predavac"], uloga: podaci["uloga"] };
+            return { valid: false, stringDatuma: stringDatuma, predavac: vanrednaZauzeca[i]["predavac"], uloga: vanrednaZauzeca[i]["uloga"] };
         }
     }
 

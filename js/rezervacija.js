@@ -72,8 +72,8 @@ function rezervirajTermin (odabraniDan) {
     
     if (chc)  {
      let dat = Kalendar.formirajDatum(odabraniDan, trenutniMjesec);
-     let podaciOsobe = "(Zahtjev za rezervisanje poslao " + dajUlogu(imeOsobe)+ " " +imeOsobe + ")";
-     alert("Nije moguće rezervisati salu " + opcija + " za navedeni datum " + dat + " i termin od " + pocetak + " do " + kraj + "!\n" + podaciOsobe);
+     
+     alert("Nije moguće rezervisati salu " + opcija + " za navedeni datum " + dat + " i termin od " + pocetak + " do " + kraj + "!\n" + "Kliknuli se na vec zauzeti termin.");
       Pozivi.ucitajIzBaze(true); 
      return ;
    }
