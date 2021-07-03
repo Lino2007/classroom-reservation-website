@@ -63,17 +63,17 @@ function ucitajFormu () {
 function rezervirajTermin (odabraniDan) {
    
     if (!ucitajFormu()) { 
-        alert("Greška: Nespravni podaci u formi.");
+        alert("Error: Incorrect data in form.");
         return ;
     }
     dan= odabraniDan;
-    let potvrda = confirm("Da li želite rezervisati odabrani termin?");
+    let potvrda = confirm("Do you want to reserve classroom?");
     let chc =Kalendar.provjeraZauzeca(odabraniDan);
     
     if (chc)  {
      let dat = Kalendar.formirajDatum(odabraniDan, trenutniMjesec);
      
-     alert("Nije moguće rezervisati salu " + opcija + " za navedeni datum " + dat + " i termin od " + pocetak + " do " + kraj + "!\n" + "Kliknuli se na vec zauzeti termin.");
+     alert("It's not possible to reserve classroom " + opcija + " for selected date " + dat + " and period from " + pocetak + " to " + kraj + "!\n" + "You clicked reserved date.");
       Pozivi.ucitajIzBaze(true); 
      return ;
    }

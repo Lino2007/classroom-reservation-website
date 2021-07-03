@@ -2,7 +2,7 @@
 <HTML>
 
 <HEAD>
-        <TITLE>Spirala 1</TITLE>
+        <TITLE>Classroom Reservation</TITLE>
         <link rel="stylesheet" type="text/css" href="../css/rezervacija.css">
         <META http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -13,39 +13,39 @@
                 <div class="logo"> <img class="htmlslika" src="../img/html-logo.png" alt="slika-logo"></div>
                 <div class="meni">
                        <ul>
-                                <li><a href="/pocetna.html">Početna</a></li>
-                                <li><a href="/sale.html" >Sale</a></li>
-                                <li><a href="/unos.html">Unos</a></li>
-                                <li><a href="#" class="bezPodvlake">Rezervacije</a></li>
-                                <li><a href="/osobe.html">Osobe</a></li>
+                                <li><a href="/pocetna.html">Main page</a></li>
+                                <li><a href="/sale.html" >Classrooms</a></li>
+                                <li><a href="/unos.html">Add classroom</a></li>
+                                <li><a href="#" class="bezPodvlake">Reservation</a></li>
+                                <li><a href="/osobe.html">Employees</a></li>
                         </ul>
                 </div>
                 <div class="sadrzaj">
-                  <label id="odb">Odabir sala</label>
+                  <label id="odb">Classroom selection</label>
 				 
                           <div id= "dropdown">
                            <form id="odabir"  oninput="Kalendar.ucitajPodatkeIzForme()">
 						   <!--oninput="Kalendar.ucitajPodatkeIzForme()"-->
-							    <label>Sala: </label>
+							    <label>Classroom: </label>
                              <select id="saleSelect"> 
                             </select>
-							<label>Periodična rezervacija: </label> <input type="checkbox" name="chbox" id="periodicnost"><br>
-                            <label>Početak: </label> <input type="time" name="početak"  id="pocetak" ><br>
-                            <label>Kraj: </label> <input type="time" name="kraj"  id="kraj"><br> 
-							 <label>Odabir osoblja: </label><select id="osobljeSelect" placeholder="Odabir osoblja"> </select>
+							<label>Periodic reservation: </label> <input type="checkbox" name="chbox" id="periodicnost"><br>
+                            <label>Start: </label> <input type="time" name="početak"  id="pocetak" ><br>
+                            <label>End: </label> <input type="time" name="kraj"  id="kraj"><br> 
+							 <label>Choose employee: </label><select id="osobljeSelect" placeholder="Odabir osoblja"> </select>
 							</form>
                           </div>
                             <div class="kalendar">
                                 <table id="datumi">
                                       <tr><td colspan="5" id="month">Novembar</td></tr>
                                         <tr class="red">
-                                          <th>PON</th>
-                                          <th>UTO</th>
-                                          <th>SRI</th>
-                                          <th>ČET</th>
-                                          <th>PET</th>
-                                          <th>SUB</th>
-                                          <th>NED</th>
+                                          <th>MON</th>
+                                          <th>TUE</th>
+                                          <th>WED</th>
+                                          <th>THU</th>
+                                          <th>FRI</th>
+                                          <th>SAT</th>
+                                          <th>SUN</th>
                                         </tr>
                                         <tr class="red">
                                           <td></td>
@@ -95,9 +95,9 @@
                                       </table>
                                     </div>
                                     <div id="btnSection">
-                                      <div class="inner" ><button type="button" class="btnCal" id="prev" onclick="Kalendar.callPrev()" >Prethodni</button></div>
+                                      <div class="inner" ><button type="button" class="btnCal" id="prev" onclick="Kalendar.callPrev()" >Previous</button></div>
                                       <div class="inner" id="spacer"></div>
-                                      <div class="inner" id="rbtn"><button type="button" class="btnCal" id="nxt" onclick="Kalendar.callNext()" >Sljedeci</button></div> 
+                                      <div class="inner" id="rbtn"><button type="button" class="btnCal" id="nxt" onclick="Kalendar.callNext()" >Next</button></div> 
                                     </div>
                    </div>
         </div>

@@ -182,7 +182,7 @@ table td {
   
  /*postavka buttona*/
  #btnSection {
-     margin-top: 10%;
+     margin-top: 3%;
     margin-left:7.5%;
    width: 72%;
    text-align: center;
@@ -204,6 +204,10 @@ table td {
   #spacer {
       margin-left: 14%;
       width: 64%;
+  }
+  
+  #nxt {
+	  margin-left: 40pt;
   }
 
   .btnCal {

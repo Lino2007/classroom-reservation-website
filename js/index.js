@@ -4,7 +4,7 @@ const app = express();
 const path = require('path');
 const url = require('url');
 const fs = require('fs');
-const nizMjeseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'];
+ const nizMjeseci = ['Januar', 'Februar', 'Mart', 'April', 'Maj', 'Juni', 'Juli', 'August', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'];
 const db = require('./db.js');
 
 app.use(bodyParser.json());
@@ -66,7 +66,7 @@ function init() {
                 });
             });
         });
-    }).then(function () { console.log("Ucitana baza") });
+    }).then(function () { console.log("Database loaded!") });
 }
 // #endregion
 
@@ -258,12 +258,12 @@ app.post('/rezervacija', function (req, res) {
             jsonResponse["stringDatuma"] = jsonResponse["stringDatuma"].replace('.', '/');
             jsonResponse["stringDatuma"] = jsonResponse["stringDatuma"].replace('.', '/');
             if (jsonResponse["stringDatuma"] != "") {
-                jsonResponse["alert"] = "Nije moguće rezervisati salu " + req.body["opcija"] + " za navedeni datum " + jsonResponse["stringDatuma"].replace('.', ' ') + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] + "!";
-                jsonResponse["alert"] += "\n(Termin je vec rezervisao " + jsonResponse["uloga"] + " " + jsonResponse["predavac"] + ")";
+                jsonResponse["alert"] = "It's not possible to reserve classroom " + req.body["opcija"] + " for the following date " + jsonResponse["stringDatuma"].replace('.', ' ') + " and period from " + req.body["pocetak"] + " to " + req.body["kraj"] + "!";
+                jsonResponse["alert"] += "\n(Classroom already reserved " + jsonResponse["uloga"] + " " + jsonResponse["predavac"] + ")";
             }
             else {
-                let strv = "Nije moguće rezervisati salu " + req.body["opcija"] + " za navedeni datum " + jsonResponse["stringDatuma"].replace('.', ' ') + " i termin od " + req.body["pocetak"] + " do " + req.body["kraj"] + "!";
-                jsonResponse["alert"] = strv + "\n (Nije moguće praviti periodične rezervacije u periodu van zimskog ili ljetnog semestra!)";
+                let strv = "It's not possible to reserve classroom " + req.body["opcija"] + " for the following date " + jsonResponse["stringDatuma"].replace('.', ' ') + " and period from " + req.body["pocetak"] + " to " + req.body["kraj"] + "!";
+                jsonResponse["alert"] = strv + "\n (You are not allowed to make reservations outside of winter or summer semesters!)";
             }
             res.json(jsonResponse);
         }
@@ -303,19 +303,19 @@ app.get('/osoblje_lokacija', function (req, res) {
                     if (osoba.ime == zauzece.Osoblje.ime && osoba.prezime == zauzece.Osoblje.prezime && osoba.uloga == zauzece.Osoblje.uloga) {
                         if (zauzece.terminAssociation.redovni && strSemestra != "nijeSemestar" && strSemestra == zauzece.terminAssociation.semestar
                             && periodicniDan == zauzece.terminAssociation.dan && preklapanjeTrenutnogVremenaITermina(zauzece.terminAssociation.pocetak, zauzece.terminAssociation.kraj, stringVremena)) {
-                            osobljeLokacija.push({ ime: osoba.ime, prezime: osoba.prezime, uloga: osoba.uloga ,lokacija: "U " + zauzece.salaAssociation.naziv });
+                            osobljeLokacija.push({ ime: osoba.ime, prezime: osoba.prezime, uloga: osoba.uloga ,lokacija: "In " + zauzece.salaAssociation.naziv });
                             redFlag = false;
                             break;
                         }
                         else if (!zauzece.terminAssociation.redovni && datumStr == zauzece.terminAssociation.datum && preklapanjeTrenutnogVremenaITermina(zauzece.terminAssociation.pocetak, zauzece.terminAssociation.kraj, stringVremena)) {
-                            osobljeLokacija.push({ ime: osoba.ime, prezime: osoba.prezime, uloga: osoba.uloga ,lokacija: "U " + zauzece.salaAssociation.naziv });
+                            osobljeLokacija.push({ ime: osoba.ime, prezime: osoba.prezime, uloga: osoba.uloga ,lokacija: "In " + zauzece.salaAssociation.naziv });
                             redFlag = false;
                             break;
                         }
                     }
                 }
                 if (redFlag) {
-                    osobljeLokacija.push({ ime: osoba.ime, prezime: osoba.prezime, uloga: osoba.uloga ,lokacija: "U kancelariji" });
+                    osobljeLokacija.push({ ime: osoba.ime, prezime: osoba.prezime, uloga: osoba.uloga ,lokacija: "In office" });
                 }
                 else redFlag = true;
             });
