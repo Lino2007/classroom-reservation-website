@@ -1,9 +1,9 @@
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize("dbwt19", "postgres", "admin", {
-   host: "127.0.0.1",
-   dialect: "postgres",
-   //dialect: "mysql",
-   //port:"3308",
+
+const sequelize = new Sequelize("DBWT19", "root", "root", {
+   host: "localhost", // mysql-db
+   dialect: "mysql",
+   port:"3306",
    logging: false
 });
 

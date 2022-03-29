@@ -1,3 +1,4 @@
+
 # Classroom reservation website
 This is my first web application as a part of the faculty project on the subject "Web technologies" (3rd year Bachelor). Used technologies:
 
@@ -17,8 +18,8 @@ The application allows user (professor or teaching assistant) to reserve classro
 ## App prerequisites and startup
 The application requires following:
 
- 1. Installed [PostgreSQL](https://www.postgresql.org/download/)  and [Node](https://nodejs.org/en/download/) 
- 2. Created database named **dbwt19** in PostgreSQL
+ 1. Installed [~~PostgreSQL~~](https://www.postgresql.org/download/)/[MySql](https://www.mysql.com/downloads/)  and [Node](https://nodejs.org/en/download/) 
+ 2. Created database named **dbwt19** in ~~PostgreSQL~~ MySql
 
 
 To run application:
