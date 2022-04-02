@@ -16,7 +16,8 @@ app.use('/', express.static(__dirname));
 
 db.sequelize.sync({ force: true }).then(function () {
     init();
-}).catch(function(e) {  process.exit(1); });
+}).catch(function(e) { console.log(e);
+                      process.exit(1); });
 
 
 function init() {
